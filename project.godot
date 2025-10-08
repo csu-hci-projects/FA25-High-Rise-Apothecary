@@ -15,10 +15,14 @@ run/main_scene="uid://dndsvpd4wfiky"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://Assets/icon.svg"
 
+[autoload]
+
+GlobalInventory="*res://Scripts/GlobalInventory.gd"
+
 [editor]
 
 naming/scene_name_casing=4
-naming/script_name_casing=4
+naming/script_name_casing=1
 
 [input]
 
