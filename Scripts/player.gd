@@ -3,6 +3,8 @@ extends CharacterBody2D
 const speed = 100
 
 @onready var animatedSprite = $AnimatedSprite2D
+@onready var interactUI = $InteractUI
+@onready var inventoryUI = $InventoryUI
 
 func _ready() -> void:
 	GlobalInventory.setPlayerNode(self)
@@ -33,3 +35,9 @@ func updateAnimations():
 				animatedSprite.play("walkDown")
 			else:
 				animatedSprite.play("walkUp")
+
+func _input(event):
+	if event.is_action_pressed("InventoryUI"):
+		inventoryUI.visible = !inventoryUI.visible
+		get_tree().paused = !get_tree().paused
+		

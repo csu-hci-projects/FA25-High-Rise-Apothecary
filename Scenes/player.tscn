@@ -1,8 +1,9 @@
-[gd_scene load_steps=31 format=3 uid="uid://pe2sq3jvjs8w"]
+[gd_scene load_steps=32 format=3 uid="uid://pe2sq3jvjs8w"]
 
 [ext_resource type="Script" uid="uid://dgnrwa2iysat7" path="res://Scripts/Player.gd" id="1_t6bgw"]
 [ext_resource type="Texture2D" uid="uid://bwbnqri3fqbl0" path="res://Assets/icon.svg" id="2_do1p4"]
 [ext_resource type="Texture2D" uid="uid://hn61in3xlv1n" path="res://Assets/Sprite Sheets/tempPerson.png" id="3_do1p4"]
+[ext_resource type="PackedScene" uid="uid://dgv6u15212ifn" path="res://Scenes/inventoryUI.tscn" id="4_vgqql"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_25jjc"]
 atlas = ExtResource("3_do1p4")
@@ -214,7 +215,8 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5o5va"]
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["Player"]]
+process_mode = 3
 z_index = 1
 y_sort_enabled = true
 scale = Vector2(0.2, 0.2)
@@ -241,3 +243,69 @@ scale = Vector2(3.1999998, 3.1999998)
 shape = SubResource("CircleShape2D_5o5va")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="InteractUI" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="InteractUI"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = -50.0
+grow_horizontal = 0
+grow_vertical = 0
+color = Color(0, 0.4862745, 0, 1)
+
+[node name="Label" type="Label" parent="InteractUI/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.5
+offset_top = -11.5
+offset_right = 71.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 26
+text = "Press 'E' to pick up"
+
+[node name="InventoryUI" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="InventoryUI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -200.0
+offset_right = 400.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0.25202772, 0.25202763, 0.25202757, 1)
+
+[node name="Label" type="Label" parent="InventoryUI/ColorRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -56.0
+offset_top = 15.0
+offset_right = 56.0
+offset_bottom = 49.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 24
+text = "Inventory"
+
+[node name="InventoryUI" parent="InventoryUI/ColorRect" instance=ExtResource("4_vgqql")]
+layout_mode = 0
