@@ -11,7 +11,7 @@ func _ready() -> void:
 
 func getInput():
 	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	if direction:
+	if direction and !inventoryUI.visible:
 		self.velocity = direction * speed
 	else:
 		self.velocity = Vector2.ZERO
