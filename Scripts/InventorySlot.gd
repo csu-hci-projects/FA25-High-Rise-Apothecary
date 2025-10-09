@@ -18,6 +18,9 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 
+func _get_minimum_size() -> Vector2:
+	return Vector2(0, size.x)
+
 func _on_item_button_pressed() -> void:
 	if item != null:
 		usagePanel.visible = !usagePanel.visible
@@ -28,7 +31,7 @@ func _on_item_button_mouse_entered() -> void:
 		detailsPanel.visible = true
 
 func _on_item_button_mouse_exited() -> void:
-	detailsPanel.visible = true
+	detailsPanel.visible = false
 
 func setEmpty():
 	icon.texture = null

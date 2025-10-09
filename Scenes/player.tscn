@@ -220,6 +220,8 @@ process_mode = 3
 z_index = 1
 y_sort_enabled = true
 scale = Vector2(0.2, 0.2)
+floor_stop_on_slope = false
+floor_snap_length = 0.0
 script = ExtResource("1_t6bgw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -241,8 +243,6 @@ animation = &"idle"
 position = Vector2(0, 39.999996)
 scale = Vector2(3.1999998, 3.1999998)
 shape = SubResource("CircleShape2D_5o5va")
-
-[node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="InteractUI" type="CanvasLayer" parent="."]
 visible = false
@@ -294,18 +294,5 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 color = Color(0.25202772, 0.25202763, 0.25202757, 1)
 
-[node name="Label" type="Label" parent="InventoryUI/ColorRect"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -56.0
-offset_top = 15.0
-offset_right = 56.0
-offset_bottom = 49.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 24
-text = "Inventory"
-
 [node name="InventoryUI" parent="InventoryUI/ColorRect" instance=ExtResource("4_vgqql")]
-layout_mode = 0
+layout_mode = 1

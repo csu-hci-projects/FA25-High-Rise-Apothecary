@@ -6,18 +6,16 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bhpio"]
 
 [node name="inventorySlot" type="Control"]
-custom_minimum_size = Vector2(150, 150)
 layout_mode = 3
 anchors_preset = 0
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 160.0
-offset_bottom = 160.0
+offset_right = 150.0
+offset_bottom = 150.0
+size_flags_horizontal = 3
 script = ExtResource("1_u5fld")
 
 [node name="OuterBorder" type="ColorRect" parent="."]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
@@ -26,31 +24,40 @@ color = Color(0.080783345, 0.080783345, 0.080783345, 1)
 
 [node name="InnerBorder" type="ColorRect" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -70.0
-offset_top = -70.0
-offset_right = 70.0
-offset_bottom = 70.0
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = -6.0
+offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.16565654, 0.16565633, 0.16565648, 1)
 
-[node name="ItemIcon" type="Sprite2D" parent="InnerBorder"]
-position = Vector2(70, 70)
-scale = Vector2(0.7109375, 0.7109375)
+[node name="ItemIcon" type="TextureRect" parent="InnerBorder"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
 texture = ExtResource("2_clr8n")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="ItemQuantity" type="Label" parent="InnerBorder"]
-layout_mode = 0
-offset_left = 5.0
-offset_right = 45.0
-offset_bottom = 45.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -5.0
+offset_right = -2.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_font_sizes/font_size = 32
 text = "1"
+horizontal_alignment = 2
 
 [node name="ItemButton" type="Button" parent="."]
 layout_mode = 1
@@ -101,6 +108,7 @@ text = "ItemEffect"
 autowrap_mode = 2
 
 [node name="UsagePanel" type="ColorRect" parent="."]
+visible = false
 layout_mode = 0
 offset_top = -110.0
 offset_right = 240.0

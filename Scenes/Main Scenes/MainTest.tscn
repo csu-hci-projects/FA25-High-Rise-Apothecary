@@ -10,10 +10,6 @@
 y_sort_enabled = true
 script = ExtResource("1_gi8e0")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(192, 108)
-zoom = Vector2(3, 3)
-
 [node name="Environment" type="Node" parent="."]
 
 [node name="InventoryItem" parent="Environment" instance=ExtResource("2_4rjj8")]
@@ -51,3 +47,8 @@ layer_1/tile_data = PackedInt32Array(-327673, 262144, 0, -327672, 262144, 0, -26
 
 [node name="CharacterBody2D" parent="Environment/TileMap" instance=ExtResource("3_4rjj8")]
 position = Vector2(166.03021, 15.875687)
+
+[node name="Camera2D" type="Camera2D" parent="Environment/TileMap/CharacterBody2D"]
+position = Vector2(-15, 94.99997)
+scale = Vector2(0.9999998, 0.9999998)
+zoom = Vector2(2.99, 2.99)

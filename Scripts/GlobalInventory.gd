@@ -9,7 +9,7 @@ var playerNode: Node = null
 @onready var inventorySlotScene = preload("res://Scenes/inventorySlot.tscn")
 
 func _ready() -> void:
-	inventory.resize(30)
+	inventory.resize(70)
 
 func setPlayerNode(player):
 	playerNode = player
