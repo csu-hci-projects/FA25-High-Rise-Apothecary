@@ -26,8 +26,8 @@ func addItem(item):
 			inventoryUpdated.emit()
 			print("Inventory item added to new slot")
 			return true
-	print("No inventory space")
-	return false
+		print("No inventory space")
+		return false
 
 func removeItem():
 	inventoryUpdated.emit()

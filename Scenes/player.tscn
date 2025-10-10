@@ -1,6 +1,6 @@
 [gd_scene load_steps=32 format=3 uid="uid://pe2sq3jvjs8w"]
 
-[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_t6bgw"]
+[ext_resource type="Script" uid="uid://dgnrwa2iysat7" path="res://Scripts/player.gd" id="1_t6bgw"]
 [ext_resource type="Texture2D" uid="uid://bwbnqri3fqbl0" path="res://Assets/icon.svg" id="2_do1p4"]
 [ext_resource type="Texture2D" uid="uid://hn61in3xlv1n" path="res://Assets/Sprite Sheets/tempPerson.png" id="3_do1p4"]
 [ext_resource type="PackedScene" uid="uid://dgv6u15212ifn" path="res://Scenes/inventoryUI.tscn" id="4_vgqql"]
@@ -273,7 +273,7 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 26
-text = "Press 'E' to pick up"
+text = "Press 'E' to interact"
 
 [node name="InventoryUI" type="CanvasLayer" parent="."]
 visible = false
@@ -292,7 +292,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-color = Color(0.2509804, 0.2509804, 0.2509804, 0)
+color = Color(0.25202772, 0.25202763, 0.25202757, 1)
 
 [node name="InventoryUI" parent="InventoryUI/ColorRect" instance=ExtResource("4_vgqql")]
 layout_mode = 1

@@ -1,44 +1,40 @@
 extends Node2D
 
-@export var itemType = ""
-@export var itemName = ""
-@export var itemTexture = Texture2D
-@export var itemEffect = ""
-var scenePath: String = "res://Scenes/inventoryItem.tscn"
+@export var tileType = ""
+@export var tileName = ""
+@export var tileTexture = Texture2D
+@export var tileEffect = ""
+var scenePath: String = "res://Scenes/InteractPoint.tscn"
 
 @onready var iconSprite = $Sprite2D
 
+@onready var interactablePopup = $InteractablePopup
 var playerInRange = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if not Engine.is_editor_hint():
-		iconSprite.texture = itemTexture
+	print("Ready!")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if Engine.is_editor_hint():
-		iconSprite.texture = itemTexture
 	
 	# add item to inventory if player in range and press 'E'
 	if playerInRange and Input.is_action_just_pressed("AddUI"):
-		pickupItem()
+		interact()
 
-func pickupItem():
-	var item = { # dictionary of item values
+func interact():
+	var tile = { # dictionary of item values
 		"quantity": 1,
-		"type": itemType,
-		"name": itemName,
-		"effect": itemEffect,
-		"texture": itemTexture,
+		"type": tileType,
+		"name": tileName,
+		"effect": tileEffect,
+		"texture": tileTexture,
 		"scenePath": scenePath
 	}
-	if GlobalInventory.playerNode:
-		GlobalInventory.addItem(item)
-		self.queue_free() # unload item from scene
+	print("Interacted!")
+	interactablePopup.visible = !interactablePopup.visible
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	print("entered")
 	if body.is_in_group("Player"): # check if player is what's colliding
 		playerInRange = true
 		body.interactUI.visible = true
