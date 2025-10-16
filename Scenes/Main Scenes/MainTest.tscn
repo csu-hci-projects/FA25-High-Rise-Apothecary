@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cid8bdfpl8uxc" path="res://Scenes/inventoryItem.tscn" id="2_4rjj8"]
 [ext_resource type="Texture2D" uid="uid://bwbnqri3fqbl0" path="res://Assets/icon.svg" id="3_01owl"]
 [ext_resource type="PackedScene" uid="uid://pe2sq3jvjs8w" path="res://Scenes/player.tscn" id="3_4rjj8"]
-[ext_resource type="Script" uid="uid://d0cm3tqnsq5hg" path="res://Scripts/InteractPoint.gd" id="6_yyyqw"]
+[ext_resource type="PackedScene" uid="uid://ce35qsnru2nkx" path="res://Scenes/interactableTile.tscn" id="6_01owl"]
 
 [node name="MainTest" type="Node2D"]
 y_sort_enabled = true
@@ -54,45 +54,7 @@ position = Vector2(-15, 94.99997)
 scale = Vector2(0.9999998, 0.9999998)
 zoom = Vector2(2.99, 2.99)
 
-[node name="InteractableTile" type="Node2D" parent="Environment" groups=["Tiles"]]
-position = Vector2(269, 48)
-script = ExtResource("6_yyyqw")
-tileType = "type1"
-tileName = "jeffery"
-tileEffect = "Does stuff"
-
-[node name="Area2D" type="Area2D" parent="Environment/InteractableTile"]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Environment/InteractableTile/Area2D"]
-polygon = PackedVector2Array(0, -6, -15, 1, -1, 8, 15, 1)
-
-[node name="InteractablePopup" type="CanvasLayer" parent="Environment/InteractableTile"]
-visible = false
-
-[node name="ColorRect" type="ColorRect" parent="Environment/InteractableTile/InteractablePopup"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -400.0
-offset_top = -200.0
-offset_right = 400.0
-offset_bottom = 200.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-color = Color(1, 0, 0, 1)
-
-[node name="Label" type="Label" parent="Environment/InteractableTile/InteractablePopup/ColorRect"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Interaction 
-Happened!"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[connection signal="body_entered" from="Environment/InteractableTile/Area2D" to="Environment/InteractableTile" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Environment/InteractableTile/Area2D" to="Environment/InteractableTile" method="_on_area_2d_body_exited"]
+[node name="InteractableTile" parent="Environment" instance=ExtResource("6_01owl")]
+position = Vector2(514, 85)
+scale = Vector2(0.99999994, 0.99999994)
+tileType = "testTile"
