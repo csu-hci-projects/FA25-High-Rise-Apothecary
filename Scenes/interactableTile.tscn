@@ -10,6 +10,7 @@ script = ExtResource("1_uhhl4")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 position = Vector2(-245, -37)
+scale = Vector2(2, 2)
 polygon = PackedVector2Array(0, -6, -15, 1, 0, 8, 15, 1)
 
 [node name="InteractablePopup" type="CanvasLayer" parent="."]
