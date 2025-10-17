@@ -9,10 +9,11 @@ extends Control
 @onready var usagePanel = $UsagePanel
 
 var item = null # currently held item
+var inContainer = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -24,8 +25,10 @@ func _get_minimum_size() -> Vector2:
 func _on_item_button_pressed() -> void:
 	if item != null:
 		usagePanel.visible = !usagePanel.visible
+		detailsPanel.visible = !detailsPanel.visible
 
 func _on_item_button_mouse_entered() -> void:
+	Globals.setGroupVisibility("InventoryPanels", false)
 	if item != null:
 		usagePanel.visible = false
 		detailsPanel.visible = true

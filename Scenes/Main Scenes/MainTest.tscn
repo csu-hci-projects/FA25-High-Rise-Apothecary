@@ -16,7 +16,7 @@ script = ExtResource("1_gi8e0")
 [node name="InventoryItem1" parent="Environment" instance=ExtResource("2_4rjj8")]
 z_index = 2
 y_sort_enabled = true
-position = Vector2(152, 43)
+position = Vector2(163, 87)
 itemType = "type 1"
 itemName = "item 1"
 itemTexture = ExtResource("3_01owl")
@@ -25,7 +25,7 @@ itemEffect = "this is a description of the item's effect"
 [node name="InventoryItem2" parent="Environment" instance=ExtResource("2_4rjj8")]
 z_index = 2
 y_sort_enabled = true
-position = Vector2(199, 30)
+position = Vector2(163, 88)
 itemType = "type 2"
 itemName = "item 2"
 itemTexture = ExtResource("3_01owl")
@@ -34,9 +34,63 @@ itemEffect = "this is a description of the item's effect"
 [node name="InventoryItem3" parent="Environment" instance=ExtResource("2_4rjj8")]
 z_index = 2
 y_sort_enabled = true
-position = Vector2(113, 60)
-itemType = "type 1"
-itemName = "item 1"
+position = Vector2(164, 89)
+itemType = "type 3"
+itemName = "item 3"
+itemTexture = ExtResource("3_01owl")
+itemEffect = "this is a description of the item's effect"
+
+[node name="InventoryItem4" parent="Environment" instance=ExtResource("2_4rjj8")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(164, 89)
+itemType = "type 4"
+itemName = "item 4"
+itemTexture = ExtResource("3_01owl")
+itemEffect = "this is a description of the item's effect"
+
+[node name="InventoryItem5" parent="Environment" instance=ExtResource("2_4rjj8")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(164, 89)
+itemType = "type 5"
+itemName = "item 5"
+itemTexture = ExtResource("3_01owl")
+itemEffect = "this is a description of the item's effect"
+
+[node name="InventoryItem6" parent="Environment" instance=ExtResource("2_4rjj8")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(164, 89)
+itemType = "type 6"
+itemName = "item 6"
+itemTexture = ExtResource("3_01owl")
+itemEffect = "this is a description of the item's effect"
+
+[node name="InventoryItem7" parent="Environment" instance=ExtResource("2_4rjj8")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(164, 89)
+itemType = "type 7"
+itemName = "item 7"
+itemTexture = ExtResource("3_01owl")
+itemEffect = "this is a description of the item's effect"
+
+[node name="InventoryItem8" parent="Environment" instance=ExtResource("2_4rjj8")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(164, 89)
+itemType = "type 8"
+itemName = "item 8"
+itemTexture = ExtResource("3_01owl")
+itemEffect = "this is a description of the item's effect"
+
+[node name="InventoryItem9" parent="Environment" instance=ExtResource("2_4rjj8")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(164, 89)
+itemType = "type 9"
+itemName = "item 9"
 itemTexture = ExtResource("3_01owl")
 itemEffect = "this is a description of the item's effect"
 

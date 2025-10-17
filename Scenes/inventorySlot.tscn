@@ -68,20 +68,20 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_bhpio")
 
-[node name="DetailsPanel" type="ColorRect" parent="."]
+[node name="DetailsPanel" type="ColorRect" parent="." groups=["InventoryPanels"]]
 visible = false
 layout_mode = 0
-offset_top = -135.0
-offset_right = 240.0
-offset_bottom = -5.0
+offset_top = -109.0
+offset_right = 207.0
+offset_bottom = -4.0
 color = Color(0.080783345, 0.080783345, 0.080783345, 1)
 
 [node name="ItemName" type="Label" parent="DetailsPanel"]
 layout_mode = 1
 offset_left = 5.0
-offset_right = 45.0
-offset_bottom = 23.0
-theme_override_font_sizes/font_size = 24
+offset_right = 128.0
+offset_bottom = 34.0
+theme_override_font_sizes/font_size = 20
 text = "ItemName"
 
 [node name="ItemType" type="Label" parent="DetailsPanel"]
@@ -90,30 +90,31 @@ anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 5.0
-offset_top = -38.0
+offset_top = -27.5
 offset_right = 78.0
-offset_bottom = -15.0
+offset_bottom = -4.5
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 0.78431374)
-theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/font_size = 12
 text = "ItemType"
 
 [node name="ItemEffect" type="Label" parent="DetailsPanel"]
 layout_mode = 1
 offset_left = 5.0
-offset_top = 49.0
-offset_right = 234.56522
-offset_bottom = 125.0
+offset_top = 44.0
+offset_right = 203.0
+offset_bottom = 100.0
+theme_override_font_sizes/font_size = 12
 text = "ItemEffect"
 autowrap_mode = 2
 
-[node name="UsagePanel" type="ColorRect" parent="."]
+[node name="UsagePanel" type="ColorRect" parent="." groups=["InventoryPanels"]]
 visible = false
 layout_mode = 0
-offset_top = -110.0
+offset_top = -59.0
 offset_right = 240.0
-offset_bottom = -5.0
-color = Color(0.16565654, 0.16565633, 0.16565648, 1)
+offset_bottom = -4.0
+color = Color(0.08235294, 0.08235294, 0.08235294, 1)
 
 [node name="UseButton" type="Button" parent="UsagePanel"]
 layout_mode = 1
@@ -127,22 +128,6 @@ offset_bottom = 50.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 24
 text = "Use"
-
-[node name="DropButton" type="Button" parent="UsagePanel"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -115.0
-offset_top = -50.0
-offset_right = 115.0
-offset_bottom = -5.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_font_sizes/font_size = 24
-text = "Drop"
 
 [connection signal="mouse_entered" from="ItemButton" to="." method="_on_item_button_mouse_entered"]
 [connection signal="mouse_exited" from="ItemButton" to="." method="_on_item_button_mouse_exited"]
