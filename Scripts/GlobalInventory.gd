@@ -9,7 +9,7 @@ var playerNode: Node = null
 @onready var inventorySlotScene = preload("res://Scenes/inventorySlot.tscn")
 
 func _ready() -> void:
-	inventory.resize(70)
+	inventory.resize(32)
 
 func setPlayerNode(player):
 	playerNode = player
@@ -26,8 +26,11 @@ func addItem(item):
 			inventoryUpdated.emit()
 			print("Inventory item added to new slot")
 			return true
-	print("No inventory space")
-	return false
+	changeInvSize(8)
+	print("No inventory space, increasing size")
+	if !addItem(item):
+		print("Cannot add to inventory")
+		return false
 
 func removeItem(itemType, itemEffect):
 	for i in range(inventory.size()):
@@ -35,9 +38,12 @@ func removeItem(itemType, itemEffect):
 			inventory[i]["quantity"] -= 1
 			if inventory[i]["quantity"] <= 0:
 				inventory[i] = null
+				if inventory.size() % 8 > 0:
+					changeInvSize(-8)
 			inventoryUpdated.emit()
 			return true
 	return false
 
-func increaseInvSize():
+func changeInvSize(slots):
+	inventory.resize(inventory.size() + slots)
 	inventoryUpdated.emit()
