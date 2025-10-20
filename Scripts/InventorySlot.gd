@@ -23,7 +23,7 @@ func _get_minimum_size() -> Vector2:
 	return Vector2(0, size.x)
 
 func _on_item_button_pressed() -> void:
-	if item != null:
+	if item != null and item["type"] == "Potion" and Globals.openUI == "shop":
 		usagePanel.visible = !usagePanel.visible
 		detailsPanel.visible = !detailsPanel.visible
 
@@ -47,3 +47,9 @@ func setItem(newItem):
 	itemName.text = str(item["name"])
 	itemType.text = str(item["type"])
 	itemEffect.text = str(item["effect"])
+
+func _on_use_button_pressed() -> void:
+	usagePanel.visible = false
+	if item != null:
+		#TODO ADD FUNCTIONALITY FOR SHOPS
+		pass

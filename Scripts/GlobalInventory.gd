@@ -16,7 +16,7 @@ func setPlayerNode(player):
 
 func addItem(item):
 	for i in range(inventory.size()):
-		if inventory[i] != null and inventory[i]["type"] == item["type"] and inventory[i]["name"] == item["name"]: # if this item is already in the inventory
+		if inventory[i] != null and inventory[i]["type"] == item["type"] and inventory[i]["effect"] == item["effect"]: # if this item is already in the inventory
 			inventory[i]["quantity"] += item["quantity"]
 			inventoryUpdated.emit()
 			print("Inventory item added to existing slot")
@@ -29,8 +29,15 @@ func addItem(item):
 	print("No inventory space")
 	return false
 
-func removeItem():
-	inventoryUpdated.emit()
+func removeItem(itemType, itemEffect):
+	for i in range(inventory.size()):
+		if inventory[i] != null and inventory[i]["type"] == itemType and inventory[i]["effect"] == itemEffect:
+			inventory[i]["quantity"] -= 1
+			if inventory[i]["quantity"] <= 0:
+				inventory[i] = null
+			inventoryUpdated.emit()
+			return true
+	return false
 
 func increaseInvSize():
 	inventoryUpdated.emit()

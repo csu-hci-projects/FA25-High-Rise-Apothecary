@@ -1,13 +1,16 @@
 extends CharacterBody2D
 
-const speed = 100
+var speed = 100
+var money = 1000
 
 @onready var animatedSprite = $AnimatedSprite2D
 @onready var interactUI = $InteractUI
 @onready var inventoryUI = $InventoryUI
+@onready var moneyLabel = $MoneyUI/Label
 
 func _ready() -> void:
 	GlobalInventory.setPlayerNode(self)
+	changeBalance(0)
 
 func getInput():
 	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
@@ -44,3 +47,7 @@ func _input(event):
 			Globals.openUI = "inv"
 		elif Globals.openUI == "inv":
 			Globals.openUI = "none"
+
+func changeBalance(amount):
+	money += amount
+	moneyLabel.text = "$" + str(money)
