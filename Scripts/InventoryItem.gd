@@ -1,7 +1,7 @@
 extends Node2D
 
-@export var itemType = ""
 @export var itemName = ""
+@export var itemType = ""
 @export var itemTexture = Texture2D
 @export var itemEffect = ""
 var scenePath: String = "res://Scenes/inventoryItem.tscn"

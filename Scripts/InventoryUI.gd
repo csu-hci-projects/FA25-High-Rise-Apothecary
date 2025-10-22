@@ -20,6 +20,7 @@ func _on_inventoryUpdated(): # update inventory UI
 			slot.setItem(item)
 		else:
 			slot.setEmpty()
+	GlobalInventory.sortInv()
 
 func clearGridContainer(): # clear inventory grid
 	while gridContainer.get_child_count() > 0:

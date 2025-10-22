@@ -8,8 +8,7 @@ extends Control
 @onready var itemEffect = $DetailsPanel/ItemEffect
 @onready var usagePanel = $UsagePanel
 
-var item = null # currently held item
-var inContainer = false
+var currentItem = null # currently held item
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -23,13 +22,13 @@ func _get_minimum_size() -> Vector2:
 	return Vector2(0, size.x)
 
 func _on_item_button_pressed() -> void:
-	if item != null and item["type"] == "Potion" and Globals.openUI == "shop":
+	if currentItem != null and currentItem["type"] == "Potion": #and Globals.openUI == "shop"
 		usagePanel.visible = !usagePanel.visible
 		detailsPanel.visible = !detailsPanel.visible
 
 func _on_item_button_mouse_entered() -> void:
 	Globals.setGroupVisibility("InventoryPanels", false)
-	if item != null:
+	if currentItem != null:
 		usagePanel.visible = false
 		detailsPanel.visible = true
 
@@ -41,15 +40,15 @@ func setEmpty():
 	quantityLabel.text = ""
 
 func setItem(newItem):
-	item = newItem
+	currentItem = newItem
 	icon.texture = newItem["texture"]
-	quantityLabel.text = str(item["quantity"])
-	itemName.text = str(item["name"])
-	itemType.text = str(item["type"])
-	itemEffect.text = str(item["effect"])
+	quantityLabel.text = str(newItem["quantity"])
+	itemName.text = str(newItem["name"])
+	itemType.text = str(newItem["type"])
+	itemEffect.text = str(newItem["effect"])
 
 func _on_use_button_pressed() -> void:
 	usagePanel.visible = false
-	if item != null:
-		#TODO ADD FUNCTIONALITY FOR SHOPS
+	if currentItem != null: #TODO ADD FUNCTIONALITY FOR SHOPS
+		GlobalInventory.removeItem(currentItem["name"], currentItem["type"])
 		pass

@@ -9,14 +9,14 @@ var playerNode: Node = null
 @onready var inventorySlotScene = preload("res://Scenes/inventorySlot.tscn")
 
 func _ready() -> void:
-	inventory.resize(32)
+	inventory.resize(8)
 
 func setPlayerNode(player):
 	playerNode = player
 
 func addItem(item):
 	for i in range(inventory.size()):
-		if inventory[i] != null and inventory[i]["type"] == item["type"] and inventory[i]["effect"] == item["effect"]: # if this item is already in the inventory
+		if inventory[i] != null and inventory[i]["name"] == item["name"] and inventory[i]["type"] == item["type"]: # if this item is already in the inventory
 			inventory[i]["quantity"] += item["quantity"]
 			inventoryUpdated.emit()
 			print("Inventory item added to existing slot")
@@ -32,14 +32,12 @@ func addItem(item):
 		print("Cannot add to inventory")
 		return false
 
-func removeItem(itemType, itemEffect):
+func removeItem(itemName, itemType):
 	for i in range(inventory.size()):
-		if inventory[i] != null and inventory[i]["type"] == itemType and inventory[i]["effect"] == itemEffect:
+		if inventory[i] != null and inventory[i]["name"] == itemName and inventory[i]["type"] == itemType:
 			inventory[i]["quantity"] -= 1
 			if inventory[i]["quantity"] <= 0:
 				inventory[i] = null
-				if inventory.size() % 8 > 0:
-					changeInvSize(-8)
 			inventoryUpdated.emit()
 			return true
 	return false
@@ -47,3 +45,9 @@ func removeItem(itemType, itemEffect):
 func changeInvSize(slots):
 	inventory.resize(inventory.size() + slots)
 	inventoryUpdated.emit()
+
+func sortByType(a: Dictionary, b: Dictionary):
+	return a["type"] < b["type"]
+
+func sortInv():
+	inventory.sort_custom(sortByType)
