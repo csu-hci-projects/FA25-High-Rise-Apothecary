@@ -6,8 +6,6 @@ extends Node2D
 @export var tileEffect = ""
 var scenePath: String = "res://Scenes/InteractPoint.tscn"
 
-@onready var iconSprite = $Sprite2D
-
 @onready var interactablePopup = $InteractablePopup
 var playerInRange = false
 

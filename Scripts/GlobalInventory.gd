@@ -18,13 +18,13 @@ func addItem(item):
 	for i in range(inventory.size()):
 		if inventory[i] != null and inventory[i]["name"] == item["name"] and inventory[i]["type"] == item["type"]: # if this item is already in the inventory
 			inventory[i]["quantity"] += item["quantity"]
-			inventoryUpdated.emit()
 			print("Inventory item added to existing slot")
+			inventoryUpdated.emit()
 			return true
 		elif inventory[i] == null: # if there is an empty slot
 			inventory[i] = item
-			inventoryUpdated.emit()
 			print("Inventory item added to new slot")
+			inventoryUpdated.emit()
 			return true
 	changeInvSize(8)
 	print("No inventory space, increasing size")
@@ -51,3 +51,18 @@ func sortByType(a: Dictionary, b: Dictionary):
 
 func sortInv():
 	inventory.sort_custom(sortByType)
+
+func sortInv2():
+	for j in range(inventory.size()):
+		for i in range(j):
+			if inventory[i] != null and inventory[i+1] != null:
+				if inventory[i]["type"] > inventory[i+1]["type"]:
+					var tempItem = inventory[i+1]
+					inventory[i+1] = inventory[i]
+					inventory[i] = tempItem
+
+func scootItems():
+	for i in range(inventory.size()-1):
+		if inventory[i] == null and inventory[i+1] != null:
+			inventory[i] = inventory[i+1]
+			inventory[i+1] = null

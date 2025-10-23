@@ -90,7 +90,7 @@ z_index = 2
 y_sort_enabled = true
 position = Vector2(164, 89)
 itemName = "item 9"
-itemType = "type 9"
+itemType = "Prepared Ingredient"
 itemTexture = ExtResource("3_01owl")
 itemEffect = "this is a description of the item's effect"
 
@@ -98,8 +98,8 @@ itemEffect = "this is a description of the item's effect"
 z_index = 2
 y_sort_enabled = true
 position = Vector2(108, 62)
-itemName = "item 9"
-itemType = "type 10"
+itemName = "item 10"
+itemType = "Potion"
 itemTexture = ExtResource("3_01owl")
 itemEffect = "this is a description of the item's effect"
 
@@ -107,8 +107,8 @@ itemEffect = "this is a description of the item's effect"
 z_index = 2
 y_sort_enabled = true
 position = Vector2(123, 54)
-itemName = "item 9"
-itemType = "type 11"
+itemName = "item 11"
+itemType = "Ingredient"
 itemTexture = ExtResource("3_01owl")
 itemEffect = "this is a description of the item's effect"
 
@@ -116,8 +116,8 @@ itemEffect = "this is a description of the item's effect"
 z_index = 2
 y_sort_enabled = true
 position = Vector2(137, 45)
-itemName = "item 9"
-itemType = "type 12"
+itemName = "item 12"
+itemType = "Ingredient"
 itemTexture = ExtResource("3_01owl")
 itemEffect = "this is a description of the item's effect"
 
@@ -125,8 +125,8 @@ itemEffect = "this is a description of the item's effect"
 z_index = 2
 y_sort_enabled = true
 position = Vector2(150, 37)
-itemName = "item 9"
-itemType = "type 13"
+itemName = "item 13"
+itemType = "Potion"
 itemTexture = ExtResource("3_01owl")
 itemEffect = "this is a description of the item's effect"
 
@@ -134,8 +134,8 @@ itemEffect = "this is a description of the item's effect"
 z_index = 2
 y_sort_enabled = true
 position = Vector2(165, 31)
-itemName = "item 9"
-itemType = "type 14"
+itemName = "item 14"
+itemType = "Prepared Ingredient"
 itemTexture = ExtResource("3_01owl")
 itemEffect = "this is a description of the item's effect"
 
@@ -143,8 +143,8 @@ itemEffect = "this is a description of the item's effect"
 z_index = 2
 y_sort_enabled = true
 position = Vector2(179, 25)
-itemName = "item 9"
-itemType = "type 15"
+itemName = "item 15"
+itemType = "Prepared Ingredient"
 itemTexture = ExtResource("3_01owl")
 itemEffect = "this is a description of the item's effect"
 
@@ -152,8 +152,8 @@ itemEffect = "this is a description of the item's effect"
 z_index = 2
 y_sort_enabled = true
 position = Vector2(194, 21)
-itemName = "item 9"
-itemType = "type 16"
+itemName = "item 16"
+itemType = "Ingredient"
 itemTexture = ExtResource("3_01owl")
 itemEffect = "this is a description of the item's effect"
 
@@ -161,8 +161,8 @@ itemEffect = "this is a description of the item's effect"
 z_index = 2
 y_sort_enabled = true
 position = Vector2(212, 19)
-itemName = "item 9"
-itemType = "type 17"
+itemName = "item 17"
+itemType = "Prepared Ingredient"
 itemTexture = ExtResource("3_01owl")
 itemEffect = "this is a description of the item's effect"
 
