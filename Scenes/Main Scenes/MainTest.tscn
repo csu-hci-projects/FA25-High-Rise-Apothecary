@@ -1,11 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dndsvpd4wfiky"]
+[gd_scene load_steps=7 format=3 uid="uid://bqurxw053unbm"]
 
-[ext_resource type="Script" uid="uid://b6tsacmewolds" path="res://Scripts/mainTest.gd" id="1_gi8e0"]
-[ext_resource type="PackedScene" uid="uid://bybxe4e1stfx" path="res://Scenes/TileMap.tscn" id="2_2xg1f"]
+[ext_resource type="Script" uid="uid://b6tsacmewolds" path="res://Scripts/MainTest.gd" id="1_gi8e0"]
+[ext_resource type="PackedScene" uid="uid://bybxe4e1stfx" path="res://Scenes/tileMap.tscn" id="2_2xg1f"]
 [ext_resource type="PackedScene" uid="uid://cid8bdfpl8uxc" path="res://Scenes/inventoryItem.tscn" id="2_4rjj8"]
 [ext_resource type="Texture2D" uid="uid://bwbnqri3fqbl0" path="res://Assets/icon.svg" id="3_01owl"]
 [ext_resource type="PackedScene" uid="uid://pe2sq3jvjs8w" path="res://Scenes/player.tscn" id="3_4rjj8"]
-[ext_resource type="Script" uid="uid://d0cm3tqnsq5hg" path="res://Scenes/Main Scenes/InteractPoint.gd" id="6_yyyqw"]
+[ext_resource type="PackedScene" uid="uid://ce35qsnru2nkx" path="res://Scenes/interactableTile.tscn" id="6_01owl"]
 
 [node name="MainTest" type="Node2D"]
 y_sort_enabled = true
@@ -13,38 +13,164 @@ script = ExtResource("1_gi8e0")
 
 [node name="Environment" type="Node" parent="."]
 
-[node name="InventoryItem" parent="Environment" instance=ExtResource("2_4rjj8")]
+[node name="InventoryItem1" parent="Environment" instance=ExtResource("2_4rjj8")]
 z_index = 2
 y_sort_enabled = true
-position = Vector2(152, 43)
-itemType = "type 1"
+position = Vector2(163, 87)
 itemName = "item 1"
+itemType = "Potion"
 itemTexture = ExtResource("3_01owl")
 itemEffect = "this is a description of the item's effect"
 
 [node name="InventoryItem2" parent="Environment" instance=ExtResource("2_4rjj8")]
 z_index = 2
 y_sort_enabled = true
-position = Vector2(199, 30)
-itemType = "type 2"
+position = Vector2(163, 88)
 itemName = "item 2"
+itemType = "Potion"
 itemTexture = ExtResource("3_01owl")
 itemEffect = "this is a description of the item's effect"
 
 [node name="InventoryItem3" parent="Environment" instance=ExtResource("2_4rjj8")]
 z_index = 2
 y_sort_enabled = true
-position = Vector2(113, 60)
-itemType = "type 1"
+position = Vector2(164, 89)
+itemName = "item 3"
+itemType = "Ingredient"
+itemTexture = ExtResource("3_01owl")
+itemEffect = "this is a description of the item's effect"
+
+[node name="InventoryItem4" parent="Environment" instance=ExtResource("2_4rjj8")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(164, 89)
 itemName = "item 1"
+itemType = "Potion"
+itemTexture = ExtResource("3_01owl")
+itemEffect = "this is a description of the item's effect"
+
+[node name="InventoryItem5" parent="Environment" instance=ExtResource("2_4rjj8")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(164, 89)
+itemName = "item 1"
+itemType = "Potion"
+itemTexture = ExtResource("3_01owl")
+itemEffect = "this is a description of the item's effect"
+
+[node name="InventoryItem6" parent="Environment" instance=ExtResource("2_4rjj8")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(164, 89)
+itemName = "item 6"
+itemType = "Ingredient"
+itemTexture = ExtResource("3_01owl")
+itemEffect = "this is a description of the item's effect"
+
+[node name="InventoryItem7" parent="Environment" instance=ExtResource("2_4rjj8")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(164, 89)
+itemName = "item 7"
+itemType = "Ingredient"
+itemTexture = ExtResource("3_01owl")
+itemEffect = "this is a description of the item's effect"
+
+[node name="InventoryItem8" parent="Environment" instance=ExtResource("2_4rjj8")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(164, 89)
+itemName = "item 8"
+itemType = "Potion"
+itemTexture = ExtResource("3_01owl")
+itemEffect = "this is a description of the item's effect"
+
+[node name="InventoryItem9" parent="Environment" instance=ExtResource("2_4rjj8")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(164, 89)
+itemName = "item 9"
+itemType = "Prepared Ingredient"
+itemTexture = ExtResource("3_01owl")
+itemEffect = "this is a description of the item's effect"
+
+[node name="InventoryItem10" parent="Environment" instance=ExtResource("2_4rjj8")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(108, 62)
+itemName = "item 10"
+itemType = "Potion"
+itemTexture = ExtResource("3_01owl")
+itemEffect = "this is a description of the item's effect"
+
+[node name="InventoryItem11" parent="Environment" instance=ExtResource("2_4rjj8")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(123, 54)
+itemName = "item 11"
+itemType = "Ingredient"
+itemTexture = ExtResource("3_01owl")
+itemEffect = "this is a description of the item's effect"
+
+[node name="InventoryItem12" parent="Environment" instance=ExtResource("2_4rjj8")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(137, 45)
+itemName = "item 12"
+itemType = "Ingredient"
+itemTexture = ExtResource("3_01owl")
+itemEffect = "this is a description of the item's effect"
+
+[node name="InventoryItem13" parent="Environment" instance=ExtResource("2_4rjj8")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(150, 37)
+itemName = "item 13"
+itemType = "Potion"
+itemTexture = ExtResource("3_01owl")
+itemEffect = "this is a description of the item's effect"
+
+[node name="InventoryItem14" parent="Environment" instance=ExtResource("2_4rjj8")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(165, 31)
+itemName = "item 14"
+itemType = "Prepared Ingredient"
+itemTexture = ExtResource("3_01owl")
+itemEffect = "this is a description of the item's effect"
+
+[node name="InventoryItem15" parent="Environment" instance=ExtResource("2_4rjj8")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(179, 25)
+itemName = "item 15"
+itemType = "Prepared Ingredient"
+itemTexture = ExtResource("3_01owl")
+itemEffect = "this is a description of the item's effect"
+
+[node name="InventoryItem16" parent="Environment" instance=ExtResource("2_4rjj8")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(194, 21)
+itemName = "item 16"
+itemType = "Ingredient"
+itemTexture = ExtResource("3_01owl")
+itemEffect = "this is a description of the item's effect"
+
+[node name="InventoryItem17" parent="Environment" instance=ExtResource("2_4rjj8")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(212, 19)
+itemName = "item 17"
+itemType = "Prepared Ingredient"
 itemTexture = ExtResource("3_01owl")
 itemEffect = "this is a description of the item's effect"
 
 [node name="TileMap" parent="Environment" instance=ExtResource("2_2xg1f")]
 y_sort_enabled = true
 position = Vector2(28.969788, 73.12431)
-layer_0/tile_data = PackedInt32Array(-196604, 0, 0, -262140, 0, 0, -262139, 0, 0, -327674, 0, 0, -262138, 0, 0, -262137, 0, 0, -196601, 0, 0, -196602, 0, 0, -131066, 0, 0, -65530, 0, 0, -65531, 0, 0, -131068, 0, 0, -131065, 0, 0, -65532, 0, 0, -131069, 0, 0, -196605, 0, 0, -196606, 0, 0, -262142, 0, 0, -262141, 0, 0, -327677, 0, 0, -65529, 0, 0, 6, 0, 0, 5, 0, 0, -131067, 0, 0, -196603, 0, 0, -327673, 0, 0, -327672, 0, 0, -393209, 0, 0, -327678, 0, 0, -131070, 0, 0, -65533, 0, 0, 3, 0, 0, 65540, 0, 0, 65541, 0, 0, 131078, 0, 0, 131079, 0, 0, 65543, 0, 0, 65544, 0, 0, 65545, 0, 0, 9, 0, 0, -65527, 0, 0, -131063, 0, 0, -196599, 0, 0, -262135, 0, 0, -262136, 0, 0, -196600, 0, 0, -131064, 0, 0, -65528, 0, 0, 7, 0, 0, 65542, 0, 0, 4, 0, 0, 8, 0, 0, 131080, 0, 0, 131077, 0, 0, -65534, 0, 0, 131081, 0, 0, 65546, 0, 0, 10, 0, 0, 11, 0, 0, -65525, 0, 0, -65526, 0, 0, -131062, 0, 0, -196598, 0, 0, -196597, 0, 0, -131061, 0, 0, -262133, 0, 0, -327669, 0, 0, -393205, 0, 0, -458741, 0, 0, -458742, 0, 0, -524278, 0, 0, -524279, 0, 0, -524280, 0, 0, -524281, 0, 0, -589819, 0, 0, -589820, 0, 0, -589821, 0, 0, -655357, 0, 0, -655358, 0, 0, -589822, 0, 0, -589823, 0, 0, -524287, 0, 0, -524288, 0, 0, -458752, 0, 0, -393216, 0, 0, -327680, 0, 0, -262143, 0, 0, -196607, 0, 0, -131071, 0, 0, -327679, 0, 0, -393215, 0, 0, -458751, 0, 0, -458750, 0, 0, -393214, 0, 0, -524286, 0, 0, -458745, 0, 0, -393208, 0, 0, -327671, 0, 0, -393207, 0, 0, -458743, 0, 0, -458744, 0, 0, -393206, 0, 0, -327670, 0, 0, -262134, 0, 0, -655356, 0, 0, -655355, 0, 0, -589816, 0, 0, -655353, 0, 0, -589815, 0, 0, -196608, 0, 0, -262144, 0, 0, -65535, 0, 0, 2, 0, 0, -327675, 0, 0, -327676, 0, 0, -393210, 0, 0, -458746, 0, 0, -655354, 0, 0, -589817, 0, 0, -524282, 0, 0, -589818, 0, 0, -720891, 458752, 0)
-layer_1/tile_data = PackedInt32Array(-327673, 262144, 0, -327672, 262144, 0, -262136, 262144, 0, -393208, 262144, 0, -327671, 262144, 0, -196606, 196608, 0, -262142, 196608, 0, -131069, 196608, 0, -131068, 196608, 0, -65529, 262144, 0, -131070, 196608, 0, -720892, 65536, 0, -655355, 458752, 0)
+layer_0/tile_data = PackedInt32Array(-196604, 0, 0, -262140, 0, 0, -262139, 0, 0, -327674, 0, 0, -262138, 0, 0, -262137, 0, 0, -196601, 0, 0, -196602, 0, 0, -131066, 0, 0, -65530, 0, 0, -65531, 0, 0, -131068, 0, 0, -131065, 0, 0, -65532, 0, 0, -131069, 0, 0, -196605, 0, 0, -196606, 0, 0, -262142, 0, 0, -262141, 0, 0, -327677, 0, 0, -65529, 0, 0, 6, 0, 0, 5, 0, 0, -131067, 0, 0, -196603, 0, 0, -327673, 0, 0, -327672, 0, 0, -393209, 0, 0, -327678, 0, 0, -131070, 0, 0, -65533, 0, 0, 3, 0, 0, 65540, 0, 0, 65541, 0, 0, 131078, 0, 0, 131079, 0, 0, 65543, 0, 0, 65544, 0, 0, 65545, 0, 0, 9, 0, 0, -65527, 0, 0, -131063, 0, 0, -196599, 0, 0, -262135, 0, 0, -262136, 0, 0, -196600, 0, 0, -131064, 0, 0, -65528, 0, 0, 7, 0, 0, 65542, 0, 0, 4, 0, 0, 8, 0, 0, 131080, 0, 0, 131077, 0, 0, -65534, 0, 0, 131081, 0, 0, 65546, 0, 0, 10, 0, 0, 11, 0, 0, -65525, 0, 0, -65526, 0, 0, -131062, 0, 0, -196598, 0, 0, -196597, 0, 0, -131061, 0, 0, -262133, 0, 0, -327669, 0, 0, -393205, 0, 0, -458741, 0, 0, -458742, 0, 0, -524278, 0, 0, -524279, 0, 0, -524280, 0, 0, -524281, 0, 0, -589819, 0, 0, -589820, 0, 0, -589821, 0, 0, -655357, 0, 0, -655358, 0, 0, -589822, 0, 0, -589823, 0, 0, -524287, 0, 0, -524288, 0, 0, -458752, 0, 0, -393216, 0, 0, -327680, 0, 0, -262143, 0, 0, -196607, 0, 0, -131071, 0, 0, -327679, 0, 0, -393215, 0, 0, -458751, 0, 0, -458750, 0, 0, -393214, 0, 0, -524286, 0, 0, -458745, 0, 0, -393208, 0, 0, -327671, 0, 0, -393207, 0, 0, -458743, 0, 0, -458744, 0, 0, -393206, 0, 0, -327670, 0, 0, -262134, 0, 0, -655356, 0, 0, -655355, 0, 0, -589816, 0, 0, -655353, 0, 0, -589815, 0, 0, -196608, 0, 0, -262144, 0, 0, -65535, 0, 0, 2, 0, 0, -327675, 0, 0, -327676, 0, 0, -393210, 0, 0, -458746, 0, 0, -655354, 0, 0, -589817, 0, 0, -524282, 0, 0, -589818, 0, 0, -720893, 0, 0, -720892, 0, 0, -720891, 0, 0, -720890, 0, 0, -655352, 0, 0)
+layer_1/tile_data = PackedInt32Array(-327673, 262144, 0, -327672, 262144, 0, -262136, 262144, 0, -393208, 262144, 0, -327671, 262144, 0, -196606, 196608, 0, -262142, 196608, 0, -131069, 196608, 0, -131068, 196608, 0, -65529, 262144, 0, -131070, 196608, 0, -720892, 196608, 0)
 
 [node name="CharacterBody2D" parent="Environment/TileMap" instance=ExtResource("3_4rjj8")]
 position = Vector2(166.03021, 15.875687)
@@ -54,45 +180,7 @@ position = Vector2(-15, 94.99997)
 scale = Vector2(0.9999998, 0.9999998)
 zoom = Vector2(2.99, 2.99)
 
-[node name="InteractableTile" type="Node2D" parent="Environment" groups=["Tiles"]]
-position = Vector2(269, 48)
-script = ExtResource("6_yyyqw")
-tileType = "type1"
-tileName = "jeffery"
-tileEffect = "Does stuff"
-
-[node name="Area2D" type="Area2D" parent="Environment/InteractableTile"]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Environment/InteractableTile/Area2D"]
-polygon = PackedVector2Array(0, -6, -15, 1, -1, 8, 15, 1)
-
-[node name="InteractablePopup" type="CanvasLayer" parent="Environment/InteractableTile"]
-visible = false
-
-[node name="ColorRect" type="ColorRect" parent="Environment/InteractableTile/InteractablePopup"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -400.0
-offset_top = -200.0
-offset_right = 400.0
-offset_bottom = 200.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-color = Color(1, 0, 0, 1)
-
-[node name="Label" type="Label" parent="Environment/InteractableTile/InteractablePopup/ColorRect"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Interaction 
-Happened!"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[connection signal="body_entered" from="Environment/InteractableTile/Area2D" to="Environment/InteractableTile" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Environment/InteractableTile/Area2D" to="Environment/InteractableTile" method="_on_area_2d_body_exited"]
+[node name="InteractableTile" parent="Environment" instance=ExtResource("6_01owl")]
+position = Vector2(530, 76)
+scale = Vector2(0.99999994, 0.99999994)
+tileType = "testTile"

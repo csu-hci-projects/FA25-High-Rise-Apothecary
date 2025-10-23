@@ -6,8 +6,6 @@ extends Node2D
 @export var tileEffect = ""
 var scenePath: String = "res://Scenes/InteractPoint.tscn"
 
-@onready var iconSprite = $Sprite2D
-
 @onready var interactablePopup = $InteractablePopup
 var playerInRange = false
 
@@ -17,8 +15,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	
-	# add item to inventory if player in range and press 'E'
 	if playerInRange and Input.is_action_just_pressed("AddUI"):
 		interact()
 
@@ -31,7 +27,14 @@ func interact():
 		"texture": tileTexture,
 		"scenePath": scenePath
 	}
-	print("Interacted!")
+	if Globals.openUI == "none":
+		print("Interacted!")
+		Globals.openUI = tile["name"]
+	elif Globals.openUI == tile["name"]:
+		print("Closed!")
+		Globals.openUI = "none"
+	else:
+		print("Interact points too close together!")
 	interactablePopup.visible = !interactablePopup.visible
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=3 uid="uid://ce35qsnru2nkx"]
+
+[ext_resource type="Script" uid="uid://d0cm3tqnsq5hg" path="res://Scripts/InteractableTile.gd" id="1_uhhl4"]
+
+[node name="InteractableTile" type="Node2D" groups=["Tiles"]]
+position = Vector2(269, 48)
+script = ExtResource("1_uhhl4")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(-245, -37)
+scale = Vector2(2, 2)
+polygon = PackedVector2Array(0, -6, -15, 1, 0, 8, 15, 1)
+
+[node name="InteractablePopup" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="InteractablePopup"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -200.0
+offset_right = 400.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(1, 0, 0, 1)
+
+[node name="Label" type="Label" parent="InteractablePopup/ColorRect"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Interaction 
+Happened!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
