@@ -14,22 +14,22 @@ func _ready() -> void:
 func setPlayerNode(player):
 	playerNode = player
 
+func getItem(slot):
+	return inventory[slot]
+
 func addItem(item):
 	for i in range(inventory.size()):
 		if inventory[i] != null and inventory[i]["name"] == item["name"] and inventory[i]["type"] == item["type"]: # if this item is already in the inventory
 			inventory[i]["quantity"] += item["quantity"]
-			print("Inventory item added to existing slot")
 			inventoryUpdated.emit()
 			return true
 		elif inventory[i] == null: # if there is an empty slot
 			inventory[i] = item
-			print("Inventory item added to new slot")
 			inventoryUpdated.emit()
 			return true
-	changeInvSize(8)
-	print("No inventory space, increasing size")
-	if !addItem(item):
-		print("Cannot add to inventory")
+	changeInvSize(8) # only reached if no inv space
+	if !addItem(item): # recursive call, should only happen once
+		push_error("addItem not working!")
 		return false
 
 func removeItem(itemName, itemType):
@@ -46,13 +46,7 @@ func changeInvSize(slots):
 	inventory.resize(inventory.size() + slots)
 	inventoryUpdated.emit()
 
-func sortByType(a: Dictionary, b: Dictionary):
-	return a["type"] < b["type"]
-
 func sortInv():
-	inventory.sort_custom(sortByType)
-
-func sortInv2():
 	for j in range(inventory.size()):
 		for i in range(j):
 			if inventory[i] != null and inventory[i+1] != null:

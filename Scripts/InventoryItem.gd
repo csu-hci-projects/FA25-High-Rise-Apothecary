@@ -2,11 +2,11 @@ extends Node2D
 
 @export var itemName = ""
 @export var itemType = ""
-@export var itemTexture = Texture2D
+@export var itemTexture = AtlasTexture
 @export var itemEffect = ""
 var scenePath: String = "res://Scenes/inventoryItem.tscn"
 
-@onready var iconSprite = $Sprite2D
+@onready var iconSprite = $TextureRect
 
 var playerInRange = false
 
@@ -36,9 +36,11 @@ func pickupItem():
 	if GlobalInventory.playerNode:
 		GlobalInventory.addItem(item)
 		self.queue_free() # unload item from scene
+	var tempItem = GlobalInventory.getItem(0)
+	GlobalInventory.addItem(tempItem) # stupid fix for sorting inventory
+	GlobalInventory.removeItem(tempItem["name"], tempItem["type"])
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	print("entered")
 	if body.is_in_group("Player"): # check if player is what's colliding
 		playerInRange = true
 		body.interactUI.visible = true
