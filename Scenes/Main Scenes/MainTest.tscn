@@ -1,16 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://bqurxw053unbm"]
+[gd_scene load_steps=7 format=3 uid="uid://bqurxw053unbm"]
 
 [ext_resource type="Script" uid="uid://b6tsacmewolds" path="res://Scripts/MainTest.gd" id="1_gi8e0"]
 [ext_resource type="PackedScene" uid="uid://bybxe4e1stfx" path="res://Scenes/tileMap.tscn" id="2_2xg1f"]
 [ext_resource type="PackedScene" uid="uid://cid8bdfpl8uxc" path="res://Scenes/inventoryItem.tscn" id="2_4rjj8"]
-[ext_resource type="Texture2D" uid="uid://bwbnqri3fqbl0" path="res://Assets/icon.svg" id="3_01owl"]
 [ext_resource type="PackedScene" uid="uid://pe2sq3jvjs8w" path="res://Scenes/player.tscn" id="3_4rjj8"]
-[ext_resource type="PackedScene" uid="uid://ce35qsnru2nkx" path="res://Scenes/interactableTile.tscn" id="6_01owl"]
-[ext_resource type="Texture2D" uid="uid://l2sg7tgof1sk" path="res://Assets/Sprite Sheets/spells.png" id="6_k2kyf"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_01owl"]
-atlas = ExtResource("6_k2kyf")
-region = Rect2(0, 0, 32, 32)
+[ext_resource type="Texture2D" uid="uid://cyov2jjg2mlrq" path="res://Assets/Sprites/Potions/EM concentration.png" id="3_k2kyf"]
+[ext_resource type="Texture2D" uid="uid://b4hlfxxlaoy8x" path="res://Assets/Sprites/Potions/FM motivation.png" id="4_8vy8x"]
 
 [node name="MainTest" type="Node2D"]
 y_sort_enabled = true
@@ -21,171 +16,32 @@ script = ExtResource("1_gi8e0")
 [node name="InventoryItem1" parent="Environment" instance=ExtResource("2_4rjj8")]
 z_index = 2
 y_sort_enabled = true
-position = Vector2(162, 90)
+position = Vector2(164, 110)
 itemName = "Concentration Potion"
 itemType = "Potion"
-itemTexture = SubResource("AtlasTexture_01owl")
+itemTexture = ExtResource("3_k2kyf")
 itemEffect = "this is a description of the item's effect"
 
 [node name="InventoryItem2" parent="Environment" instance=ExtResource("2_4rjj8")]
 z_index = 2
 y_sort_enabled = true
-position = Vector2(183, 79)
-itemName = "item 2"
+position = Vector2(195, 104)
+itemName = "Motivation Potion"
 itemType = "Potion"
-itemTexture = ExtResource("6_k2kyf")
-itemEffect = "this is a description of the item's effect"
-
-[node name="InventoryItem3" parent="Environment" instance=ExtResource("2_4rjj8")]
-z_index = 2
-y_sort_enabled = true
-position = Vector2(173, 66)
-itemName = "item 3"
-itemType = "Ingredient"
-itemTexture = ExtResource("3_01owl")
-itemEffect = "this is a description of the item's effect"
-
-[node name="InventoryItem4" parent="Environment" instance=ExtResource("2_4rjj8")]
-z_index = 2
-y_sort_enabled = true
-position = Vector2(172, 67)
-itemName = "item 1"
-itemType = "Potion"
-itemTexture = ExtResource("3_01owl")
-itemEffect = "this is a description of the item's effect"
-
-[node name="InventoryItem5" parent="Environment" instance=ExtResource("2_4rjj8")]
-z_index = 2
-y_sort_enabled = true
-position = Vector2(171, 68)
-itemName = "item 1"
-itemType = "Potion"
-itemTexture = ExtResource("3_01owl")
-itemEffect = "this is a description of the item's effect"
-
-[node name="InventoryItem6" parent="Environment" instance=ExtResource("2_4rjj8")]
-z_index = 2
-y_sort_enabled = true
-position = Vector2(170, 69)
-itemName = "item 6"
-itemType = "Ingredient"
-itemTexture = ExtResource("3_01owl")
-itemEffect = "this is a description of the item's effect"
-
-[node name="InventoryItem7" parent="Environment" instance=ExtResource("2_4rjj8")]
-z_index = 2
-y_sort_enabled = true
-position = Vector2(170, 67)
-itemName = "item 7"
-itemType = "Ingredient"
-itemTexture = ExtResource("3_01owl")
-itemEffect = "this is a description of the item's effect"
-
-[node name="InventoryItem8" parent="Environment" instance=ExtResource("2_4rjj8")]
-z_index = 2
-y_sort_enabled = true
-position = Vector2(170, 68)
-itemName = "item 8"
-itemType = "Potion"
-itemTexture = ExtResource("3_01owl")
-itemEffect = "this is a description of the item's effect"
-
-[node name="InventoryItem9" parent="Environment" instance=ExtResource("2_4rjj8")]
-z_index = 2
-y_sort_enabled = true
-position = Vector2(170, 66)
-itemName = "item 9"
-itemType = "Prepared Ingredient"
-itemTexture = ExtResource("3_01owl")
-itemEffect = "this is a description of the item's effect"
-
-[node name="InventoryItem10" parent="Environment" instance=ExtResource("2_4rjj8")]
-z_index = 2
-y_sort_enabled = true
-position = Vector2(108, 62)
-itemName = "item 10"
-itemType = "Potion"
-itemTexture = ExtResource("3_01owl")
-itemEffect = "this is a description of the item's effect"
-
-[node name="InventoryItem11" parent="Environment" instance=ExtResource("2_4rjj8")]
-z_index = 2
-y_sort_enabled = true
-position = Vector2(123, 54)
-itemName = "item 11"
-itemType = "Ingredient"
-itemTexture = ExtResource("3_01owl")
-itemEffect = "this is a description of the item's effect"
-
-[node name="InventoryItem12" parent="Environment" instance=ExtResource("2_4rjj8")]
-z_index = 2
-y_sort_enabled = true
-position = Vector2(137, 45)
-itemName = "item 12"
-itemType = "Ingredient"
-itemTexture = ExtResource("3_01owl")
-itemEffect = "this is a description of the item's effect"
-
-[node name="InventoryItem13" parent="Environment" instance=ExtResource("2_4rjj8")]
-z_index = 2
-y_sort_enabled = true
-position = Vector2(150, 37)
-itemName = "item 13"
-itemType = "Potion"
-itemTexture = ExtResource("3_01owl")
-itemEffect = "this is a description of the item's effect"
-
-[node name="InventoryItem14" parent="Environment" instance=ExtResource("2_4rjj8")]
-z_index = 2
-y_sort_enabled = true
-position = Vector2(165, 31)
-itemName = "item 14"
-itemType = "Prepared Ingredient"
-itemTexture = ExtResource("3_01owl")
-itemEffect = "this is a description of the item's effect"
-
-[node name="InventoryItem15" parent="Environment" instance=ExtResource("2_4rjj8")]
-z_index = 2
-y_sort_enabled = true
-position = Vector2(179, 25)
-itemName = "item 15"
-itemType = "Prepared Ingredient"
-itemTexture = ExtResource("3_01owl")
-itemEffect = "this is a description of the item's effect"
-
-[node name="InventoryItem16" parent="Environment" instance=ExtResource("2_4rjj8")]
-z_index = 2
-y_sort_enabled = true
-position = Vector2(194, 21)
-itemName = "item 16"
-itemType = "Ingredient"
-itemTexture = ExtResource("3_01owl")
-itemEffect = "this is a description of the item's effect"
-
-[node name="InventoryItem17" parent="Environment" instance=ExtResource("2_4rjj8")]
-z_index = 2
-y_sort_enabled = true
-position = Vector2(212, 19)
-itemName = "item 17"
-itemType = "Prepared Ingredient"
-itemTexture = ExtResource("3_01owl")
+itemTexture = ExtResource("4_8vy8x")
 itemEffect = "this is a description of the item's effect"
 
 [node name="TileMap" parent="Environment" instance=ExtResource("2_2xg1f")]
-y_sort_enabled = true
-position = Vector2(28.969788, 73.12431)
-layer_0/tile_data = PackedInt32Array(-196604, 0, 0, -262140, 0, 0, -262139, 0, 0, -327674, 0, 0, -262138, 0, 0, -262137, 0, 0, -196601, 0, 0, -196602, 0, 0, -131066, 0, 0, -65530, 0, 0, -65531, 0, 0, -131068, 0, 0, -131065, 0, 0, -65532, 0, 0, -131069, 0, 0, -196605, 0, 0, -196606, 0, 0, -262142, 0, 0, -262141, 0, 0, -327677, 0, 0, -65529, 0, 0, 6, 0, 0, 5, 0, 0, -131067, 0, 0, -196603, 0, 0, -327673, 0, 0, -327672, 0, 0, -393209, 0, 0, -327678, 0, 0, -131070, 0, 0, -65533, 0, 0, 3, 0, 0, 65540, 0, 0, 65541, 0, 0, 131078, 0, 0, 131079, 0, 0, 65543, 0, 0, 65544, 0, 0, 65545, 0, 0, 9, 0, 0, -65527, 0, 0, -131063, 0, 0, -196599, 0, 0, -262135, 0, 0, -262136, 0, 0, -196600, 0, 0, -131064, 0, 0, -65528, 0, 0, 7, 0, 0, 65542, 0, 0, 4, 0, 0, 8, 0, 0, 131080, 0, 0, 131077, 0, 0, -65534, 0, 0, 131081, 0, 0, 65546, 0, 0, 10, 0, 0, 11, 0, 0, -65525, 0, 0, -65526, 0, 0, -131062, 0, 0, -196598, 0, 0, -196597, 0, 0, -131061, 0, 0, -262133, 0, 0, -327669, 0, 0, -393205, 0, 0, -458741, 0, 0, -458742, 0, 0, -524278, 0, 0, -524279, 0, 0, -524280, 0, 0, -524281, 0, 0, -589819, 0, 0, -589820, 0, 0, -589821, 0, 0, -655357, 0, 0, -655358, 0, 0, -589822, 0, 0, -589823, 0, 0, -524287, 0, 0, -524288, 0, 0, -458752, 0, 0, -393216, 0, 0, -327680, 0, 0, -262143, 0, 0, -196607, 0, 0, -131071, 0, 0, -327679, 0, 0, -393215, 0, 0, -458751, 0, 0, -458750, 0, 0, -393214, 0, 0, -524286, 0, 0, -458745, 0, 0, -393208, 0, 0, -327671, 0, 0, -393207, 0, 0, -458743, 0, 0, -458744, 0, 0, -393206, 0, 0, -327670, 0, 0, -262134, 0, 0, -655356, 0, 0, -655355, 0, 0, -589816, 0, 0, -655353, 0, 0, -589815, 0, 0, -196608, 0, 0, -262144, 0, 0, -65535, 0, 0, 2, 0, 0, -327675, 0, 0, -327676, 0, 0, -393210, 0, 0, -458746, 0, 0, -655354, 0, 0, -589817, 0, 0, -524282, 0, 0, -589818, 0, 0, -720893, 0, 0, -720892, 0, 0, -720891, 0, 0, -720890, 0, 0, -655352, 0, 0)
-layer_1/tile_data = PackedInt32Array(-327673, 262144, 0, -327672, 262144, 0, -262136, 262144, 0, -393208, 262144, 0, -327671, 262144, 0, -196606, 196608, 0, -262142, 196608, 0, -131069, 196608, 0, -131068, 196608, 0, -65529, 262144, 0, -131070, 196608, 0, -720892, 196608, 0)
+position = Vector2(150, 114)
+layer_0/tile_data = PackedInt32Array(-196610, 65537, 1, -131074, 65537, 1, -65538, 65537, 1, -2, 65537, 1, 65534, 65537, 1, 65535, 65537, 1, 0, 65537, 1, 1, 65537, 1, -65535, 65537, 1, -131071, 65537, 1, -196607, 65537, 1, -196608, 65537, 1, -262144, 65537, 1, -262143, 65537, 1, -196609, 65537, 1, -131073, 65537, 1, -65537, 65537, 1, -1, 65537, 1, -65536, 65537, 1, -131072, 65537, 1, -262146, 65537, 1, -262145, 65537, 1, -327681, 65537, 1, -393216, 65537, 1, -393215, 65537, 1, -393214, 65537, 1, -327678, 65537, 1, -327679, 65537, 1, -327680, 65537, 1, -262142, 65537, 1, -196606, 65537, 1, -131070, 65537, 1, -65534, 65537, 1, 2, 65537, 1, 65538, 65537, 1, 131074, 65537, 1, 131073, 65537, 1, 131072, 65537, 1, 196607, 65537, 1, 196606, 65537, 1, 131070, 65537, 1, 65536, 65537, 1, 65537, 65537, 1, 131071, 65537, 1, 131069, 65537, 1, 196605, 65537, 1, 131068, 65537, 1, 196604, 65537, 1, 65532, 65537, 1, -4, 65537, 1, -65540, 65537, 1, -65539, 65537, 1, -131075, 65537, 1, -196611, 65537, 1, -262147, 65537, 1, -262148, 65537, 1, -327684, 65537, 1, -327683, 65537, 1, -327682, 65537, 1, -196612, 65537, 1, -131076, 65537, 1, -3, 65537, 1, 65533, 65537, 1, -393220, 65537, 1, -393219, 65537, 1, -458755, 65537, 1, -458756, 65537, 1, -524291, 65537, 1, -524292, 65537, 1, -524290, 65537, 1, -458753, 65537, 1, -524289, 65537, 1, -524288, 65537, 1, -524287, 65537, 1, -589823, 65537, 1, -589824, 65537, 1, -524286, 65537, 1, -589822, 65537, 1, -458750, 65537, 1, -458752, 65537, 1, -393217, 65537, 1, -393218, 65537, 1, -458754, 65537, 1, -458751, 65537, 1, 262140, 458753, 0, 262141, 458753, 0, 262142, 458753, 0, 262143, 458753, 0, 196608, 458753, 0, 196609, 458753, 0, 196610, 458753, 0, 196611, 458753, 0, 131075, 458753, 0, 65539, 458753, 0, 3, 458753, 0, -65533, 458753, 0, -131069, 458753, 0, -196605, 458753, 0, -262141, 458753, 0, -327677, 458753, 0, -393213, 458753, 0, -458749, 458753, 0, -524285, 458753, 0, -589821, 458753, 0)
+layer_1/tile_data = PackedInt32Array(-65540, 196609, 0, -196612, 196609, 0, -327684, 262145, 0, -458756, 262145, 0, 131066, 1, 1, 65530, 1, 1, -6, 1, 1, -65542, 1, 1, -131078, 196609, 1, -196614, 1, 1, -262150, 1, 1, -327686, 1, 1, -393222, 1, 1, -458758, 1, 1, -524294, 1, 1, -589830, 1, 1, -655366, 1, 1, -655365, 1, 1, -655364, 262145, 1, -655363, 1, 1, -655362, 1, 1, -655361, 262145, 1, -720896, 1, 1, -720895, 1, 1, -458753, 393217, 1)
+layer_2/tile_data = PackedInt32Array(-196615, 131073, 1, 65529, 1, 1, -7, 1, 1, -65543, 1, 1, -131079, 1, 1, -262151, 1, 1, -327687, 1, 1, -393223, 1, 1, -458759, 1, 1, -524295, 1, 1, -589831, 1, 1, -655367, 1, 1, -720903, 1, 1, -720902, 1, 1, -720901, 327681, 1, -720900, 1, 1, -720899, 1, 1, -720898, 327681, 1, -720897, 1, 1, -786432, 1, 1)
 
 [node name="CharacterBody2D" parent="Environment/TileMap" instance=ExtResource("3_4rjj8")]
-position = Vector2(281.0302, 3.8756876)
+position = Vector2(-53, -29)
+scale = Vector2(0.19999999, 0.19999999)
 
 [node name="Camera2D" type="Camera2D" parent="Environment/TileMap/CharacterBody2D"]
-position = Vector2(-15, 94.99997)
+position = Vector2(0, 85.00001)
 scale = Vector2(0.9999998, 0.9999998)
 zoom = Vector2(2.99, 2.99)
-
-[node name="InteractableTile" parent="Environment" instance=ExtResource("6_01owl")]
-position = Vector2(530, 76)
-scale = Vector2(0.99999994, 0.99999994)
-tileType = "testTile"

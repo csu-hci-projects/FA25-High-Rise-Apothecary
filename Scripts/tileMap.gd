@@ -9,11 +9,18 @@ const mainSource = 0
 const blueBlockAtlasPos = Vector2i(0,0)
 const redBlockAtlasPos = Vector2i(1,0)
 const greenBlockAtlasPos = Vector2i(2,0)
-const whiteBlockAtlasPos = Vector2i(3,0)
-const blackBlockAtlasPos = Vector2i(4,0)
+const emptyPotAtlasPos = Vector2i(3,0)
+const fullPotAtlasPos = Vector2i(4,0)
 const purpleBlockAtlasPos = Vector2i(5,0)
 const orangeBlockAtlasPos = Vector2i(6,0)
 const boundaryAtlasPos = Vector2i(7,0)
+const wallAtlasPos = Vector2i(0,1)
+const floorAtlasPos = Vector2i(1,1)
+const doorTopAtlasPos = Vector2i(2,1)
+const doorBottomAtlasPos = Vector2i(3,1)
+const windowBottomAtlasPos = Vector2i(4,1)
+const windowTopAtlasPos = Vector2i(5,1)
+const cauldronAtlasPos = Vector2i(6,1)
 
 func placeBoundaries():
 	var offsets = [

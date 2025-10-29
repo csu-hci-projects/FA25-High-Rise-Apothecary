@@ -1,32 +1,57 @@
 [gd_scene load_steps=5 format=3 uid="uid://bybxe4e1stfx"]
 
-[ext_resource type="Texture2D" uid="uid://c768wnus6446l" path="res://Assets/Tilemap/isoTileset.png" id="1_hk6qd"]
+[ext_resource type="Texture2D" uid="uid://dcs7qgnkwtym6" path="res://Assets/Tilemap/isoTileset_1.png" id="1_tls8f"]
 [ext_resource type="Script" uid="uid://cfd7j8au6ycqp" path="res://Scripts/TileMap.gd" id="2_cs1ky"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8ty16"]
-texture = ExtResource("1_hk6qd")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ypxc6"]
+texture = ExtResource("1_tls8f")
 texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-0:0/0/texture_origin = Vector2i(0, -8)
 1:0/0 = 0
-1:0/0/texture_origin = Vector2i(0, -8)
+1:0/0/texture_origin = Vector2i(0, 8)
+1:0/0/z_index = 1
 2:0/0 = 0
-2:0/0/texture_origin = Vector2i(0, -8)
+2:0/0/texture_origin = Vector2i(0, 8)
+2:0/0/z_index = 1
 3:0/0 = 0
-3:0/0/texture_origin = Vector2i(0, -8)
+3:0/0/texture_origin = Vector2i(0, 8)
 3:0/0/z_index = 1
-3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, 8, 16.052975, 16.122316, -0.034671783, 23.958109, -16.122318, 16.052973, 0, 8)
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 0, 0, 8, 16, 0, 0, -8)
 4:0/0 = 0
-4:0/0/texture_origin = Vector2i(0, -8)
+4:0/0/texture_origin = Vector2i(0, 8)
 4:0/0/z_index = 1
-4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, 8, 16.15179, 15.983979, -0.20976639, 24.038898, -16.15179, 15.900075)
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 0, 0, 8, 16, 0, 0, -8)
 5:0/0 = 0
-5:0/0/texture_origin = Vector2i(0, -8)
+5:0/0/texture_origin = Vector2i(0, 8)
+5:0/0/z_index = 1
 6:0/0 = 0
-6:0/0/texture_origin = Vector2i(0, -8)
+6:0/0/texture_origin = Vector2i(0, 8)
+6:0/0/z_index = 1
+0:1/0 = 0
+0:1/0/texture_origin = Vector2i(0, 8)
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 0, 0, 8, 16, 0, 0, -8)
+1:1/0 = 0
+1:1/0/texture_origin = Vector2i(0, 8)
+2:1/0 = 0
+2:1/0/texture_origin = Vector2i(0, 8)
+3:1/0 = 0
+3:1/0/texture_origin = Vector2i(0, 8)
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 0, 0, 8, 15.57428, 0.2128601, 0, -8)
+4:1/0 = 0
+4:1/0/texture_origin = Vector2i(0, 8)
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 0, 0, 8, 16, 0, 0, -8)
+5:1/0 = 0
+5:1/0/texture_origin = Vector2i(0, 8)
+6:1/0 = 0
+6:1/0/texture_origin = Vector2i(0, 8)
+6:1/0/z_index = 1
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-10.666666, -2.6666665, 0, 2.666667, 10.666668, -2.6666665, 0, -8)
 7:0/0 = 0
-7:0/0/texture_origin = Vector2i(0, -8)
-7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -8, 16, 0, 0, 8, -16, 0)
+7:0/0/texture_origin = Vector2i(0, 8)
+7:0/0/z_index = 1
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 0, -8, 16, -16, 0, -24)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 8)
+0:0/0/z_index = 1
 
 [sub_resource type="TileSet" id="TileSet_mge4j"]
 tile_shape = 1
@@ -34,9 +59,10 @@ tile_layout = 5
 tile_offset_axis = 1
 tile_size = Vector2i(32, 16)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_8ty16")
+sources/1 = SubResource("TileSetAtlasSource_ypxc6")
 
 [node name="TileMap" type="TileMap"]
+y_sort_enabled = true
 tile_set = SubResource("TileSet_mge4j")
 format = 2
 layer_0/name = "Level0"
