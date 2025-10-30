@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bqurxw053unbm"]
+[gd_scene load_steps=8 format=3 uid="uid://bqurxw053unbm"]
 
 [ext_resource type="Script" uid="uid://b6tsacmewolds" path="res://Scripts/MainTest.gd" id="1_gi8e0"]
 [ext_resource type="PackedScene" uid="uid://bybxe4e1stfx" path="res://Scenes/tileMap.tscn" id="2_2xg1f"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://pe2sq3jvjs8w" path="res://Scenes/player.tscn" id="3_4rjj8"]
 [ext_resource type="Texture2D" uid="uid://cyov2jjg2mlrq" path="res://Assets/Sprites/Potions/EM concentration.png" id="3_k2kyf"]
 [ext_resource type="Texture2D" uid="uid://b4hlfxxlaoy8x" path="res://Assets/Sprites/Potions/FM motivation.png" id="4_8vy8x"]
+[ext_resource type="PackedScene" uid="uid://ce35qsnru2nkx" path="res://Scenes/interactableTile.tscn" id="7_k2kyf"]
 
 [node name="MainTest" type="Node2D"]
 y_sort_enabled = true
@@ -45,3 +46,6 @@ scale = Vector2(0.19999999, 0.19999999)
 position = Vector2(0, 85.00001)
 scale = Vector2(0.9999998, 0.9999998)
 zoom = Vector2(2.99, 2.99)
+
+[node name="InteractableTile" parent="Environment" instance=ExtResource("7_k2kyf")]
+position = Vector2(524, 83)
