@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://ce35qsnru2nkx"]
+
+[ext_resource type="Script" uid="uid://d0cm3tqnsq5hg" path="res://Scripts/Interactable.gd" id="1_uhhl4"]
+
+[node name="Interactable" type="Node2D" groups=["Tiles"]]
+script = ExtResource("1_uhhl4")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(0, 8)
+polygon = PackedVector2Array(0, -14, -30, 0, 0, 14, 30, 0)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

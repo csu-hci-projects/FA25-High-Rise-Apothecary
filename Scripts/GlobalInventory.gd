@@ -29,7 +29,7 @@ func addItem(item):
 			return true
 	changeInvSize(8) # only reached if no inv space
 	if !addItem(item): # recursive call, should only happen once
-		push_error("addItem not working!")
+		push_error("!ERROR! addItem not working!")
 		return false
 
 func removeItem(itemName, itemType):

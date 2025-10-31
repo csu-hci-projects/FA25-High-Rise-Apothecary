@@ -4,6 +4,7 @@ extends Node2D
 @export var itemType = ""
 @export var itemTexture = Texture
 @export var itemEffect = ""
+@export var pointTotals = []
 var scenePath: String = "res://Scenes/inventoryItem.tscn"
 
 @onready var iconSprite = $TextureRect
@@ -14,6 +15,8 @@ var playerInRange = false
 func _ready() -> void:
 	if not Engine.is_editor_hint():
 		iconSprite.texture = itemTexture
+	
+	pointTotals.resize(9)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -31,7 +34,8 @@ func pickupItem():
 		"name": itemName,
 		"effect": itemEffect,
 		"texture": itemTexture,
-		"scenePath": scenePath
+		"scenePath": scenePath,
+		"pointTotals": pointTotals
 	}
 	if GlobalInventory.playerNode:
 		GlobalInventory.addItem(item)

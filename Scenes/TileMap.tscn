@@ -52,6 +52,9 @@ texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(0, 8)
 0:0/0/z_index = 1
+7:1/0 = 0
+7:1/0/texture_origin = Vector2i(0, 8)
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 0, 0, -8, 16, 0, 0, 8)
 
 [sub_resource type="TileSet" id="TileSet_mge4j"]
 tile_shape = 1
