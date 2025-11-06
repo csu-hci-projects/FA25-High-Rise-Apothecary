@@ -3,6 +3,7 @@ extends Node
 var inventory = []
 
 signal inventoryUpdated
+signal itemSent
 
 var playerNode: Node = null
 

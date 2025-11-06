@@ -9,3 +9,30 @@ func setGroupVisibility(groupName: String, visible: bool):
 			node.show()
 		else:
 			node.hide()
+
+func changeUI(UI):
+	match UI:
+		"inv":
+			if openUI == "none": #if no UI is open
+				openUI = "inv"
+			elif openUI == "inv": #if inventory UI is open
+				openUI = "none"
+			elif openUI == "shop": #if shop UI is open
+				openUI = "shop inv"
+			elif openUI == "shop inv": #if shop and inventory UI is open
+				openUI = "shop"
+			elif openUI == "pot": #if pot UI is open
+				openUI = "pot inv"
+			elif openUI == "pot inv": #if pot and inventroy UI is open
+				openUI = "pot"
+		"shop":
+			if openUI == "none":
+				openUI = "shop"
+			elif openUI == "shop":
+				openUI = "none"
+		"pot":
+			if openUI == "none":
+				openUI = "pot"
+			elif openUI == "pot":
+				openUI = "none"
+	print("Current UI = ", openUI)

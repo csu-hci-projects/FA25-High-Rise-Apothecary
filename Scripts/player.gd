@@ -43,10 +43,7 @@ func _input(event):
 	if event.is_action_pressed("InventoryUI"):
 		inventoryUI.visible = !inventoryUI.visible
 		get_tree().paused = !get_tree().paused
-		if Globals.openUI == "none":
-			Globals.openUI = "inv"
-		elif Globals.openUI == "inv":
-			Globals.openUI = "none"
+		Globals.changeUI("inv")
 
 func changeBalance(amount):
 	money += amount

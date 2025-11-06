@@ -7,6 +7,7 @@ extends Control
 @onready var itemType = $DetailsPanel/ItemType
 @onready var itemEffect = $DetailsPanel/ItemEffect
 @onready var usagePanel = $UsagePanel
+@onready var useButton = $UsagePanel/UseButton
 
 var currentItem = null # currently held item
 
@@ -22,7 +23,13 @@ func _get_minimum_size() -> Vector2:
 	return Vector2(0, size.x)
 
 func _on_item_button_pressed() -> void:
-	if currentItem != null and currentItem["type"] == "Potion": #and Globals.openUI == "shop"
+	if currentItem != null:
+		if currentItem["type"] == "Potion" and Globals.openUI == "shop inv": 
+			useButton.text = "Sell"
+		elif currentItem["type"].contains("Ingredient") and Globals.openUI == "pot inv":
+			useButton.text = "Add"
+		else:
+			useButton.text = "Use"
 		usagePanel.visible = !usagePanel.visible
 		detailsPanel.visible = !detailsPanel.visible
 
@@ -49,6 +56,8 @@ func setItem(newItem):
 
 func _on_use_button_pressed() -> void:
 	usagePanel.visible = false
-	if currentItem != null: #TODO ADD FUNCTIONALITY FOR SHOPS
-		GlobalInventory.removeItem(currentItem["name"], currentItem["type"])
-		pass
+	if currentItem != null:
+		if Globals.openUI == "shop inv" and currentItem["type"] == "Potion": #TODO ADD FUNCTIONALITY FOR SHOPS
+			GlobalInventory.removeItem(currentItem["name"], currentItem["type"])
+		elif Globals.openUI == "pot inv" and currentItem["type"].contains("Ingredient"): #TODO ADD FUNCTIONALITY FOR POT
+			GlobalInventory.itemSent.emit(currentItem)
