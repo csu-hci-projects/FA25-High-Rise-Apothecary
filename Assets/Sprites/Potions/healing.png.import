@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdnqg1dh6pslj"
-path="res://.godot/imported/AB swiftness.png-d595152a69c5eaa52f707a892b22ad9c.ctex"
+uid="uid://c3h1r3rmh8cjc"
+path="res://.godot/imported/healing.png-aa479a7c8499042dcf8c17aed8763713.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Potions/AB swiftness.png"
-dest_files=["res://.godot/imported/AB swiftness.png-d595152a69c5eaa52f707a892b22ad9c.ctex"]
+source_file="res://Assets/Sprites/Potions/healing.png"
+dest_files=["res://.godot/imported/healing.png-aa479a7c8499042dcf8c17aed8763713.ctex"]
 
 [params]
 

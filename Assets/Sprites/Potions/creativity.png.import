@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbnsugs20edx0"
-path="res://.godot/imported/FB attack.png-cadb1d93b09dd179c5df289a579a06c3.ctex"
+uid="uid://6i7r6ib5o21q"
+path="res://.godot/imported/creativity.png-0897c40742c437fda68c3a1a47435aa3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Potions/FB attack.png"
-dest_files=["res://.godot/imported/FB attack.png-cadb1d93b09dd179c5df289a579a06c3.ctex"]
+source_file="res://Assets/Sprites/Potions/creativity.png"
+dest_files=["res://.godot/imported/creativity.png-0897c40742c437fda68c3a1a47435aa3.ctex"]
 
 [params]
 

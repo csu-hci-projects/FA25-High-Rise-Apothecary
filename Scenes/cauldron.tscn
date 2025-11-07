@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://b3mi7kqulyjtu"]
+[gd_scene load_steps=3 format=3 uid="uid://b3mi7kqulyjtu"]
 
+[ext_resource type="Script" uid="uid://bm7ty2h7ixlae" path="res://Scripts/Cauldron.gd" id="1_2rulr"]
 [ext_resource type="Texture2D" uid="uid://c8bgmxtxwv64f" path="res://Assets/Sprites/Environment/cauldron.png" id="1_2xink"]
 
 [node name="Cauldron" type="Node2D"]
+script = ExtResource("1_2rulr")
 
 [node name="Area2D" type="StaticBody2D" parent="."]
 
@@ -11,15 +13,9 @@ position = Vector2(-0.22916603, -3.6666665)
 scale = Vector2(1.4583333, 1.4583333)
 polygon = PackedVector2Array(0, 14, 13, 8, 0, 2, -12, 8)
 
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -23.0
-offset_top = -26.0
-offset_right = 23.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(16, 16)
-size_flags_horizontal = 4
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -2.9999998)
+scale = Vector2(1.375, 1.375)
 texture = ExtResource("1_2xink")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -58,51 +54,86 @@ offset_right = -20.0
 offset_bottom = 286.0
 grow_horizontal = 0
 
-[node name="FireLabel" type="Label" parent="CanvasLayer/PotMenu/VBoxContainer"]
-layout_mode = 2
-text = "Fire: "
-horizontal_alignment = 2
-
 [node name="WaterLabel" type="Label" parent="CanvasLayer/PotMenu/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
-text = "Water: "
+text = "Water: 0"
 horizontal_alignment = 2
 
 [node name="EarthLabel" type="Label" parent="CanvasLayer/PotMenu/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
-text = "Earth: "
+text = "Earth: 0"
+horizontal_alignment = 2
+
+[node name="FireLabel" type="Label" parent="CanvasLayer/PotMenu/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Fire: 0"
 horizontal_alignment = 2
 
 [node name="AirLabel" type="Label" parent="CanvasLayer/PotMenu/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
-text = "Air: "
+text = "Air: 0"
 horizontal_alignment = 2
 
 [node name="LightLabel" type="Label" parent="CanvasLayer/PotMenu/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
-text = "Light: "
+text = "Light: 0"
 horizontal_alignment = 2
 
 [node name="DarkLabel" type="Label" parent="CanvasLayer/PotMenu/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
-text = "Dark: "
+text = "Dark: 0"
 horizontal_alignment = 2
 
 [node name="Spacer" type="Label" parent="CanvasLayer/PotMenu/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 horizontal_alignment = 2
 
 [node name="MindLabel" type="Label" parent="CanvasLayer/PotMenu/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
-text = "Mind: "
+text = "Mind: 0"
 horizontal_alignment = 2
 
 [node name="BodyLabel" type="Label" parent="CanvasLayer/PotMenu/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
-text = "Body: "
+text = "Body: 0"
 horizontal_alignment = 2
 
 [node name="SpiritLabel" type="Label" parent="CanvasLayer/PotMenu/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
-text = "Spirit: "
+text = "Spirit: 0"
 horizontal_alignment = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer/PotMenu"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -140.0
+offset_top = -60.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Button" type="Button" parent="CanvasLayer/PotMenu/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Finish Potion"
+
+[connection signal="pressed" from="CanvasLayer/PotMenu/Panel/Button" to="." method="_on_button_pressed"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4hlfxxlaoy8x"
-path="res://.godot/imported/FM motivation.png-73ae78cf46b28c08cca3d506f14a9a0a.ctex"
+uid="uid://dl07wpceve1ac"
+path="res://.godot/imported/intelligence.png-60ae1a1ef2fbb26899d3c8c6358daf12.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Potions/FM motivation.png"
-dest_files=["res://.godot/imported/FM motivation.png-73ae78cf46b28c08cca3d506f14a9a0a.ctex"]
+source_file="res://Assets/Sprites/Potions/intelligence.png"
+dest_files=["res://.godot/imported/intelligence.png-60ae1a1ef2fbb26899d3c8c6358daf12.ctex"]
 
 [params]
 

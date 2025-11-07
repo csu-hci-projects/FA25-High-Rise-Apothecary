@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfprm1n6cfycf"
-path="res://.godot/imported/LS luck.png-62d366d99a87704dd79ebfa496cda2b9.ctex"
+uid="uid://cwhrlrtujmjjp"
+path="res://.godot/imported/poison.png-93ab1e1e6b4657b2f15f349c615856de.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Potions/LS luck.png"
-dest_files=["res://.godot/imported/LS luck.png-62d366d99a87704dd79ebfa496cda2b9.ctex"]
+source_file="res://Assets/Sprites/Potions/poison.png"
+dest_files=["res://.godot/imported/poison.png-93ab1e1e6b4657b2f15f349c615856de.ctex"]
 
 [params]
 

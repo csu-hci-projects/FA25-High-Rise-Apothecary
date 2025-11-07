@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyov2jjg2mlrq"
-path="res://.godot/imported/EM concentration.png-6a6742ad1f982e3df794c4800a6b671f.ctex"
+uid="uid://cceiluinrxydt"
+path="res://.godot/imported/charisma.png-05d1ae9f3413766c66b2c8248fee3546.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Potions/EM concentration.png"
-dest_files=["res://.godot/imported/EM concentration.png-6a6742ad1f982e3df794c4800a6b671f.ctex"]
+source_file="res://Assets/Sprites/Potions/charisma.png"
+dest_files=["res://.godot/imported/charisma.png-05d1ae9f3413766c66b2c8248fee3546.ctex"]
 
 [params]
 

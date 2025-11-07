@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkgr75lk7nyk4"
-path="res://.godot/imported/AM intelligence.png-361bb0198063ea6f969d60cfaafa3332.ctex"
+uid="uid://bqqcc7tsw13hm"
+path="res://.godot/imported/truth.png-ffc9a074944f2fcf632a0d0b7a4391fb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Potions/AM intelligence.png"
-dest_files=["res://.godot/imported/AM intelligence.png-361bb0198063ea6f969d60cfaafa3332.ctex"]
+source_file="res://Assets/Sprites/Potions/truth.png"
+dest_files=["res://.godot/imported/truth.png-ffc9a074944f2fcf632a0d0b7a4391fb.ctex"]
 
 [params]
 

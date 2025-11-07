@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cuxw358kvfwwh"
-path="res://.godot/imported/LM dreams.png-8897af401b9d8d34b90c564ffff1f1a3.ctex"
+uid="uid://bfebctdbah63j"
+path="res://.godot/imported/curse.png-1d0d48528d4ddcfdc7545d47a685828a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Potions/LM dreams.png"
-dest_files=["res://.godot/imported/LM dreams.png-8897af401b9d8d34b90c564ffff1f1a3.ctex"]
+source_file="res://Assets/Sprites/Potions/curse.png"
+dest_files=["res://.godot/imported/curse.png-1d0d48528d4ddcfdc7545d47a685828a.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpvmoq12omdm2"
-path="res://.godot/imported/ES growth.png-6fa87f05f80e7a30361e9e9fc7640958.ctex"
+uid="uid://chc6gdkvhocio"
+path="res://.godot/imported/levitation.png-4ec5824aee2d32b97600693477d512ca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Potions/ES growth.png"
-dest_files=["res://.godot/imported/ES growth.png-6fa87f05f80e7a30361e9e9fc7640958.ctex"]
+source_file="res://Assets/Sprites/Potions/levitation.png"
+dest_files=["res://.godot/imported/levitation.png-4ec5824aee2d32b97600693477d512ca.ctex"]
 
 [params]
 

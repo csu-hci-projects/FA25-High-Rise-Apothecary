@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bs71nqspedq26"
-path="res://.godot/imported/EB defense.png-879e30bcfeaf0aab063c6009b369be2f.ctex"
+uid="uid://dljjsr5g0vl3e"
+path="res://.godot/imported/attack.png-bc36c8db5944b2da2a0986a1ce6192c3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Potions/EB defense.png"
-dest_files=["res://.godot/imported/EB defense.png-879e30bcfeaf0aab063c6009b369be2f.ctex"]
+source_file="res://Assets/Sprites/Potions/attack.png"
+dest_files=["res://.godot/imported/attack.png-bc36c8db5944b2da2a0986a1ce6192c3.ctex"]
 
 [params]
 

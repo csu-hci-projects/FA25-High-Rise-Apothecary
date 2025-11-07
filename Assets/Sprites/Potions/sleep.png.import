@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bc2i60ndd4xj"
-path="res://.godot/imported/DS curse.png-e69539ae27c8ec60792eb5a0b74de2d8.ctex"
+uid="uid://biypf0cdjwf0g"
+path="res://.godot/imported/sleep.png-b429a5583f1c26c1273425b2f3db717f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Potions/DS curse.png"
-dest_files=["res://.godot/imported/DS curse.png-e69539ae27c8ec60792eb5a0b74de2d8.ctex"]
+source_file="res://Assets/Sprites/Potions/sleep.png"
+dest_files=["res://.godot/imported/sleep.png-b429a5583f1c26c1273425b2f3db717f.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vt2n3ldb1p33"
-path="res://.godot/imported/WM sleep.png-9d9f02cbe52bf9efcc43a86dd43f701a.ctex"
+uid="uid://q7laq6s5ase2"
+path="res://.godot/imported/pouch.png-f3f58d612391b9ebc2c87e32c5d8752f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Potions/WM sleep.png"
-dest_files=["res://.godot/imported/WM sleep.png-9d9f02cbe52bf9efcc43a86dd43f701a.ctex"]
+source_file="res://Assets/Sprites/Ingredients/pouch.png"
+dest_files=["res://.godot/imported/pouch.png-f3f58d612391b9ebc2c87e32c5d8752f.ctex"]
 
 [params]
 

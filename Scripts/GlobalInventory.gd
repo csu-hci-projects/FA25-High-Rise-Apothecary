@@ -3,6 +3,7 @@ extends Node
 var inventory = []
 
 signal inventoryUpdated
+@warning_ignore("unused_signal")
 signal itemSent
 
 var playerNode: Node = null
@@ -38,7 +39,8 @@ func removeItem(itemName, itemType):
 		if inventory[i] != null and inventory[i]["name"] == itemName and inventory[i]["type"] == itemType:
 			inventory[i]["quantity"] -= 1
 			if inventory[i]["quantity"] <= 0:
-				inventory[i] = null
+				inventory.pop_at(i)
+				changeInvSize(1)
 			inventoryUpdated.emit()
 			return true
 	return false
@@ -51,13 +53,9 @@ func sortInv():
 	for j in range(inventory.size()):
 		for i in range(j):
 			if inventory[i] != null and inventory[i+1] != null:
-				if inventory[i]["type"] > inventory[i+1]["type"]:
+				var iType = inventory[i].itemType if inventory[i] is InventoryItem else inventory[i]["type"]
+				var i1Type = inventory[i+1].itemType if inventory[i+1] is InventoryItem else inventory[i+1]["type"]
+				if iType > i1Type:
 					var tempItem = inventory[i+1]
 					inventory[i+1] = inventory[i]
 					inventory[i] = tempItem
-
-func scootItems():
-	for i in range(inventory.size()-1):
-		if inventory[i] == null and inventory[i+1] != null:
-			inventory[i] = inventory[i+1]
-			inventory[i+1] = null

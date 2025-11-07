@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dly1ck2uoxy26"
-path="res://.godot/imported/LB levitation.png-bff5a4e11c952669529560d72bb69362.ctex"
+uid="uid://bmbkpcoppwd6l"
+path="res://.godot/imported/concentration.png-69cdda1e3f71292725c7b31ee1289f0e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Potions/LB levitation.png"
-dest_files=["res://.godot/imported/LB levitation.png-bff5a4e11c952669529560d72bb69362.ctex"]
+source_file="res://Assets/Sprites/Potions/concentration.png"
+dest_files=["res://.godot/imported/concentration.png-69cdda1e3f71292725c7b31ee1289f0e.ctex"]
 
 [params]
 

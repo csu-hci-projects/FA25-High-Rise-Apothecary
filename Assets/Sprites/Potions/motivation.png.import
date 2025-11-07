@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwd7xbwphjqui"
-path="res://.godot/imported/DB poison.png-705e7e6d89a44c24eadec2842530a5d2.ctex"
+uid="uid://fdkskpfrcumo"
+path="res://.godot/imported/motivation.png-1dcdfa1cfd60ff46e2ee8dfd0ac22472.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Potions/DB poison.png"
-dest_files=["res://.godot/imported/DB poison.png-705e7e6d89a44c24eadec2842530a5d2.ctex"]
+source_file="res://Assets/Sprites/Potions/motivation.png"
+dest_files=["res://.godot/imported/motivation.png-1dcdfa1cfd60ff46e2ee8dfd0ac22472.ctex"]
 
 [params]
 

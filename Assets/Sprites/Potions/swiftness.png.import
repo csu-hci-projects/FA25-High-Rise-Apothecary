@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ktr0f80f2idw"
-path="res://.godot/imported/AS truth.png-d945728c3a0fd7b8f1a6ca6db614740e.ctex"
+uid="uid://dlg6jdq10ad5d"
+path="res://.godot/imported/swiftness.png-61f0c96843350159592149ed27feba01.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Potions/AS truth.png"
-dest_files=["res://.godot/imported/AS truth.png-d945728c3a0fd7b8f1a6ca6db614740e.ctex"]
+source_file="res://Assets/Sprites/Potions/swiftness.png"
+dest_files=["res://.godot/imported/swiftness.png-61f0c96843350159592149ed27feba01.ctex"]
 
 [params]
 

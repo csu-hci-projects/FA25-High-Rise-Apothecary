@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bap03bwbdaj1m"
-path="res://.godot/imported/DM nightmares.png-b733bc766e9d17d5ade28fa8bdea42ca.ctex"
+uid="uid://lgs7m0lrxe70"
+path="res://.godot/imported/defense.png-8436ac49a01d2fda78291afeb9d080ba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Potions/DM nightmares.png"
-dest_files=["res://.godot/imported/DM nightmares.png-b733bc766e9d17d5ade28fa8bdea42ca.ctex"]
+source_file="res://Assets/Sprites/Potions/defense.png"
+dest_files=["res://.godot/imported/defense.png-8436ac49a01d2fda78291afeb9d080ba.ctex"]
 
 [params]
 

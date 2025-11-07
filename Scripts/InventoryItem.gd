@@ -1,17 +1,22 @@
 extends Node2D
+class_name InventoryItem
 
 @export var itemName = ""
 @export var itemType = ""
-@export var itemTexture = Texture
+@export_file_path() var itemTexturePath = ""
+var itemTexture = Texture
 @export var itemEffect = ""
 @export var pointTotals:Array[int] = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+@export var potionTier = 0
+@export var itemQuantity = 1
+
 var scenePath: String = "res://Scenes/inventoryItem.tscn"
 
 @onready var iconSprite = $TextureRect
 
 var playerInRange = false
 
-var ingredientTotals = { # collapse when not in use
+var ingredientTotals = { # collapse when not editing
 # Elements:  W  E  F  A  L  D  M  B  S
 	"None": [0, 0, 0, 0, 0, 0, 0, 0, 0],
 	"Sulfur": [5, 5, 5, 5, 0, 0, 30, 0, 0],
@@ -33,7 +38,7 @@ var ingredientTotals = { # collapse when not in use
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if not Engine.is_editor_hint():
-		iconSprite.texture = itemTexture
+		iconSprite.texture = load(itemTexturePath)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -49,9 +54,10 @@ func pickupItem():
 		"type": itemType,
 		"effect": itemEffect,
 		"quantity": 1,
-		"texture": itemTexture,
+		"texturePath": itemTexturePath,
 		"scenePath": scenePath,
-		"pointTotals": pointTotals
+		"pointTotals": pointTotals,
+		"tier": potionTier
 	}
 	if GlobalInventory.playerNode:
 		GlobalInventory.addItem(item)
@@ -71,9 +77,26 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 		playerInRange = false
 		body.interactUI.visible = false
 
-func assignPointTotals(key):
+func assignPointTotals(key: String):
 	for i in range(self["pointTotals"].size()):
-		print("Filling in point totals")
 		self["pointTotals"][i] = ingredientTotals[key][i]
-	print("Point totals: ", self["pointTotals"])
-	
+
+func setItemData(data: Dictionary):
+	itemName = data["name"]
+	itemType = data["type"]
+	itemEffect = data["effect"]
+	itemTexture = data["texture"]
+	if data["tier"] != null:
+		potionTier = data["tier"]
+	if data["pointTotals"] != null:
+		pointTotals = data["pointTotals"]
+
+func initiateItem(newItemName: String, newItemType: String, newItemEffect: String, newItemTexturePath: String, newItemTier, newItemPoints):
+	itemName = newItemName
+	itemType = newItemType
+	itemEffect = newItemEffect
+	itemTexturePath = newItemTexturePath
+	if newItemTier != null:
+		potionTier = newItemTier
+	if newItemPoints != null:
+		pointTotals = newItemPoints

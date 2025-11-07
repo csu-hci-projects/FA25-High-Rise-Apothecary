@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkohmqkobtnut"
-path="res://.godot/imported/WS charisma.png-ba4d2b34f53783c4563d1a8a56865b9e.ctex"
+uid="uid://ddfcgkpnetpae"
+path="res://.godot/imported/growth.png-b7f25c77e6d9f0c505adc5b5993a0501.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Potions/WS charisma.png"
-dest_files=["res://.godot/imported/WS charisma.png-ba4d2b34f53783c4563d1a8a56865b9e.ctex"]
+source_file="res://Assets/Sprites/Potions/growth.png"
+dest_files=["res://.godot/imported/growth.png-b7f25c77e6d9f0c505adc5b5993a0501.ctex"]
 
 [params]
 

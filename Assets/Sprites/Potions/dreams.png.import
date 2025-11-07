@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crsb26vdnjmr7"
-path="res://.godot/imported/FS creativity.png-013313aeb65f222fb3e4395579452f77.ctex"
+uid="uid://eldrsh5sxt18"
+path="res://.godot/imported/dreams.png-b00564b2318a85ebdfdf7ef8c8b5590c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Potions/FS creativity.png"
-dest_files=["res://.godot/imported/FS creativity.png-013313aeb65f222fb3e4395579452f77.ctex"]
+source_file="res://Assets/Sprites/Potions/dreams.png"
+dest_files=["res://.godot/imported/dreams.png-b00564b2318a85ebdfdf7ef8c8b5590c.ctex"]
 
 [params]
 

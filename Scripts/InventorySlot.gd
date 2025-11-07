@@ -24,9 +24,10 @@ func _get_minimum_size() -> Vector2:
 
 func _on_item_button_pressed() -> void:
 	if currentItem != null:
-		if currentItem["type"] == "Potion" and Globals.openUI == "shop inv": 
+		var iType = currentItem.itemType if currentItem is InventoryItem else currentItem["type"]
+		if iType == "Potion" and Globals.openUI == "shop inv": 
 			useButton.text = "Sell"
-		elif currentItem["type"].contains("Ingredient") and Globals.openUI == "pot inv":
+		elif iType.contains("Ingredient") and Globals.openUI == "pot inv":
 			useButton.text = "Add"
 		else:
 			useButton.text = "Use"
@@ -48,16 +49,24 @@ func setEmpty():
 
 func setItem(newItem):
 	currentItem = newItem
-	icon.texture = newItem["texture"]
-	quantityLabel.text = str(newItem["quantity"])
-	itemName.text = str(newItem["name"])
-	itemType.text = str(newItem["type"])
-	itemEffect.text = str(newItem["effect"])
+	if newItem is InventoryItem:
+		icon.texture = newItem.itemTexture
+		quantityLabel.text = str(newItem.itemQuantity)
+		itemName.text = str(newItem.itemName)
+		itemType.text = str(newItem.itemType)
+		itemEffect.text = str(newItem.itemEffect)
+	else:
+		icon.texture = load(newItem["texturePath"])
+		quantityLabel.text = str(newItem["quantity"])
+		itemName.text = str(newItem["name"])
+		itemType.text = str(newItem["type"])
+		itemEffect.text = str(newItem["effect"])
 
 func _on_use_button_pressed() -> void:
 	usagePanel.visible = false
 	if currentItem != null:
-		if Globals.openUI == "shop inv" and currentItem["type"] == "Potion": #TODO ADD FUNCTIONALITY FOR SHOPS
+		var iType = currentItem.itemType if currentItem is InventoryItem else currentItem["type"]
+		if Globals.openUI == "shop inv" and iType == "Potion": #TODO ADD FUNCTIONALITY FOR SHOPS
 			GlobalInventory.removeItem(currentItem["name"], currentItem["type"])
-		elif Globals.openUI == "pot inv" and currentItem["type"].contains("Ingredient"): #TODO ADD FUNCTIONALITY FOR POT
+		elif Globals.openUI == "pot inv" and iType.contains("Ingredient"):
 			GlobalInventory.itemSent.emit(currentItem)
