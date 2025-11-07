@@ -21,10 +21,13 @@ func getItem(slot):
 
 func addItem(item):
 	for i in range(inventory.size()):
-		if inventory[i] != null and inventory[i]["name"] == item["name"] and inventory[i]["type"] == item["type"]: # if this item is already in the inventory
-			inventory[i]["quantity"] += item["quantity"]
-			inventoryUpdated.emit()
-			return true
+		if inventory[i] != null:
+			var iName = inventory[i].itemName if inventory[i] is InventoryItem else inventory[i]["name"]
+			var iType = inventory[i].itemType if inventory[i] is InventoryItem else inventory[i]["type"]
+			if inventory[i] != null and iName == item["name"] and iType == item["type"]: # if this item is already in the inventory
+				inventory[i]["quantity"] += item["quantity"]
+				inventoryUpdated.emit()
+				return true
 		elif inventory[i] == null: # if there is an empty slot
 			inventory[i] = item
 			inventoryUpdated.emit()

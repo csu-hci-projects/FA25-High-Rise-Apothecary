@@ -16,23 +16,23 @@ script = ExtResource("1_gi8e0")
 [node name="InventoryItem3" parent="Environment" instance=ExtResource("2_4rjj8")]
 z_index = 2
 y_sort_enabled = true
-position = Vector2(134, 97)
-itemName = "Grapevine"
+position = Vector2(148, 100)
+itemName = "Sulfur"
 itemType = "Ingredient"
 itemTexturePath = "res://Assets/Sprites/Ingredients/pouch.png"
 
 [node name="InventoryItem4" parent="Environment" instance=ExtResource("2_4rjj8")]
 z_index = 2
 y_sort_enabled = true
-position = Vector2(163, 95)
-itemName = "Sulfur"
+position = Vector2(174, 99)
+itemName = "Grapevine"
 itemType = "Ingredient"
 itemTexturePath = "res://Assets/Sprites/Ingredients/pouch.png"
 
 [node name="InventoryItem5" parent="Environment" instance=ExtResource("2_4rjj8")]
 z_index = 2
 y_sort_enabled = true
-position = Vector2(155, 118)
+position = Vector2(171, 122)
 itemName = "Cherry Pits"
 itemType = "Ingredient"
 itemTexturePath = "res://Assets/Sprites/Ingredients/pouch.png"
@@ -55,7 +55,7 @@ zoom = Vector2(2.99, 2.99)
 [node name="Cauldron" parent="Environment" instance=ExtResource("5_8vy8x")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(200, 82)
+position = Vector2(217, 74)
 
 [node name="Interactable" parent="Environment/Cauldron" instance=ExtResource("6_w2gfe")]
 visible = false
