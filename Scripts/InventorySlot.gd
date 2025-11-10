@@ -54,13 +54,19 @@ func setItem(newItem):
 		quantityLabel.text = str(newItem.itemQuantity)
 		itemName.text = str(newItem.itemName)
 		itemType.text = str(newItem.itemType)
-		itemEffect.text = str(newItem.itemEffect)
+		if str(newItem.itemType).contains("Ingredient"):
+			itemEffect.text = assignEffect(newItem.pointTotals)
+		else:
+			itemEffect.text = str(newItem.itemEffect)
 	else:
 		icon.texture = load(newItem["texturePath"])
 		quantityLabel.text = str(newItem["quantity"])
 		itemName.text = str(newItem["name"])
 		itemType.text = str(newItem["type"])
-		itemEffect.text = str(newItem["effect"])
+		if str(newItem["type"]).contains("Ingredient"):
+			itemEffect.text = assignEffect(newItem["pointTotals"])
+		else:
+			itemEffect.text = str(newItem["effect"])
 
 func _on_use_button_pressed() -> void:
 	usagePanel.visible = false
@@ -70,3 +76,16 @@ func _on_use_button_pressed() -> void:
 			GlobalInventory.removeItem(currentItem["name"], currentItem["type"])
 		elif Globals.openUI == "pot inv" and iType.contains("Ingredient"):
 			GlobalInventory.itemSent.emit(currentItem)
+
+func assignEffect(pointTotals):
+	var effect = ""
+	effect += "Water: " + str(pointTotals[0]) + ", "
+	effect += "Earth: " + str(pointTotals[1]) + ", "
+	effect += "Fire: " + str(pointTotals[2]) + ", \n"
+	effect += "Air: " + str(pointTotals[3]) + ", "
+	effect += "Light: " + str(pointTotals[4]) + ", "
+	effect += "Dark: " + str(pointTotals[5]) + ", \n"
+	effect += "Mind: " + str(pointTotals[6]) + ", "
+	effect += "Body: " + str(pointTotals[7]) + ", "
+	effect += "Spirit: " + str(pointTotals[8])
+	return effect

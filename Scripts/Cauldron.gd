@@ -134,9 +134,9 @@ func determinePotion(chosenAspect: int, chosenElement: int):
 
 func determineTier():
 	var totalSum = sumPoints()
-	if totalSum >= 100:
+	if totalSum >= 200:
 		return 3
-	elif totalSum >= 50:
+	elif totalSum >= 100:
 		return 2
 	else:
 		return 1

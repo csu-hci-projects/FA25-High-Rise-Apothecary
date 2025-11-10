@@ -54,7 +54,6 @@ zoom = Vector2(2.99, 2.99)
 
 [node name="Cauldron" parent="Environment" instance=ExtResource("5_8vy8x")]
 z_index = 1
-y_sort_enabled = true
 position = Vector2(217, 74)
 
 [node name="Interactable" parent="Environment/Cauldron" instance=ExtResource("6_w2gfe")]

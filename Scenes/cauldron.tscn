@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c8bgmxtxwv64f" path="res://Assets/Sprites/Environment/cauldron.png" id="1_2xink"]
 
 [node name="Cauldron" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_2rulr")
 
 [node name="Area2D" type="StaticBody2D" parent="."]
@@ -14,6 +15,7 @@ scale = Vector2(1.4583333, 1.4583333)
 polygon = PackedVector2Array(0, 14, 13, 8, 0, 2, -12, 8)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
 position = Vector2(0, -2.9999998)
 scale = Vector2(1.375, 1.375)
 texture = ExtResource("1_2xink")

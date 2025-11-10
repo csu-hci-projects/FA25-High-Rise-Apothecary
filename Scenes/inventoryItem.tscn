@@ -1,13 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://cid8bdfpl8uxc"]
+[gd_scene load_steps=3 format=3 uid="uid://cid8bdfpl8uxc"]
 
 [ext_resource type="Script" uid="uid://6n8jm4jllt7y" path="res://Scripts/InventoryItem.gd" id="1_o0ghr"]
-[ext_resource type="Texture2D" uid="uid://bwbnqri3fqbl0" path="res://Assets/icon.svg" id="2_o0ghr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sojec"]
 
 [node name="InventoryItem" type="Node2D" groups=["Items"]]
 script = ExtResource("1_o0ghr")
-itemTexture = ExtResource("2_o0ghr")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = -7.0

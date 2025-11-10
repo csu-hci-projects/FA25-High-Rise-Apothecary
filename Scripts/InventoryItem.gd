@@ -62,10 +62,13 @@ func pickupItem():
 	if GlobalInventory.playerNode:
 		GlobalInventory.addItem(item)
 		self.queue_free() # unload item from scene
+	if item["type"] == "Ingredient":
+		assignPointTotals(item["name"])
+	if itemType.contains("Ingredient"):
+		itemEffect = setEffect()
 	var tempItem = GlobalInventory.getItem(0)
 	GlobalInventory.addItem(tempItem) # stupid fix for sorting inventory
 	GlobalInventory.removeItem(tempItem["name"], tempItem["type"])
-	assignPointTotals(item["name"])
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"): # check if player is what's colliding
@@ -100,3 +103,16 @@ func initiateItem(newItemName: String, newItemType: String, newItemEffect: Strin
 		potionTier = newItemTier
 	if newItemPoints != null:
 		pointTotals = newItemPoints
+
+func setEffect():
+	var effect = ""
+	effect += "Water: " + str(pointTotals[0]) + ", "
+	effect += "Earth: " + str(pointTotals[1]) + ", "
+	effect += "Fire: " + str(pointTotals[2]) + ", \n"
+	effect += "Air: " + str(pointTotals[3]) + ", "
+	effect += "Light: " + str(pointTotals[4]) + ", "
+	effect += "Dark: " + str(pointTotals[5]) + ", \n"
+	effect += "Mind: " + str(pointTotals[6]) + ", "
+	effect += "Body: " + str(pointTotals[7]) + ", "
+	effect += "Spirit: " + str(pointTotals[8])
+	return effect
