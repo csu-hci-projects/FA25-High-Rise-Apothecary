@@ -1,0 +1,95 @@
+[gd_scene load_steps=6 format=3 uid="uid://cmseibw4xwg0h"]
+
+[ext_resource type="Script" uid="uid://cc7pam7fcgbqf" path="res://Scenes/Main Scenes/[0]mainMenu.gd" id="1_l6ft7"]
+[ext_resource type="Texture2D" uid="uid://b6ch4nyrdoyk0" path="res://Assets/Backgrounds/MainMenu_BG.png" id="2_8fcvq"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fdw6h"]
+texture = ExtResource("2_8fcvq")
+
+[sub_resource type="Theme" id="Theme_ycnrk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_28bxx"]
+bg_color = Color(0.314426, 0.506076, 0.506222, 1)
+border_color = Color(0.948514, 0.725787, 0.833603, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+expand_margin_left = 16.0
+expand_margin_top = 8.0
+expand_margin_right = 16.0
+expand_margin_bottom = 8.0
+shadow_size = 16
+
+[node name="[0]mainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_l6ft7")
+
+[node name="Background_Image" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.999974, 1.00315)
+theme_override_styles/panel = SubResource("StyleBoxTexture_fdw6h")
+
+[node name="Play" type="Button" parent="."]
+layout_mode = 1
+offset_left = 24.0
+offset_top = 457.0
+offset_right = 228.0
+offset_bottom = 512.0
+scale = Vector2(0.808641, 1.12)
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme = SubResource("Theme_ycnrk")
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_28bxx")
+action_mode = 0
+text = "Play Game"
+
+[node name="Controls" type="Button" parent="."]
+layout_mode = 1
+offset_left = 997.0
+offset_top = 580.0
+offset_right = 1201.0
+offset_bottom = 635.0
+scale = Vector2(0.608641, 0.8)
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme = SubResource("Theme_ycnrk")
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_28bxx")
+text = "Controls"
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 1
+offset_left = 24.0
+offset_top = 560.0
+offset_right = 228.0
+offset_bottom = 615.0
+scale = Vector2(0.808641, 1.12)
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme = SubResource("Theme_ycnrk")
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_28bxx")
+text = "Exit Game"
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Controls" to="." method="_on_controls_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
