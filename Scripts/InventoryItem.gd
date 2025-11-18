@@ -24,15 +24,15 @@ var ingredientTotals = { # collapse when not editing
 	"Salt": [5, 5, 5, 5, 0, 0, 0, 0, 30],
 	"Grapevine": [20, 0, 0, 0, 25, 0, 0, 0, 5],
 	"Cherry Pits": [0, 10, 5, 0, 0, 5, 15, 0, 15],
-	"Daisy": [0, 0, 0, 0, 0, 0, 0, 0, 0], # TODO input all point totals from sheet
-	"Mandrake": [0, 0, 0, 0, 0, 0, 0, 0, 0],
-	"Hemlock": [0, 0, 0, 0, 0, 0, 0, 0, 0],
-	"Wolfsbane": [0, 0, 0, 0, 0, 0, 0, 0, 0],
-	"Henbane": [0, 0, 0, 0, 0, 0, 0, 0, 0],
-	"Bergamot": [0, 0, 0, 0, 0, 0, 0, 0, 0],
-	"Catnip": [0, 0, 0, 0, 0, 0, 0, 0, 0],
-	"Star Anise": [0, 0, 0, 0, 0, 0, 0, 0, 0],
-	"Dandelion": [0, 0, 0, 0, 0, 0, 0, 0, 0]
+	"Daisy": [10, 10, 0, 10, 15, 5, 0, 0, 0], # TODO input all point totals from sheet
+	"Mandrake": [15, 5, 5, 0, 0, 0, 10, 10, 0],
+	"Hemlock": [10, 0, 0, 0, 20, 0, 10, 0, 10],
+	"Wolfsbane": [0, 0, 15, 15, 5, 10, 0, 0, 0],
+	"Henbane": [15, 0, 0, 5, 0, 0, 0, 15, 15],
+	"Bergamot": [5, 0, 15, 0, 0, 0, 30, 0, 0],
+	"Catnip": [0, 5, 5, 5, 15, 15, 0, 0, 5],
+	"Star Anise": [0, 0, 30, 0, 0, 0, 0, 20, 0],
+	"Dandelion": [0, 20, 0, 25, 0, 5, 0, 0, 0]
 }
 
 # Called when the node enters the scene tree for the first time.
@@ -53,7 +53,7 @@ func pickupItem():
 		"name": itemName,
 		"type": itemType,
 		"effect": itemEffect,
-		"quantity": 1,
+		"quantity": itemQuantity,
 		"texturePath": itemTexturePath,
 		"scenePath": scenePath,
 		"pointTotals": pointTotals,
@@ -66,7 +66,8 @@ func pickupItem():
 		assignPointTotals(item["name"])
 	if itemType.contains("Ingredient"):
 		itemEffect = setEffect()
-	var tempItem = GlobalInventory.getItem(0)
+	var tempItem = GlobalInventory.getItemDupe(0)
+	tempItem["quantity"] = 1
 	GlobalInventory.addItem(tempItem) # stupid fix for sorting inventory
 	GlobalInventory.removeItem(tempItem["name"], tempItem["type"])
 
@@ -106,13 +107,13 @@ func initiateItem(newItemName: String, newItemType: String, newItemEffect: Strin
 
 func setEffect():
 	var effect = ""
-	effect += "Water: " + str(pointTotals[0]) + ", "
-	effect += "Earth: " + str(pointTotals[1]) + ", "
-	effect += "Fire: " + str(pointTotals[2]) + ", \n"
-	effect += "Air: " + str(pointTotals[3]) + ", "
-	effect += "Light: " + str(pointTotals[4]) + ", "
-	effect += "Dark: " + str(pointTotals[5]) + ", \n"
-	effect += "Mind: " + str(pointTotals[6]) + ", "
-	effect += "Body: " + str(pointTotals[7]) + ", "
-	effect += "Spirit: " + str(pointTotals[8])
+	effect += "Water: {str(pointTotals[0])}, "
+	effect += "Earth: {str(pointTotals[1])}, "
+	effect += "Fire: {str(pointTotals[2])}, \n"
+	effect += "Air: {str(pointTotals[3])}, "
+	effect += "Light: {str(pointTotals[4])}, "
+	effect += "Dark: {str(pointTotals[5])}, \n"
+	effect += "Mind: {str(pointTotals[6])}, "
+	effect += "Body: {str(pointTotals[7])}, "
+	effect += "Spirit: {str(pointTotals[8])}"
 	return effect

@@ -16,18 +16,29 @@ func _ready() -> void:
 func setPlayerNode(player):
 	playerNode = player
 
-func getItem(slot):
+func getItemDirect(slot):
 	return inventory[slot]
+
+func getItemDupe(slot):
+	return inventory[slot].duplicate()
 
 func addItem(item):
 	for i in range(inventory.size()):
 		if inventory[i] != null:
 			var iName = inventory[i].itemName if inventory[i] is InventoryItem else inventory[i]["name"]
 			var iType = inventory[i].itemType if inventory[i] is InventoryItem else inventory[i]["type"]
-			if inventory[i] != null and iName == item["name"] and iType == item["type"]: # if this item is already in the inventory
-				inventory[i]["quantity"] += item["quantity"]
-				inventoryUpdated.emit()
-				return true
+			var iQuantity = item.itemQuantity if item is InventoryItem else item["quantity"]
+			if iType == "Potion":
+				var iTier = inventory[i].potionTier if inventory[i] is InventoryItem else inventory[i]["tier"]
+				if iName == item["name"] and iType == item["type"] and iTier == item["tier"]:
+					inventory[i]["quantity"] += iQuantity
+					inventoryUpdated.emit()
+					return true
+			else:
+				if iName == item["name"] and iType == item["type"]: # if this item is already in the inventory
+					inventory[i]["quantity"] += iQuantity
+					inventoryUpdated.emit()
+					return true
 		elif inventory[i] == null: # if there is an empty slot
 			inventory[i] = item
 			inventoryUpdated.emit()

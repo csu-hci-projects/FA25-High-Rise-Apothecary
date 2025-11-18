@@ -10,6 +10,7 @@ script = ExtResource("1_2rulr")
 [node name="Area2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+z_index = -1
 position = Vector2(-0.22916603, -3.6666665)
 scale = Vector2(1.4583333, 1.4583333)
 polygon = PackedVector2Array(0, 14, 13, 8, 0, 2, -12, 8)

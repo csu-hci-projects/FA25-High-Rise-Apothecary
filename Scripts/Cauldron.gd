@@ -98,23 +98,28 @@ func _on_itemSent(item: Dictionary):
 	GlobalInventory.removeItem(item["name"], item["type"])
 
 func _on_button_pressed() -> void:
-	if sumPoints() > 0:
-		var maxElements = findMaximums(pointTotals, 0, 5)
-		var maxAspects = findMaximums(pointTotals, 6, 8)
-		var chosenElement = maxElements.pick_random()
-		var chosenAspect = maxAspects.pick_random()
-		var createdPotion = createItem()
-		var potionName = determinePotion(chosenAspect, chosenElement)
-		var potionTier = determineTier()
-		createdPotion = assignPotionValues(createdPotion, potionName, potionTier)
-		GlobalInventory.addItem(createdPotion)
-		pointTotals = [0, 0, 0, 0, 0, 0, 0, 0, 0]
-		updateTotals()
+	if sumPoints(0, pointTotals.size()) > 0:
+		if verifyMinimums(pointTotals, 0, 6, 10):
+			var maxElements = findMaximums(pointTotals, 0, 6)
+			var maxAspects = findMaximums(pointTotals, 6, 9)
+			var chosenElement = maxElements.pick_random()
+			var chosenAspect = maxAspects.pick_random()
+			var createdPotion = createItem()
+			var potionName = determinePotion(chosenAspect, chosenElement)
+			var potionTier = determineTier()
+			createdPotion = assignPotionValues(createdPotion, potionName, potionTier)
+			GlobalInventory.addItem(createdPotion)
+			pointTotals = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+			updateTotals()
+		else:
+			print("Not enough elemental points!")
+	else:
+		print("No ingredients in cauldron!")
 
 func findMaximums(array: Array, startIndex: int, endIndex: int):
 	var maxValue = 0
 	var maxIndexes = []
-	for i in range(startIndex, endIndex+1):
+	for i in range(startIndex, endIndex):
 		if array[i] > maxValue:
 			maxValue = array[i]
 			maxIndexes = [i]
@@ -122,9 +127,15 @@ func findMaximums(array: Array, startIndex: int, endIndex: int):
 			maxIndexes.append(i)
 	return maxIndexes
 
-func sumPoints():
+func verifyMinimums(array: Array, startIndex: int, endIndex: int, minimum: int):
+	for i in range(startIndex, endIndex):
+		if array[i] >= minimum:
+			return true # if at least one of the elements is over 10
+	return false
+
+func sumPoints(startIndex: int, endIndex: int):
 	var totalSum = 0
-	for i in range(pointTotals.size()):
+	for i in range(startIndex, endIndex):
 		totalSum += pointTotals[i]
 	return totalSum
 
@@ -133,7 +144,7 @@ func determinePotion(chosenAspect: int, chosenElement: int):
 	return potionName
 
 func determineTier():
-	var totalSum = sumPoints()
+	var totalSum = sumPoints(0, pointTotals.size())
 	if totalSum >= 200:
 		return 3
 	elif totalSum >= 100:
