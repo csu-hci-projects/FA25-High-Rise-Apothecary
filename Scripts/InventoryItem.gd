@@ -24,7 +24,7 @@ var ingredientTotals = { # collapse when not editing
 	"Salt": [5, 5, 5, 5, 0, 0, 0, 0, 30],
 	"Grapevine": [20, 0, 0, 0, 25, 0, 0, 0, 5],
 	"Cherry Pits": [0, 10, 5, 0, 0, 5, 15, 0, 15],
-	"Daisy": [10, 10, 0, 10, 15, 5, 0, 0, 0], # TODO input all point totals from sheet
+	"Daisy": [10, 10, 0, 10, 15, 5, 0, 0, 0],
 	"Mandrake": [15, 5, 5, 0, 0, 0, 10, 10, 0],
 	"Hemlock": [10, 0, 0, 0, 20, 0, 10, 0, 10],
 	"Wolfsbane": [0, 0, 15, 15, 5, 10, 0, 0, 0],

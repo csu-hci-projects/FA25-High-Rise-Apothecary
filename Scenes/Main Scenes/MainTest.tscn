@@ -18,41 +18,91 @@ script = ExtResource("1_gi8e0")
 z_index = 2
 y_sort_enabled = true
 position = Vector2(288, 72)
-itemName = "Sulfur"
+itemName = "Hemlock"
 itemType = "Ingredient"
 itemTexturePath = "res://Assets/Sprites/Ingredients/pouch.png"
+itemQuantity = 5
 
 [node name="InventoryItem4" parent="Environment" instance=ExtResource("2_4rjj8")]
 z_index = 2
 y_sort_enabled = true
 position = Vector2(271, 70)
-itemName = "Grapevine"
+itemName = "Mandrake"
 itemType = "Ingredient"
 itemTexturePath = "res://Assets/Sprites/Ingredients/pouch.png"
+itemQuantity = 5
 
 [node name="InventoryItem5" parent="Environment" instance=ExtResource("2_4rjj8")]
 z_index = 2
 y_sort_enabled = true
 position = Vector2(267, 85)
-itemName = "Grapevine"
+itemName = "Dandelion"
 itemType = "Ingredient"
 itemTexturePath = "res://Assets/Sprites/Ingredients/pouch.png"
+itemQuantity = 5
 
 [node name="InventoryItem6" parent="Environment" instance=ExtResource("2_4rjj8")]
 z_index = 2
 y_sort_enabled = true
-position = Vector2(248, 84)
+position = Vector2(247, 84)
 itemName = "Grapevine"
 itemType = "Ingredient"
 itemTexturePath = "res://Assets/Sprites/Ingredients/pouch.png"
+itemQuantity = 5
 
 [node name="InventoryItem7" parent="Environment" instance=ExtResource("2_4rjj8")]
 z_index = 2
 y_sort_enabled = true
 position = Vector2(240, 99)
-itemName = "Grapevine"
+itemName = "Cherry Pits"
 itemType = "Ingredient"
 itemTexturePath = "res://Assets/Sprites/Ingredients/pouch.png"
+itemQuantity = 5
+
+[node name="InventoryItem8" parent="Environment" instance=ExtResource("2_4rjj8")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(222, 92)
+itemName = "Wolfsbane"
+itemType = "Ingredient"
+itemTexturePath = "res://Assets/Sprites/Ingredients/pouch.png"
+itemQuantity = 5
+
+[node name="InventoryItem9" parent="Environment" instance=ExtResource("2_4rjj8")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(216, 108)
+itemName = "Catnip"
+itemType = "Ingredient"
+itemTexturePath = "res://Assets/Sprites/Ingredients/pouch.png"
+itemQuantity = 5
+
+[node name="InventoryItem10" parent="Environment" instance=ExtResource("2_4rjj8")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(192, 93)
+itemName = "Sulfur"
+itemType = "Ingredient"
+itemTexturePath = "res://Assets/Sprites/Ingredients/pouch.png"
+itemQuantity = 5
+
+[node name="InventoryItem11" parent="Environment" instance=ExtResource("2_4rjj8")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(172, 98)
+itemName = "Salt"
+itemType = "Ingredient"
+itemTexturePath = "res://Assets/Sprites/Ingredients/pouch.png"
+itemQuantity = 5
+
+[node name="InventoryItem12" parent="Environment" instance=ExtResource("2_4rjj8")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(181, 78)
+itemName = "Mercury"
+itemType = "Ingredient"
+itemTexturePath = "res://Assets/Sprites/Ingredients/pouch.png"
+itemQuantity = 5
 
 [node name="TileMap" parent="Environment" instance=ExtResource("2_2xg1f")]
 position = Vector2(150, 114)
@@ -82,7 +132,7 @@ position = Vector2(221, 63)
 visible = false
 
 [node name="PlantPot" parent="Environment" instance=ExtResource("7_k2kyf")]
-position = Vector2(205, 89)
+position = Vector2(451, 112)
 plantReady = false
 
 [node name="Interactable" parent="Environment/PlantPot" instance=ExtResource("6_w2gfe")]
