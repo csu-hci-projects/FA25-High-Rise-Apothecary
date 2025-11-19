@@ -99,7 +99,7 @@ func _on_itemSent(item: Dictionary):
 
 func _on_button_pressed() -> void:
 	if sumPoints(0, pointTotals.size()) > 0:
-		if verifyMinimums(pointTotals, 0, 6, 10):
+		if verifyMinimums(pointTotals, 0, 6, 10) and verifyMinimums(pointTotals, 6, 9, 1):
 			var maxElements = findMaximums(pointTotals, 0, 6)
 			var maxAspects = findMaximums(pointTotals, 6, 9)
 			var chosenElement = maxElements.pick_random()
@@ -112,7 +112,7 @@ func _on_button_pressed() -> void:
 			pointTotals = [0, 0, 0, 0, 0, 0, 0, 0, 0]
 			updateTotals()
 		else:
-			print("Not enough elemental points!")
+			print("Not enough elemental or aspect points!")
 	else:
 		print("No ingredients in cauldron!")
 

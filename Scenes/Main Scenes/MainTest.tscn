@@ -116,7 +116,7 @@ layer_3/z_index = 3
 layer_3/tile_data = PackedInt32Array(393209, 1, 1, 327673, 1, 1, 262137, 131073, 1, 196601, 1, 1, 131065, 1, 1, 65529, 1, 1, -7, 1, 1, -65543, 1, 1, -131079, 1, 1, -196615, 1, 1, -262151, 1, 1, -327687, 1, 1, -393223, 1, 1, -458759, 1, 1, -524295, 1, 1, -589831, 1, 1, -655367, 1, 1, -720903, 1, 1, -720902, 1, 1, -720901, 327681, 1, -720900, 1, 1, -720899, 327681, 1, -720898, 1, 1, -720897, 327681, 1, -786432, 1, 1, -786431, 1, 1, -917501, 131073, 0, -851965, 131073, 0, -786429, 131073, 0, -786430, 1, 1, -1179645, 131073, 0, -1114109, 131073, 0, -1048573, 131073, 0, -1245181, 131073, 0, -1245180, 131073, 0, -1245179, 131073, 0, -1245178, 131073, 0, -1245177, 131073, 0, -1245176, 131073, 0, -1245175, 131073, 0, -1245174, 131073, 0, -1245173, 131073, 0, -1245172, 131073, 0, -983037, 131073, 0)
 
 [node name="CharacterBody2D" parent="Environment/TileMap" instance=ExtResource("3_4rjj8")]
-position = Vector2(0, -47)
+position = Vector2(9, -50)
 scale = Vector2(0.19999999, 0.19999999)
 
 [node name="Camera2D" type="Camera2D" parent="Environment/TileMap/CharacterBody2D"]
@@ -124,16 +124,18 @@ position = Vector2(0, 85.00001)
 scale = Vector2(0.9999998, 0.9999998)
 zoom = Vector2(2.99, 2.99)
 
-[node name="Cauldron" parent="Environment" instance=ExtResource("5_8vy8x")]
+[node name="Cauldron" parent="Environment/TileMap" instance=ExtResource("5_8vy8x")]
 z_index = 2
-position = Vector2(221, 63)
+position = Vector2(64, -52)
 
-[node name="Interactable" parent="Environment/Cauldron" instance=ExtResource("6_w2gfe")]
+[node name="Interactable" parent="Environment/TileMap/Cauldron" instance=ExtResource("6_w2gfe")]
 visible = false
 
-[node name="PlantPot" parent="Environment" instance=ExtResource("7_k2kyf")]
-position = Vector2(451, 112)
+[node name="PlantPot" parent="Environment/TileMap" instance=ExtResource("7_k2kyf")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(304, 0)
 plantReady = false
 
-[node name="Interactable" parent="Environment/PlantPot" instance=ExtResource("6_w2gfe")]
+[node name="Interactable" parent="Environment/TileMap/PlantPot" instance=ExtResource("6_w2gfe")]
 visible = false
