@@ -108,7 +108,6 @@ offset_right = 223.0
 offset_bottom = 100.0
 theme_override_font_sizes/font_size = 12
 text = "ItemEffect"
-autowrap_mode = 2
 
 [node name="UsagePanel" type="ColorRect" parent="." groups=["InventoryPanels"]]
 visible = false

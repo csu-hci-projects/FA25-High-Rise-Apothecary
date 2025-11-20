@@ -2,7 +2,7 @@ extends Control
 
 
 func _on_play_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/Main Scenes/mainTest.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Main Scenes/mainApartment.tscn")
 
 
 func _on_controls_pressed() -> void:

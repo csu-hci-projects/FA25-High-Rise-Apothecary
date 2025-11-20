@@ -58,6 +58,7 @@ func setItem(newItem):
 			itemEffect.text = assignEffect(newItem.pointTotals)
 		else:
 			itemEffect.text = str(newItem.itemEffect)
+			itemEffect.set_autowrap_mode(TextServer.AUTOWRAP_WORD)
 	else:
 		icon.texture = load(newItem["texturePath"])
 		quantityLabel.text = str(newItem["quantity"])
@@ -67,6 +68,7 @@ func setItem(newItem):
 			itemEffect.text = assignEffect(newItem["pointTotals"])
 		else:
 			itemEffect.text = str(newItem["effect"])
+			itemEffect.set_autowrap_mode(TextServer.AUTOWRAP_WORD)
 
 func _on_use_button_pressed() -> void:
 	usagePanel.visible = false
