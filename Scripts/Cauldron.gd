@@ -74,10 +74,12 @@ func createPotionGrid(grid: Array, gridWidth: int, gridHeight: int):
 	grid[Aspect.SPIRIT][Element.DARK] = "curse"
 	return grid
 
-func addIngredient(item: Dictionary):
-	if item["type"].contains("Ingredient"):
-		for i in range(item["pointTotals"].size()):
-			pointTotals[i] += item["pointTotals"][i]
+func addIngredient(addedItem):
+	var iType = addedItem.itemType if addedItem is InventoryItem else addedItem["type"]
+	var iTotals = addedItem.pointTotals if addedItem is InventoryItem else addedItem["pointTotals"]
+	if iType.contains("Ingredient"):
+		for i in range(iTotals.size()):
+			pointTotals[i] += iTotals[i]
 		updateTotals()
 	else:
 		push_error("!ERROR! Noningredient attempted to add to pot!")
@@ -93,9 +95,11 @@ func updateTotals():
 	bodyLabel.text = "Body: " + str(pointTotals[Aspect.BODY+6])
 	spiritLabel.text = "Spirit: " + str(pointTotals[Aspect.SPIRIT+6])
 
-func _on_itemSent(item: Dictionary):
+func _on_itemSent(item):
 	addIngredient(item)
-	GlobalInventory.removeItem(item["name"], item["type"])
+	var iName = item.itemName if item is InventoryItem else item["name"]
+	var iType = item.itemType if item is InventoryItem else item["type"]
+	GlobalInventory.removeItem(iName, iType)
 
 func _on_button_pressed() -> void:
 	if sumPoints(0, pointTotals.size()) > 0:
@@ -154,7 +158,7 @@ func determineTier():
 
 func createItem():
 	var newItem = itemScene.instantiate()
-	newItem.initiateItem("name", "type", "effect", "res://Assets/icon.svg", null, null)
+	newItem.initiateItem("name", "type", "effect", "res://Assets/icon.svg", 1, null, null)
 	return newItem
 
 func assignPotionValues(potionItem: InventoryItem, potionName: String, tier: int):

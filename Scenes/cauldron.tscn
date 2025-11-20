@@ -11,9 +11,9 @@ script = ExtResource("1_2rulr")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 z_index = -1
-position = Vector2(-0.22916603, -3.6666665)
-scale = Vector2(1.4583333, 1.4583333)
-polygon = PackedVector2Array(0, 14, 13, 8, 0, 2, -12, 8)
+position = Vector2(-0.17187524, -2.8333359)
+scale = Vector2(1.3541667, 1.3541667)
+polygon = PackedVector2Array(0, 14, 12.900002, 8.000001, 0, 2, -12, 8)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 y_sort_enabled = true

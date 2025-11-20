@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var speed = 100
+var speed = 200
 var money = 1000
 
 @onready var animatedSprite = $AnimatedSprite2D

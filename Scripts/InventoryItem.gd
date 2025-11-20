@@ -67,9 +67,15 @@ func pickupItem():
 	if itemType.contains("Ingredient"):
 		itemEffect = setEffect()
 	var tempItem = GlobalInventory.getItemDupe(0)
-	tempItem["quantity"] = 1
-	GlobalInventory.addItem(tempItem) # stupid fix for sorting inventory
-	GlobalInventory.removeItem(tempItem["name"], tempItem["type"])
+	if tempItem is InventoryItem:
+		tempItem.itemQuantity = 1
+		GlobalInventory.addItem(tempItem) # stupid fix for sorting inventory
+		GlobalInventory.removeItem(tempItem.itemName, tempItem.itemType)
+	else:
+		tempItem["quantity"] = 1
+		GlobalInventory.addItem(tempItem) # stupid fix for sorting inventory
+		GlobalInventory.removeItem(tempItem["name"], tempItem["type"])
+	
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"): # check if player is what's colliding
@@ -95,11 +101,12 @@ func setItemData(data: Dictionary):
 	if data["pointTotals"] != null:
 		pointTotals = data["pointTotals"]
 
-func initiateItem(newItemName: String, newItemType: String, newItemEffect: String, newItemTexturePath: String, newItemTier, newItemPoints):
+func initiateItem(newItemName: String, newItemType: String, newItemEffect: String, newItemTexturePath: String, newItemQuantity: int, newItemTier, newItemPoints):
 	itemName = newItemName
 	itemType = newItemType
 	itemEffect = newItemEffect
 	itemTexturePath = newItemTexturePath
+	itemQuantity = newItemQuantity
 	if newItemTier != null:
 		potionTier = newItemTier
 	if newItemPoints != null:

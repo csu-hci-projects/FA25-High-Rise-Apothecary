@@ -22,39 +22,56 @@ func getItemDirect(slot):
 func getItemDupe(slot):
 	return inventory[slot].duplicate()
 
-func addItem(item):
+func addItem(newItem):
 	for i in range(inventory.size()):
 		if inventory[i] != null:
 			var iName = inventory[i].itemName if inventory[i] is InventoryItem else inventory[i]["name"]
 			var iType = inventory[i].itemType if inventory[i] is InventoryItem else inventory[i]["type"]
-			var iQuantity = item.itemQuantity if item is InventoryItem else item["quantity"]
+			var niName = newItem.itemName if newItem is InventoryItem else newItem["name"]
+			var niType = newItem.itemType if newItem is InventoryItem else newItem["type"]
+			var niQuantity = newItem.itemQuantity if newItem is InventoryItem else newItem["quantity"]
 			if iType == "Potion":
 				var iTier = inventory[i].potionTier if inventory[i] is InventoryItem else inventory[i]["tier"]
-				if iName == item["name"] and iType == item["type"] and iTier == item["tier"]:
-					inventory[i]["quantity"] += iQuantity
+				var niTier = newItem.potionTier if newItem is InventoryItem else newItem["tier"]
+				if iName == niName and iType == niType and iTier == niTier:
+					if inventory[i] is InventoryItem:
+						inventory[i].itemQuantity += niQuantity
+					else:
+						inventory[i]["quantity"] += niQuantity
 					inventoryUpdated.emit()
 					return true
 			else:
-				if iName == item["name"] and iType == item["type"]: # if this item is already in the inventory
-					inventory[i]["quantity"] += iQuantity
+				if iName == niName and iType == niType: # if this item is already in the inventory
+					if inventory[i] is InventoryItem:
+						inventory[i].itemQuantity += niQuantity
+					else:
+						inventory[i]["quantity"] += niQuantity
 					inventoryUpdated.emit()
 					return true
 		elif inventory[i] == null: # if there is an empty slot
-			inventory[i] = item
+			inventory[i] = newItem
 			inventoryUpdated.emit()
 			return true
 	changeInvSize(8) # only reached if no inv space
-	if !addItem(item): # recursive call, should only happen once
+	if !addItem(newItem): # recursive call, should only happen once
 		push_error("!ERROR! addItem not working!")
 		return false
 
 func removeItem(itemName, itemType):
 	for i in range(inventory.size()):
-		if inventory[i] != null and inventory[i]["name"] == itemName and inventory[i]["type"] == itemType:
-			inventory[i]["quantity"] -= 1
-			if inventory[i]["quantity"] <= 0:
-				inventory.pop_at(i)
-				changeInvSize(1)
+		var iName = inventory[i].itemName if inventory[i] is InventoryItem else inventory[i]["name"]
+		var iType = inventory[i].itemType if inventory[i] is InventoryItem else inventory[i]["type"]
+		if inventory[i] != null and iName == itemName and iType == itemType:
+			if inventory[i] is InventoryItem:
+				inventory[i].itemQuantity -= 1
+				if inventory[i].itemQuantity <= 0:
+					inventory.pop_at(i)
+					changeInvSize(1)
+			else:
+				inventory[i]["quantity"] -= 1
+				if inventory[i]["quantity"] <= 0:
+					inventory.pop_at(i)
+					changeInvSize(1)
 			inventoryUpdated.emit()
 			return true
 	return false

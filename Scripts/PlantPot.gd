@@ -6,11 +6,13 @@ var spriteTexture = Texture
 var currentPlant = createItem()
 @export_file_path() var plantTexturePath = ""
 @export var plantReady = true
-var spriteChanged = false
 
 var playerInRange = false
 
 const itemScene = preload("res://Scenes/inventoryItem.tscn")
+const emptyPath = "res://Assets/Sprites/Environment/empty pot.png"
+const plantedPath = "res://Assets/Sprites/Environment/planted pot.png"
+const readyPath = "res://Assets/Sprites/Environment/ready pot.png"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -21,37 +23,55 @@ func _ready() -> void:
 	if not Engine.is_editor_hint():
 		spriteTexture = load(spriteTexturePath)
 		sprite.texture = spriteTexture
+	_on_time_passed()
 	updateSprite()
+	assignPlantValues("Catnip")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Engine.is_editor_hint():
 		sprite.texture = spriteTexture
-	if spriteChanged:
-		updateSprite()
 
 func _on_interacted():
-	spriteChanged = true
-	plantReady = false
+	if currentPlant.itemName == "nullName":
+		openPlanterUI()
+	else:
+		if plantReady:
+			harvestPlant()
+			updateSprite()
 
 func _on_time_passed():
 	plantReady = true
-	spriteChanged = true
+	updateSprite()
 
 func updateSprite():
-	if currentPlant != null:
+	if currentPlant.itemName != "nullName":
 		var iName = currentPlant.itemName
 		plantTexturePath = "res://Assets/Sprites/Ingredients" + iName + ".png"
-		spriteTexturePath = "res://Assets/Sprites/Environment/planted pot.png"
+		spriteTexturePath = plantedPath
 	else:
-		spriteTexturePath = "res://Assets/Sprites/Environment/empty pot.png"
+		spriteTexturePath = emptyPath
 	if plantReady:
-		spriteTexturePath = "res://Assets/Sprites/Environment/ready pot.png"
+		spriteTexturePath = readyPath
 	spriteTexture = load(spriteTexturePath)
 	sprite.texture = spriteTexture
-	spriteChanged = false
 
 func createItem():
 	var newItem = itemScene.instantiate()
-	newItem.initiateItem("name", "type", "effect", "res://Assets/icon.svg", null, null)
+	newItem.initiateItem("nullName", "Ingredient", "nullEffect", "res://Assets/icon.svg", 5, null, null)
 	return newItem
+
+func assignPlantValues(plantName):
+	currentPlant.itemName = plantName
+	#currentPlant.itemTexturePath = "res://Assets/Sprites/Ingredients/" + plantName + ".png"
+	var texturePath = "res://Assets/Sprites/Ingredients/pouch.png"
+	currentPlant.itemTexturePath = texturePath
+	currentPlant.itemTexture = load(texturePath)
+	currentPlant.assignPointTotals(plantName)
+
+func openPlanterUI():
+	pass
+
+func harvestPlant():
+	GlobalInventory.addItem(currentPlant)
+	plantReady = false

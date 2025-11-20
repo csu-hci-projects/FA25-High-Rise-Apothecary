@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b5vhwkkc8wts7"]
 
-[ext_resource type="Script" uid="uid://ycbrk0jxn765" path="res://Scripts/PlantPot.gd" id="1_145di"]
+[ext_resource type="Script" path="res://Scripts/PlantPot.gd" id="1_145di"]
 [ext_resource type="Texture2D" uid="uid://b6ycs0ywiudb6" path="res://Assets/Sprites/Environment/empty pot.png" id="1_rotea"]
 
 [node name="PlantPot" type="Node2D"]
@@ -9,9 +9,9 @@ script = ExtResource("1_145di")
 [node name="Area2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-position = Vector2(-0.22916603, -3.6666665)
-scale = Vector2(1.4583333, 1.4583333)
-polygon = PackedVector2Array(0, 14, 13, 8, 0, 2, -12, 8)
+position = Vector2(-0.12499977, -1.9999993)
+scale = Vector2(1.2499999, 1.2499998)
+polygon = PackedVector2Array(0, 14, 12.100001, 8.000001, 0, 2, -12, 8)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 unique_name_in_owner = true
