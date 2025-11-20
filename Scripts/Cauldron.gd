@@ -96,10 +96,11 @@ func updateTotals():
 	spiritLabel.text = "Spirit: " + str(pointTotals[Aspect.SPIRIT+6])
 
 func _on_itemSent(item):
-	addIngredient(item)
-	var iName = item.itemName if item is InventoryItem else item["name"]
-	var iType = item.itemType if item is InventoryItem else item["type"]
-	GlobalInventory.removeItem(iName, iType)
+	if Globals.openUI.contains("pot"):
+		addIngredient(item)
+		var iName = item.itemName if item is InventoryItem else item["name"]
+		var iType = item.itemType if item is InventoryItem else item["type"]
+		GlobalInventory.removeItem(iName, iType)
 
 func _on_button_pressed() -> void:
 	if sumPoints(0, pointTotals.size()) > 0:
@@ -113,6 +114,7 @@ func _on_button_pressed() -> void:
 			var potionTier = determineTier()
 			createdPotion = assignPotionValues(createdPotion, potionName, potionTier)
 			GlobalInventory.addItem(createdPotion)
+			GlobalInventory.inventoryUpdated.emit() # fix sorting
 			pointTotals = [0, 0, 0, 0, 0, 0, 0, 0, 0]
 			updateTotals()
 		else:

@@ -29,8 +29,10 @@ func _on_item_button_pressed() -> void:
 			useButton.text = "Sell"
 		elif iType.contains("Ingredient") and Globals.openUI == "pot inv":
 			useButton.text = "Add"
+		elif iType.contains("Seedling") and Globals.openUI == "planter inv":
+			useButton.text = "Plant"
 		else:
-			useButton.text = "Use"
+			useButton.text = "Cannot use"
 		usagePanel.visible = !usagePanel.visible
 		detailsPanel.visible = !detailsPanel.visible
 
@@ -77,6 +79,8 @@ func _on_use_button_pressed() -> void:
 		if Globals.openUI == "shop inv" and iType == "Potion": #TODO ADD FUNCTIONALITY FOR SHOPS
 			GlobalInventory.removeItem(currentItem["name"], currentItem["type"])
 		elif Globals.openUI == "pot inv" and iType.contains("Ingredient"):
+			GlobalInventory.itemSent.emit(currentItem)
+		elif Globals.openUI == "planter inv" and iType.contains("Seedling"):
 			GlobalInventory.itemSent.emit(currentItem)
 
 func assignEffect(pointTotals):

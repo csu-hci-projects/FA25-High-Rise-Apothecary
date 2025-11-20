@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b5vhwkkc8wts7"]
 
-[ext_resource type="Script" path="res://Scripts/PlantPot.gd" id="1_145di"]
+[ext_resource type="Script" uid="uid://ycbrk0jxn765" path="res://Scripts/PlantPot.gd" id="1_145di"]
 [ext_resource type="Texture2D" uid="uid://b6ycs0ywiudb6" path="res://Assets/Sprites/Environment/empty pot.png" id="1_rotea"]
 
 [node name="PlantPot" type="Node2D"]
@@ -19,3 +19,132 @@ y_sort_enabled = true
 position = Vector2(0, -1)
 scale = Vector2(1, 0.99999994)
 texture = ExtResource("1_rotea")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="PlanterMenu" type="ColorRect" parent="CanvasLayer"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.0
+offset_top = -200.0
+offset_right = 260.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.21950102, 0.21950102, 0.21950093, 1)
+
+[node name="PotTextureRect" type="TextureRect" parent="CanvasLayer/PlanterMenu"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 38.0
+offset_top = 38.0
+offset_right = 362.0
+offset_bottom = 362.0
+texture = ExtResource("1_rotea")
+
+[node name="UprootPanel" type="Panel" parent="CanvasLayer/PlanterMenu"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -140.0
+offset_top = -60.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="UprootButton" type="Button" parent="CanvasLayer/PlanterMenu/UprootPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Uproot"
+
+[node name="GrowPanel" type="Panel" parent="CanvasLayer/PlanterMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 120.0
+offset_top = 92.0
+offset_right = 240.0
+offset_bottom = 132.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GrowButton" type="Button" parent="CanvasLayer/PlanterMenu/GrowPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Grow"
+
+[node name="Panel" type="Panel" parent="CanvasLayer/PlanterMenu"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -140.0
+offset_top = 56.0
+offset_right = -20.0
+offset_bottom = 201.0
+grow_horizontal = 0
+
+[node name="PlantTextureRect" type="TextureRect" parent="CanvasLayer/PlanterMenu/Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -60.0
+offset_right = 60.0
+offset_bottom = 120.0
+grow_horizontal = 2
+expand_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/PlanterMenu/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -60.0
+offset_top = -32.0
+offset_right = 60.0
+offset_bottom = -7.0
+grow_horizontal = 2
+text = "Chosen Plant:"
+horizontal_alignment = 1
+
+[node name="PlantLabel" type="Label" parent="CanvasLayer/PlanterMenu/Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -60.0
+offset_top = -25.0
+offset_right = 60.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "None"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="CanvasLayer/PlanterMenu/UprootPanel/UprootButton" to="." method="_on_uproot_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/PlanterMenu/GrowPanel/GrowButton" to="." method="_on_grow_button_pressed"]

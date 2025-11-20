@@ -25,6 +25,10 @@ func changeUI(UI):
 				openUI = "pot inv"
 			elif openUI == "pot inv": #if pot and inventroy UI is open
 				openUI = "pot"
+			elif openUI == "planter": #if planter UI is open
+				openUI = "planter inv"
+			elif openUI == "planter inv": #if planter and inventory UI is open
+				openUI = "planter"
 		"shop":
 			if openUI == "none":
 				openUI = "shop"
@@ -34,5 +38,10 @@ func changeUI(UI):
 			if openUI == "none":
 				openUI = "pot"
 			elif openUI == "pot":
+				openUI = "none"
+		"planter":
+			if openUI == "none":
+				openUI = "planter"
+			elif openUI == "planter":
 				openUI = "none"
 	print("Current UI = ", openUI)

@@ -4,7 +4,7 @@ var inventory = []
 
 signal inventoryUpdated
 @warning_ignore("unused_signal")
-signal itemSent
+signal itemSent(item)
 
 var playerNode: Node = null
 

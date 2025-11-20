@@ -88,8 +88,9 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 		body.interactUI.visible = false
 
 func assignPointTotals(key: String):
-	for i in range(self["pointTotals"].size()):
-		self["pointTotals"][i] = ingredientTotals[key][i]
+	var iPointTotals = self.pointTotals if self is InventoryItem else self["pointTotals"]
+	for i in range(iPointTotals.size()):
+		iPointTotals[i] = ingredientTotals[key][i]
 
 func setItemData(data: Dictionary):
 	itemName = data["name"]
@@ -111,6 +112,9 @@ func initiateItem(newItemName: String, newItemType: String, newItemEffect: Strin
 		potionTier = newItemTier
 	if newItemPoints != null:
 		pointTotals = newItemPoints
+
+func setTexture(newTexturePath: String):
+	itemTexture = load(newTexturePath)
 
 func setEffect():
 	var effect = ""

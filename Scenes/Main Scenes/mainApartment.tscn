@@ -55,19 +55,19 @@ itemQuantity = 5
 [node name="InventoryItem7" parent="Environment/Items" instance=ExtResource("2_4rjj8")]
 z_index = 2
 y_sort_enabled = true
-position = Vector2(28, 140)
+position = Vector2(447, 86)
 itemName = "Cherry Pits"
-itemType = "Ingredient"
-itemTexturePath = "res://Assets/Sprites/Ingredients/pouch.png"
+itemType = "Seedling"
+itemTexturePath = "res://Assets/Sprites/Seedlings/seed.png"
 itemQuantity = 5
 
 [node name="InventoryItem8" parent="Environment/Items" instance=ExtResource("2_4rjj8")]
 z_index = 2
 y_sort_enabled = true
-position = Vector2(10, 128)
-itemName = "Wolfsbane"
-itemType = "Ingredient"
-itemTexturePath = "res://Assets/Sprites/Ingredients/pouch.png"
+position = Vector2(427, 80)
+itemName = "Catnip"
+itemType = "Seedling"
+itemTexturePath = "res://Assets/Sprites/Seedlings/seed.png"
 itemQuantity = 5
 
 [node name="InventoryItem9" parent="Environment/Items" instance=ExtResource("2_4rjj8")]
@@ -117,7 +117,7 @@ layer_3/y_sort_origin = 3
 layer_3/z_index = 3
 
 [node name="CharacterBody2D" parent="Environment/TileMap" instance=ExtResource("3_4rjj8")]
-position = Vector2(256, -24)
+position = Vector2(205, -45)
 scale = Vector2(0.19999999, 0.19999999)
 
 [node name="Camera2D" type="Camera2D" parent="Environment/TileMap/CharacterBody2D"]
