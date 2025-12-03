@@ -3,7 +3,7 @@ extends Node2D
 @onready var sprite = %Sprite2D
 var spriteTexture = Texture
 @export_file_path() var spriteTexturePath = "res://Assets/Sprites/Environment/empty pot.png"
-var currentPlant = createNullItem()
+var currentPlant = createItem("nullName")
 var plantTexture = Texture
 @export_file_path() var plantTexturePath = ""
 @export var plantReady = true
@@ -45,8 +45,13 @@ func _on_interacted():
 	if plantReady and Globals.openUI == "none":
 		harvestPlant()
 		updateSprite()
-	else:
+		resetAction()
+	elif Globals.openUI == "none" and Globals.lastAction != "E":
 		openPlanterUI()
+	elif planterMenu.visible:
+		openPlanterUI()
+		resetAction()
+	Globals.lastAction = "E"
 
 func _on_timePassed():
 	if currentPlant is InventoryItem:
@@ -61,7 +66,7 @@ func _on_timePassed():
 func updateSprite():
 	var iName = currentPlant.itemName if currentPlant is InventoryItem else currentPlant["name"]
 	if iName != "nullName":
-		#plantTexturePath = "res://Assets/Sprites/Ingredients" + iName + ".png"
+		#plantTexturePath = "res://Assets/Sprites/PLants" + iName + ".png"
 		plantTexturePath = "res://Assets/Sprites/Ingredients/pouch.png"
 		spriteTexturePath = plantedPath
 	else:
@@ -74,11 +79,6 @@ func updateSprite():
 	if plantTexturePath != "":
 		plantTexture = load(plantTexturePath)
 		plantTextureRect.texture = plantTexture
-
-func createNullItem():
-	var newItem = itemScene.instantiate()
-	newItem.initiateItem("nullName", "Ingredient", "nullEffect", "res://Assets/icon.svg", 5, null, null)
-	return newItem
 
 func createItem(itemName):
 	var newItem = itemScene.instantiate()
@@ -99,7 +99,7 @@ func openPlanterUI():
 	planterMenu.visible = !planterMenu.visible
 
 func _on_itemSent(item):
-	if Globals.openUI.contains("planter"):
+	if Globals.openUI.contains("planter") and planterMenu.visible:
 		plantSeed(item)
 
 func plantSeed(item):
@@ -127,10 +127,15 @@ func harvestPlant():
 	plantReady = false
 
 func _on_uproot_button_pressed() -> void:
-	currentPlant = createNullItem()
+	currentPlant = createItem("nullName")
 	updateSprite()
 	plantTextureRect.texture = null
 	plantLabel.text = "None"
 	
 func _on_grow_button_pressed() -> void:
 	_on_timePassed()
+
+func resetAction():
+	await get_tree().create_timer(0.1).timeout
+	Globals.lastAction = "null"
+	print("Last action: " + Globals.lastAction)

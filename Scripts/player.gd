@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var speed = 200
+var speed = 100
 var money = 1000
 
 @onready var animatedSprite = $AnimatedSprite2D
@@ -16,6 +16,7 @@ func getInput():
 	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	if direction and Globals.openUI == "none":
 		self.velocity = direction * speed
+		Globals.lastAction = "move"
 	else:
 		self.velocity = Vector2.ZERO
 

@@ -1,6 +1,7 @@
 extends Node
 
 @onready var openUI = "none"
+@onready var lastAction = ""
 
 func setGroupVisibility(groupName: String, visible: bool):
 	var nodesInGroup = get_tree().get_nodes_in_group(groupName)
