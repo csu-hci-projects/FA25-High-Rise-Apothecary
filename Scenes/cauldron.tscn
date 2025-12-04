@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b3mi7kqulyjtu"]
 
-[ext_resource type="Script" uid="uid://dktbpqyapfugu" path="res://Workstation.gd" id="1_2rulr"]
+[ext_resource type="Script" uid="uid://bm7ty2h7ixlae" path="res://Scripts/Cauldron.gd" id="1_2rulr"]
 [ext_resource type="Texture2D" uid="uid://c8bgmxtxwv64f" path="res://Assets/Sprites/Environment/cauldron.png" id="1_2xink"]
 
 [node name="Cauldron" type="Node2D"]

@@ -101,7 +101,6 @@ func _on_itemSent(item):
 		var iName = item.itemName if item is InventoryItem else item["name"]
 		var iType = item.itemType if item is InventoryItem else item["type"]
 		GlobalInventory.removeItem(iName, iType)
-		
 
 func _on_button_pressed() -> void:
 	if sumPoints(0, pointTotals.size()) > 0:
