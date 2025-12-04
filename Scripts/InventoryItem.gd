@@ -115,6 +115,9 @@ func initiateItem(newItemName: String, newItemType: String, newItemEffect: Strin
 
 func setTexture(newTexturePath: String):
 	itemTexture = load(newTexturePath)
+	
+func increaseWater():
+	pointTotals[0] += 10
 
 func setEffect():
 	var effect = ""

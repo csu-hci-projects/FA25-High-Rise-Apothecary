@@ -97,11 +97,16 @@ func updateTotals():
 
 func _on_itemSent(item):
 	if Globals.openUI.contains("pot"):
-		addIngredient(item)
 		var iName = item.itemName if item is InventoryItem else item["name"]
 		var iType = item.itemType if item is InventoryItem else item["type"]
 		GlobalInventory.removeItem(iName, iType)
 		
+		var newItem = itemScene.instantiate()
+		
+		item["pointTotals"][0] += 10
+		
+		newItem.initiateItem(iName, iType, item["effect"], "res://Assets/icon.svg", 1, null, item["pointTotals"])
+		GlobalInventory.addItem(newItem)
 
 func _on_button_pressed() -> void:
 	if sumPoints(0, pointTotals.size()) > 0:
