@@ -1,12 +1,20 @@
-[gd_scene load_steps=8 format=3 uid="uid://cocmh2nvc4blg"]
+[gd_scene load_steps=11 format=3 uid="uid://cocmh2nvc4blg"]
 
 [ext_resource type="Script" uid="uid://b6tsacmewolds" path="res://Scripts/MainTest.gd" id="1_gi8e0"]
-[ext_resource type="PackedScene" uid="uid://bybxe4e1stfx" path="res://Scenes/tileMap.tscn" id="2_2xg1f"]
+[ext_resource type="PackedScene" path="res://Scenes/tileMap.tscn" id="2_2xg1f"]
 [ext_resource type="PackedScene" uid="uid://cid8bdfpl8uxc" path="res://Scenes/inventoryItem.tscn" id="2_4rjj8"]
 [ext_resource type="PackedScene" uid="uid://pe2sq3jvjs8w" path="res://Scenes/player.tscn" id="3_4rjj8"]
+[ext_resource type="Shader" uid="uid://c4wlfs0it6mtf" path="res://Assets/Shaders/outline.gdshader" id="3_u0jhp"]
 [ext_resource type="PackedScene" uid="uid://b3mi7kqulyjtu" path="res://Scenes/cauldron.tscn" id="5_8vy8x"]
 [ext_resource type="PackedScene" uid="uid://ce35qsnru2nkx" path="res://Scenes/Component Scenes/interactable.tscn" id="6_w2gfe"]
 [ext_resource type="PackedScene" uid="uid://b5vhwkkc8wts7" path="res://Scenes/plantPot.tscn" id="7_k2kyf"]
+[ext_resource type="PackedScene" uid="uid://c4l6vo8lg58vp" path="res://Scenes/PrepStation.tscn" id="8_3bt1m"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u0jhp"]
+shader = ExtResource("3_u0jhp")
+shader_parameter/active = true
+shader_parameter/line_color = Color(1, 0, 0, 1)
+shader_parameter/line_thickness = 3.0
 
 [node name="MainTest" type="Node2D"]
 y_sort_enabled = true
@@ -100,7 +108,8 @@ itemQuantity = 5
 [node name="InventoryItem12" parent="Environment/Items" instance=ExtResource("2_4rjj8")]
 z_index = 2
 y_sort_enabled = true
-position = Vector2(216, 101)
+material = SubResource("ShaderMaterial_u0jhp")
+position = Vector2(244, 88)
 itemName = "Mercury"
 itemType = "Ingredient"
 itemTexturePath = "res://Assets/Sprites/Ingredients/pouch.png"
@@ -109,7 +118,7 @@ itemQuantity = 5
 [node name="TileMap" parent="Environment" instance=ExtResource("2_2xg1f")]
 position = Vector2(150, 114)
 layer_0/tile_data = PackedInt32Array(-196610, 65537, 1, -131074, 65537, 1, -65538, 65537, 1, -2, 65537, 1, 65534, 65537, 1, 65535, 65537, 1, 0, 65537, 1, -65535, 65537, 1, -131071, 65537, 1, -196607, 65537, 1, -196608, 65537, 1, -262144, 65537, 1, -262143, 65537, 1, -196609, 65537, 1, -131073, 65537, 1, -65537, 65537, 1, -1, 65537, 1, -65536, 65537, 1, -131072, 65537, 1, -262146, 65537, 1, -262145, 65537, 1, -327681, 65537, 1, -393216, 65537, 1, -393215, 65537, 1, -327679, 65537, 1, -327680, 65537, 1, -196606, 65537, 1, -131070, 65537, 1, -65534, 65537, 1, 131074, 65537, 1, 131073, 65537, 1, 131072, 65537, 1, 196607, 65537, 1, 196606, 65537, 1, 131070, 65537, 1, 65536, 65537, 1, 131071, 65537, 1, 196605, 65537, 1, 196604, 65537, 1, -4, 65537, 1, -65540, 65537, 1, -65539, 65537, 1, -131075, 65537, 1, -196611, 65537, 1, -262147, 65537, 1, -262148, 65537, 1, -327684, 65537, 1, -327683, 65537, 1, -327682, 65537, 1, -196612, 65537, 1, -131076, 65537, 1, -3, 65537, 1, -393220, 65537, 1, -393219, 65537, 1, -458755, 65537, 1, -458756, 65537, 1, -524291, 65537, 1, -524292, 65537, 1, -524290, 65537, 1, -458753, 65537, 1, -524289, 65537, 1, -524288, 65537, 1, -524287, 65537, 1, -589823, 65537, 1, -589824, 65537, 1, -458752, 65537, 1, -393217, 65537, 1, -393218, 65537, 1, -458754, 65537, 1, -458751, 65537, 1, 262140, 65537, 1, 262141, 65537, 1, 262142, 65537, 1, 262143, 65537, 1, 196608, 65537, 1, 196609, 65537, 1, 196610, 65537, 1, 262146, 65537, 1, 327682, 65537, 1, 393218, 65537, 1, 458754, 65537, 1, 458753, 65537, 1, 393217, 65537, 1, 393216, 65537, 1, 458751, 65537, 1, 524287, 65537, 1, 458752, 65537, 1, 524286, 65537, 1, 458750, 65537, 1, 524285, 65537, 1, 458749, 65537, 1, 458748, 65537, 1, 393212, 65537, 1, 327676, 65537, 1, 327677, 65537, 1, 393213, 65537, 1, 524284, 65537, 1, 393214, 65537, 1, 327678, 65537, 1, 327679, 65537, 1, 393215, 65537, 1, 262144, 65537, 1, 327680, 65537, 1, 327681, 65537, 1, 262145, 65537, 1, -458748, 65537, 1, 65537, 65537, 1, 65538, 65537, 1, 131069, 65537, 1, 131068, 65537, 1, 131067, 458753, 0, 196603, 458753, 0, 262139, 458753, 0, 327675, 458753, 0, 393211, 458753, 0, 458747, 458753, 0, 524283, 458753, 0, 589819, 458753, 0, 589820, 458753, 0, 589821, 458753, 0, 589822, 458753, 0, 589823, 458753, 0, 524288, 458753, 0, 524289, 458753, 0, 524290, 458753, 0, 524291, 458753, 0, 458755, 458753, 0, 393219, 458753, 0, 327683, 458753, 0, 262147, 458753, 0, 196611, 458753, 0, 131075, 458753, 0, 65539, 458753, 0, 3, 458753, 0, -65533, 458753, 0, -524284, 65537, 1, -655357, 458753, 0, -655358, 458753, 0, -655359, 458753, 0, -655360, 458753, 0, -589825, 458753, 0, -589826, 458753, 0, -655362, 458753, 0, -65541, 458753, 0, -131077, 458753, 0, -196613, 458753, 0, -262149, 458753, 0, -327685, 458753, 0, -393221, 458753, 0, -458757, 458753, 0, -524293, 458753, 0, -589829, 458753, 0, -589828, 458753, 0, -589827, 458753, 0, -5, 458753, 0, 65531, 458753, 0, -917499, 458753, 0, -851963, 458753, 0, -786427, 458753, 0, -655355, 458753, 0, -589819, 65537, 1, -524283, 65537, 1, -458747, 65537, 1, -393211, 458753, 0, -327675, 458753, 0, -262139, 458753, 0, -917498, 65537, 1, -851962, 65537, 1, -786426, 65537, 1, -720890, 65537, 1, -655354, 65537, 1, -589818, 65537, 1, -524282, 65537, 1, -458746, 65537, 1, -393210, 65537, 1, -327674, 65537, 1, -262138, 65537, 1, -196602, 458753, 0, -917497, 65537, 1, -851961, 65537, 1, -786425, 65537, 1, -720889, 65537, 1, -655353, 65537, 1, -589817, 65537, 1, -524281, 65537, 1, -458745, 65537, 1, -393209, 65537, 1, -327673, 65537, 1, -262137, 65537, 1, -196601, 458753, 0, -917496, 65537, 1, -851960, 65537, 1, -786424, 65537, 1, -720888, 65537, 1, -655352, 65537, 1, -589816, 65537, 1, -524280, 65537, 1, -458744, 65537, 1, -393208, 65537, 1, -327672, 65537, 1, -262136, 65537, 1, -196600, 458753, 0, -917495, 65537, 1, -851959, 65537, 1, -786423, 65537, 1, -720887, 65537, 1, -655351, 65537, 1, -589815, 65537, 1, -524279, 65537, 1, -458743, 65537, 1, -393207, 65537, 1, -327671, 65537, 1, -262135, 65537, 1, -196599, 458753, 0, -917494, 65537, 1, -851958, 65537, 1, -786422, 65537, 1, -720886, 65537, 1, -655350, 65537, 1, -589814, 65537, 1, -524278, 65537, 1, -458742, 65537, 1, -393206, 65537, 1, -327670, 65537, 1, -262134, 65537, 1, -196598, 458753, 0, -917493, 65537, 1, -851957, 65537, 1, -786421, 65537, 1, -720885, 65537, 1, -655349, 65537, 1, -589813, 65537, 1, -524277, 65537, 1, -458741, 65537, 1, -393205, 65537, 1, -327669, 65537, 1, -262133, 65537, 1, -196597, 458753, 0, -917492, 65537, 1, -851956, 65537, 1, -786420, 65537, 1, -720884, 65537, 1, -655348, 65537, 1, -589812, 65537, 1, -524276, 65537, 1, -458740, 65537, 1, -393204, 65537, 1, -327668, 65537, 1, -262132, 65537, 1, -196596, 458753, 0, -917491, 65537, 1, -851955, 65537, 1, -786419, 65537, 1, -720883, 65537, 1, -655347, 65537, 1, -589811, 65537, 1, -524275, 65537, 1, -458739, 65537, 1, -393203, 65537, 1, -327667, 65537, 1, -262131, 65537, 1, -196595, 458753, 0, -917490, 65537, 1, -851954, 65537, 1, -786418, 65537, 1, -720882, 65537, 1, -655346, 65537, 1, -589810, 65537, 1, -524274, 65537, 1, -458738, 65537, 1, -393202, 65537, 1, -327666, 65537, 1, -262130, 65537, 1, -196594, 458753, 0, -917489, 458753, 0, -851953, 458753, 0, -786417, 458753, 0, -720881, 458753, 0, -655345, 458753, 0, -589809, 458753, 0, -524273, 458753, 0, -458737, 458753, 0, -393201, 458753, 0, -327665, 458753, 0, -262129, 458753, 0, -196593, 458753, 0, -1048571, 458753, 0, -983035, 458753, 0, -1048570, 65537, 1, -983034, 65537, 1, -1048569, 65537, 1, -983033, 65537, 1, -1048568, 65537, 1, -983032, 65537, 1, -1048567, 65537, 1, -983031, 65537, 1, -1048566, 65537, 1, -983030, 65537, 1, -1048565, 65537, 1, -983029, 65537, 1, -1048564, 65537, 1, -983028, 65537, 1, -1048563, 65537, 1, -983027, 65537, 1, -1048562, 65537, 1, -983026, 65537, 1, -1048561, 458753, 0, -983025, 458753, 0, -589822, 65537, 1, -524286, 65537, 1, -458750, 65537, 1, -393214, 65537, 1, -327678, 65537, 1, -262142, 65537, 1, -524285, 65537, 1, -458749, 65537, 1, -393213, 458753, 0, -327677, 458753, 0, -196603, 458753, 0, -393212, 458753, 0, -262141, 458753, 0, -196605, 458753, 0, -131069, 458753, 0, -655356, 458753, 0, -720891, 458753, 0, -589820, 65537, 1, -589821, 65537, 1, 2, 458753, 0, 1, 458753, 0, 65533, 458753, 0, 65532, 458753, 0, -1114098, 458753, 0, -1114099, 458753, 0, -1114100, 458753, 0, -1114097, 458753, 0, -1114101, 458753, 0, -1114102, 458753, 0, -1114103, 458753, 0, -1114104, 458753, 0, -1114105, 458753, 0, -1114106, 458753, 0, -1114107, 458753, 0)
-layer_1/tile_data = PackedInt32Array(-589829, 1, 0, -524293, 1, 0, -458757, 1, 0, -393221, 1, 0, -327685, 1, 0, -262149, 1, 0, -589827, 1, 0, -589828, 1, 0, -589826, 1, 0, -589825, 1, 0, -655359, 1, 0, -393218, 1, 0, -393217, 1, 0, -327681, 1, 0, -327682, 1, 0, -655360, 1, 0, 196605, 393217, 0, 131072, 393217, 0, 393215, 393217, 0, -655348, 262145, 0, -458740, 262145, 0, -393210, 262145, 0, -393209, 262145, 0, -393207, 262145, 0, -393206, 262145, 0, -589812, 262145, 0, -393204, 262145, 0, 393214, 393217, 0, -983034, 262145, 0, -786426, 262145, 0, -851956, 262145, 0, -1048570, 262145, 0, -851962, 262145, 0, -1048568, 262145, 0, -1048567, 262145, 0, -1048565, 262145, 0, -1048564, 262145, 0, -917492, 262145, 0, -655366, 1, 1, -589830, 1, 1, -524294, 1, 1, -458758, 1, 1, -393222, 1, 1, -327686, 1, 1, -262150, 1, 1, -196614, 1, 1, -131078, 196609, 1, -65542, 1, 1, -6, 1, 1, 65530, 1, 1, 131066, 1, 1, 196602, 1, 1, 262138, 1, 1, 327674, 196609, 1, 393210, 1, 1, 458746, 1, 1, -655365, 1, 1, -655364, 262145, 1, -655363, 1, 1, -655362, 262145, 1, -655361, 1, 1, -720896, 262145, 1, -720895, 1, 1, -720894, 1, 1, -720893, 1, 1, -393213, 458753, 0, -1179644, 131073, 0, -1114108, 131073, 0, -1048572, 131073, 0, -983036, 131073, 0, -917500, 131073, 0, -851964, 131073, 0, -786428, 131073, 0, -720892, 131073, 0, -1179643, 131073, 0, -1179642, 131073, 0, -1179641, 131073, 0, -1179640, 131073, 0, -1179639, 131073, 0, -1179638, 131073, 0, -1179637, 131073, 0, -1179636, 131073, 0, -1179635, 131073, 0)
+layer_1/tile_data = PackedInt32Array(-589829, 1, 0, -524293, 1, 0, -458757, 1, 0, -393221, 1, 0, -327685, 1, 0, -262149, 1, 0, -589827, 1, 0, -589828, 1, 0, -589826, 1, 0, -589825, 1, 0, -393218, 1, 0, -393217, 1, 0, -327681, 1, 0, -327682, 1, 0, 196605, 393217, 0, 131072, 393217, 0, 393215, 393217, 0, 393214, 393217, 0, -655366, 1, 1, -589830, 1, 1, -524294, 1, 1, -458758, 1, 1, -393222, 1, 1, -327686, 1, 1, -262150, 1, 1, -196614, 1, 1, -131078, 196609, 1, -65542, 1, 1, -6, 1, 1, 65530, 1, 1, 131066, 1, 1, 196602, 1, 1, 262138, 1, 1, 327674, 196609, 1, 393210, 1, 1, 458746, 1, 1, -655365, 1, 1, -655364, 262145, 1, -655363, 1, 1, -655362, 262145, 1, -655361, 1, 1, -720896, 262145, 1, -720895, 1, 1, -720894, 1, 1, -720893, 1, 1, -393213, 458753, 0, -1179644, 131073, 0, -1114108, 131073, 0, -1048572, 131073, 0, -983036, 131073, 0, -917500, 131073, 0, -851964, 131073, 0, -786428, 131073, 0, -720892, 131073, 0, -1179643, 131073, 0, -1179642, 131073, 0, -1179641, 131073, 0, -1179640, 131073, 0, -1179639, 131073, 0, -1179638, 131073, 0, -1179637, 131073, 0, -1179636, 131073, 0, -1179635, 131073, 0, -655360, 1, 0)
 layer_2/tile_data = PackedInt32Array(-720903, 1, 1, -655367, 1, 1, -589831, 1, 1, -524295, 1, 1, -458759, 1, 1, -393223, 1, 1, -327687, 1, 1, -262151, 1, 1, -196615, 131073, 1, -131079, 1, 1, -65543, 1, 1, -7, 1, 1, 65529, 1, 1, 131065, 1, 1, 196601, 1, 1, 262137, 131073, 1, 327673, 1, 1, 393209, 1, 1, -720902, 1, 1, -720901, 327681, 1, -720900, 1, 1, -720899, 327681, 1, -720898, 1, 1, -720897, 327681, 1, -786432, 1, 1, -786431, 1, 1, -786430, 1, 1, -1245181, 131073, 0, -1179645, 131073, 0, -1114109, 131073, 0, -1048573, 131073, 0, -983037, 131073, 0, -917501, 131073, 0, -851965, 131073, 0, -786429, 131073, 0, -1245180, 131073, 0, -1245179, 131073, 0, -1245178, 131073, 0, -1245177, 131073, 0, -1245176, 131073, 0, -1245175, 131073, 0, -1245174, 131073, 0, -1245173, 131073, 0, -1245172, 131073, 0)
 layer_3/name = "Layer3"
 layer_3/y_sort_enabled = true
@@ -117,7 +126,7 @@ layer_3/y_sort_origin = 3
 layer_3/z_index = 3
 
 [node name="CharacterBody2D" parent="Environment/TileMap" instance=ExtResource("3_4rjj8")]
-position = Vector2(293, -4)
+position = Vector2(232, -22)
 scale = Vector2(0.19999999, 0.19999999)
 
 [node name="Camera2D" type="Camera2D" parent="Environment/TileMap/CharacterBody2D"]
@@ -132,19 +141,26 @@ position = Vector2(64.000015, -52)
 [node name="Interactable" parent="Environment/TileMap/Cauldron" instance=ExtResource("6_w2gfe")]
 visible = false
 
-[node name="PlantPot" parent="Environment/TileMap" instance=ExtResource("7_k2kyf")]
+[node name="PrepStation1" parent="Environment/TileMap" instance=ExtResource("8_3bt1m")]
+z_index = 3
+position = Vector2(176, -91)
+stationType = null
+
+[node name="Interactable" parent="Environment/TileMap/PrepStation1" instance=ExtResource("6_w2gfe")]
+
+[node name="PlantPot1" parent="Environment/TileMap" instance=ExtResource("7_k2kyf")]
 z_index = 2
 y_sort_enabled = true
-position = Vector2(352, -23)
+position = Vector2(304, 1)
 plantReady = false
 
-[node name="Interactable" parent="Environment/TileMap/PlantPot" instance=ExtResource("6_w2gfe")]
+[node name="Interactable" parent="Environment/TileMap/PlantPot1" instance=ExtResource("6_w2gfe")]
 visible = false
 
 [node name="PlantPot2" parent="Environment/TileMap" instance=ExtResource("7_k2kyf")]
 z_index = 2
 y_sort_enabled = true
-position = Vector2(368, -31)
+position = Vector2(288, -7)
 plantReady = false
 
 [node name="Interactable" parent="Environment/TileMap/PlantPot2" instance=ExtResource("6_w2gfe")]
@@ -153,8 +169,179 @@ visible = false
 [node name="PlantPot3" parent="Environment/TileMap" instance=ExtResource("7_k2kyf")]
 z_index = 2
 y_sort_enabled = true
-position = Vector2(255, -16)
+position = Vector2(352, -23)
 plantReady = false
 
 [node name="Interactable" parent="Environment/TileMap/PlantPot3" instance=ExtResource("6_w2gfe")]
+visible = false
+
+[node name="PlantPot4" parent="Environment/TileMap" instance=ExtResource("7_k2kyf")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(368, -31)
+plantReady = false
+
+[node name="Interactable" parent="Environment/TileMap/PlantPot4" instance=ExtResource("6_w2gfe")]
+visible = false
+
+[node name="PlantPot5" parent="Environment/TileMap" instance=ExtResource("7_k2kyf")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(304, -47)
+plantReady = false
+
+[node name="Interactable" parent="Environment/TileMap/PlantPot5" instance=ExtResource("6_w2gfe")]
+visible = false
+
+[node name="PlantPot6" parent="Environment/TileMap" instance=ExtResource("7_k2kyf")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(320, -55)
+plantReady = false
+
+[node name="Interactable" parent="Environment/TileMap/PlantPot6" instance=ExtResource("6_w2gfe")]
+visible = false
+
+[node name="PlantPot7" parent="Environment/TileMap" instance=ExtResource("7_k2kyf")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(352, -71)
+plantReady = false
+
+[node name="Interactable" parent="Environment/TileMap/PlantPot7" instance=ExtResource("6_w2gfe")]
+visible = false
+
+[node name="PlantPot8" parent="Environment/TileMap" instance=ExtResource("7_k2kyf")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(368, -79)
+plantReady = false
+
+[node name="Interactable" parent="Environment/TileMap/PlantPot8" instance=ExtResource("6_w2gfe")]
+visible = false
+
+[node name="PlantPot9" parent="Environment/TileMap" instance=ExtResource("7_k2kyf")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(416, -55)
+plantReady = false
+
+[node name="Interactable" parent="Environment/TileMap/PlantPot9" instance=ExtResource("6_w2gfe")]
+visible = false
+
+[node name="PlantPot10" parent="Environment/TileMap" instance=ExtResource("7_k2kyf")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(400, -63)
+plantReady = false
+
+[node name="Interactable" parent="Environment/TileMap/PlantPot10" instance=ExtResource("6_w2gfe")]
+visible = false
+
+[node name="PlantPot11" parent="Environment/TileMap" instance=ExtResource("7_k2kyf")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(464, -31)
+plantReady = false
+
+[node name="Interactable" parent="Environment/TileMap/PlantPot11" instance=ExtResource("6_w2gfe")]
+visible = false
+
+[node name="PlantPot12" parent="Environment/TileMap" instance=ExtResource("7_k2kyf")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(448, -39)
+plantReady = false
+
+[node name="Interactable" parent="Environment/TileMap/PlantPot12" instance=ExtResource("6_w2gfe")]
+visible = false
+
+[node name="PlantPot13" parent="Environment/TileMap" instance=ExtResource("7_k2kyf")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(416, -7)
+plantReady = false
+
+[node name="Interactable" parent="Environment/TileMap/PlantPot13" instance=ExtResource("6_w2gfe")]
+visible = false
+
+[node name="PlantPot14" parent="Environment/TileMap" instance=ExtResource("7_k2kyf")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(432, -15)
+plantReady = false
+
+[node name="Interactable" parent="Environment/TileMap/PlantPot14" instance=ExtResource("6_w2gfe")]
+visible = false
+
+[node name="PlantPot15" parent="Environment/TileMap" instance=ExtResource("7_k2kyf")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(352, 25)
+plantReady = false
+
+[node name="Interactable" parent="Environment/TileMap/PlantPot15" instance=ExtResource("6_w2gfe")]
+visible = false
+
+[node name="PlantPot16" parent="Environment/TileMap" instance=ExtResource("7_k2kyf")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(368, 17)
+plantReady = false
+
+[node name="Interactable" parent="Environment/TileMap/PlantPot16" instance=ExtResource("6_w2gfe")]
+visible = false
+
+[node name="PlantPot17" parent="Environment/TileMap" instance=ExtResource("7_k2kyf")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(304, 49)
+plantReady = false
+
+[node name="Interactable" parent="Environment/TileMap/PlantPot17" instance=ExtResource("6_w2gfe")]
+visible = false
+
+[node name="PlantPot18" parent="Environment/TileMap" instance=ExtResource("7_k2kyf")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(320, 41)
+plantReady = false
+
+[node name="Interactable" parent="Environment/TileMap/PlantPot18" instance=ExtResource("6_w2gfe")]
+visible = false
+
+[node name="PlantPot19" parent="Environment/TileMap" instance=ExtResource("7_k2kyf")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(272, 33)
+plantReady = false
+
+[node name="Interactable" parent="Environment/TileMap/PlantPot19" instance=ExtResource("6_w2gfe")]
+visible = false
+
+[node name="PlantPot20" parent="Environment/TileMap" instance=ExtResource("7_k2kyf")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(256, 25)
+plantReady = false
+
+[node name="Interactable" parent="Environment/TileMap/PlantPot20" instance=ExtResource("6_w2gfe")]
+visible = false
+
+[node name="PlantPot21" parent="Environment/TileMap" instance=ExtResource("7_k2kyf")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(224, 9)
+plantReady = false
+
+[node name="Interactable" parent="Environment/TileMap/PlantPot21" instance=ExtResource("6_w2gfe")]
+visible = false
+
+[node name="PlantPot22" parent="Environment/TileMap" instance=ExtResource("7_k2kyf")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(208, 1)
+plantReady = false
+
+[node name="Interactable" parent="Environment/TileMap/PlantPot22" instance=ExtResource("6_w2gfe")]
 visible = false

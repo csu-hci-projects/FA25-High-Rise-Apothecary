@@ -8,7 +8,8 @@ signal itemSent(item)
 
 var playerNode: Node = null
 
-@onready var inventorySlotScene = preload("res://Scenes/inventorySlot.tscn")
+const itemScene = preload("res://Scenes/inventoryItem.tscn")
+const inventorySlotScene = preload("res://Scenes/inventorySlot.tscn")
 
 func _ready() -> void:
 	inventory.resize(8)
@@ -90,3 +91,9 @@ func sortInv():
 					var tempItem = inventory[i+1]
 					inventory[i+1] = inventory[i]
 					inventory[i] = tempItem
+
+
+func createItem(itemName):
+	var newItem = itemScene.instantiate()
+	newItem.initiateItem(itemName, "Ingredient", "nullEffect", "res://Assets/icon.svg", 5, null, null)
+	return newItem

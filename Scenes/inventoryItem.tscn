@@ -1,6 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://cid8bdfpl8uxc"]
+[gd_scene load_steps=5 format=3 uid="uid://cid8bdfpl8uxc"]
 
 [ext_resource type="Script" uid="uid://6n8jm4jllt7y" path="res://Scripts/InventoryItem.gd" id="1_o0ghr"]
+[ext_resource type="Shader" uid="uid://ixk5q2lon1ar" path="res://Assets/Shaders/outline.gdshader" id="2_cnwdi"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cwstw"]
+shader = ExtResource("2_cnwdi")
+shader_parameter/active = false
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_thickness = 1.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sojec"]
 
@@ -8,6 +15,7 @@
 script = ExtResource("1_o0ghr")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_cwstw")
 offset_left = -7.0
 offset_top = -7.0
 offset_right = 7.0
