@@ -21,6 +21,14 @@ const doorBottomAtlasPos = Vector2i(3,1)
 const windowBottomAtlasPos = Vector2i(4,1)
 const windowTopAtlasPos = Vector2i(5,1)
 const cauldronAtlasPos = Vector2i(6,1)
+const sofa1AtalasPos = Vector2i(0,2)
+const sofa2tAtlasPos = Vector2i(1,2)
+const woodblock = Vector2i(2,2)
+const table_left = Vector2i(3,2)
+const table_right = Vector2i(4,2)
+const table_down = Vector2i(5,2)
+const table_up = Vector2i(6,2)
+
 
 func placeBoundaries():
 	var offsets = [
@@ -29,6 +37,7 @@ func placeBoundaries():
 		Vector2i(-1,0),
 		Vector2i(1,0)
 	]
+	
 	var used = get_used_cells(layers.level0)
 	for spot in used:
 		for offset in offsets:
