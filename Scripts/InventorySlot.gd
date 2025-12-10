@@ -13,6 +13,7 @@ var currentItem = null # currently held item
 
 var shader = load("res://Assets/Shaders/outline.gdshader")
 var shaderMaterial = ShaderMaterial.new()
+var outlineColor: Color
 
 signal pointsUpdated
 
@@ -73,7 +74,9 @@ func setItem(newItem):
 			itemEffect.text = str(newItem.itemEffect)
 			itemEffect.set_autowrap_mode(TextServer.AUTOWRAP_WORD)
 		if str(newItem.itemType) == "Prepared Ingredient":
-			setShader(true, Color.hex(GlobalInventory.shaderHex))
+			if not outlineColor:
+				outlineColor = Color(GlobalInventory.shaderColor)
+			setShader(true, outlineColor)
 	else:
 		icon.texture = load(newItem["texturePath"])
 		quantityLabel.text = str(newItem["quantity"])
