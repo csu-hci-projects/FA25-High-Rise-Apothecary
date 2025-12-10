@@ -1,17 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://b4fgcr0304jmt"]
+[gd_scene load_steps=3 format=3 uid="uid://b4fgcr0304jmt"]
 
 [ext_resource type="Script" uid="uid://co5wwbt6pjv7a" path="res://Scenes/PrepStation.gd" id="1_hpak2"]
-[ext_resource type="Texture2D" uid="uid://cyb0vienllboi" path="res://Assets/Sprites/Potions/luck.png" id="1_text4"]
-[ext_resource type="Texture2D" uid="uid://b6ycs0ywiudb6" path="res://Assets/Sprites/Environment/empty pot.png" id="3_hpak2"]
+[ext_resource type="Texture2D" uid="uid://bwbnqri3fqbl0" path="res://Assets/icon.svg" id="3_hpak2"]
 
 [node name="PrepStation" type="Node2D"]
 script = ExtResource("1_hpak2")
+spriteTexturePath = "res://Assets/icon.svg"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+unique_name_in_owner = true
 y_sort_enabled = true
 position = Vector2(0, -2.9999998)
 scale = Vector2(0.81249994, 0.8124999)
-texture = ExtResource("1_text4")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 0
@@ -62,9 +62,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Uproot"
+text = "Prepare"
 
-[node name="Panel" type="Panel" parent="CanvasLayer/StationMenu"]
+[node name="IngredientPanel" type="Panel" parent="CanvasLayer/StationMenu"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -75,7 +75,7 @@ offset_right = -20.0
 offset_bottom = 201.0
 grow_horizontal = 0
 
-[node name="IngredientTextureRect" type="TextureRect" parent="CanvasLayer/StationMenu/Panel"]
+[node name="IngredientTextureRect" type="TextureRect" parent="CanvasLayer/StationMenu/IngredientPanel"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 5
@@ -87,7 +87,7 @@ offset_bottom = 120.0
 grow_horizontal = 2
 expand_mode = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/StationMenu/Panel"]
+[node name="Label" type="Label" parent="CanvasLayer/StationMenu/IngredientPanel"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -100,7 +100,7 @@ grow_horizontal = 2
 text = "Chosen Ingredient:"
 horizontal_alignment = 1
 
-[node name="IngredientLabel" type="Label" parent="CanvasLayer/StationMenu/Panel"]
+[node name="IngredientLabel" type="Label" parent="CanvasLayer/StationMenu/IngredientPanel"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 7
@@ -115,3 +115,5 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "None"
 horizontal_alignment = 1
+
+[connection signal="pressed" from="CanvasLayer/StationMenu/PreparePanel/PrepareButton" to="." method="_on_prepare_button_pressed"]

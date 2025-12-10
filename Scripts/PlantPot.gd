@@ -3,7 +3,7 @@ extends Node2D
 @onready var sprite = %Sprite2D
 var spriteTexture = Texture
 @export_file_path() var spriteTexturePath = "res://Assets/Sprites/Environment/empty pot.png"
-var currentPlant = createItem("nullName")
+var currentPlant = GlobalInventory.createItem("nullName", 1, "nullType", "nullEffect")
 var plantTexture = Texture
 @export_file_path() var plantTexturePath = ""
 @export var plantReady = true
@@ -37,7 +37,7 @@ func _ready() -> void:
 	updateSprite()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Engine.is_editor_hint():
 		sprite.texture = spriteTexture
 
@@ -66,7 +66,7 @@ func _on_timePassed():
 func updateSprite():
 	var iName = currentPlant.itemName if currentPlant is InventoryItem else currentPlant["name"]
 	if iName != "nullName":
-		#plantTexturePath = "res://Assets/Sprites/PLants" + iName + ".png"
+		#plantTexturePath = "res://Assets/Sprites/Plants" + iName + ".png"
 		plantTexturePath = "res://Assets/Sprites/Ingredients/pouch.png"
 		spriteTexturePath = plantedPath
 	else:
@@ -79,11 +79,6 @@ func updateSprite():
 	if plantTexturePath != "":
 		plantTexture = load(plantTexturePath)
 		plantTextureRect.texture = plantTexture
-
-func createItem(itemName):
-	var newItem = itemScene.instantiate()
-	newItem.initiateItem(itemName, "Ingredient", "nullEffect", "res://Assets/icon.svg", 5, null, null)
-	return newItem
 
 func assignPlantValues(plantName):
 	currentPlant.itemName = plantName
@@ -108,7 +103,7 @@ func plantSeed(item):
 	var niType = item.itemType if item is InventoryItem else item["type"]
 	if iName == "nullName":
 		if niType.contains("Seedling"):
-			currentPlant = createItem(niName)
+			currentPlant = GlobalInventory.createItem(niName, 5, "Ingredient", "")
 			plantTextureRect.texture = load(plantTexturePath)
 			plantLabel.text = niName
 			updateSprite()
@@ -127,7 +122,7 @@ func harvestPlant():
 	plantReady = false
 
 func _on_uproot_button_pressed() -> void:
-	currentPlant = createItem("nullName")
+	currentPlant = GlobalInventory.createItem("nullName", 1, "nullType", "nullEffect")
 	updateSprite()
 	plantTextureRect.texture = null
 	plantLabel.text = "None"

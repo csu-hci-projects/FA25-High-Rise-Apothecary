@@ -12,7 +12,7 @@ var itemTexture = Texture
 
 var scenePath: String = "res://Scenes/inventoryItem.tscn"
 
-@onready var iconSprite = $TextureRect
+@export var iconSprite: TextureRect
 
 var playerInRange = false
 
@@ -62,7 +62,7 @@ func pickupItem():
 	if GlobalInventory.playerNode:
 		GlobalInventory.addItem(item)
 		self.queue_free() # unload item from scene
-	if item["type"] == "Ingredient":
+	if item["type"].contains("Ingredient"):
 		assignPointTotals(item["name"])
 	if itemType.contains("Ingredient"):
 		itemEffect = setEffect()
@@ -118,13 +118,36 @@ func setTexture(newTexturePath: String):
 
 func setEffect():
 	var effect = ""
-	effect += "Water: {str(pointTotals[0])}, "
-	effect += "Earth: {str(pointTotals[1])}, "
-	effect += "Fire: {str(pointTotals[2])}, \n"
-	effect += "Air: {str(pointTotals[3])}, "
-	effect += "Light: {str(pointTotals[4])}, "
-	effect += "Dark: {str(pointTotals[5])}, \n"
-	effect += "Mind: {str(pointTotals[6])}, "
-	effect += "Body: {str(pointTotals[7])}, "
-	effect += "Spirit: {str(pointTotals[8])}"
+	effect += "Water: " + str(pointTotals[0]) + ", "
+	effect += "Earth: " + str(pointTotals[1]) + ", "
+	effect += "Fire: " + str(pointTotals[2]) + ",\n"
+	effect += "Air: " + str(pointTotals[3]) + ", "
+	effect += "Light: " + str(pointTotals[4]) + ", "
+	effect += "Dark: " + str(pointTotals[5]) + ",\n"
+	effect += "Mind: " + str(pointTotals[6]) + ", "
+	effect += "Body: " + str(pointTotals[7]) + ", "
+	effect += "Spirit: " + str(pointTotals[8]) + ", "
 	return effect
+
+func changePoints(type, amt):
+	var iPointTotals = self.pointTotals if self is InventoryItem else self["pointTotals"]
+	match type:
+		"water":
+			iPointTotals[0] += amt
+		"earth":
+			iPointTotals[1] += amt
+		"fire":
+			iPointTotals[2] += amt
+		"air":
+			iPointTotals[3] += amt
+		"light":
+			iPointTotals[4] += amt
+		"dark":
+			iPointTotals[5] += amt
+		"mind":
+			iPointTotals[6] += amt
+		"body":
+			iPointTotals[7] += amt
+		"spirit":
+			iPointTotals[8] += amt
+	self.itemEffect = setEffect()

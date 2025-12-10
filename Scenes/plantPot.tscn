@@ -94,7 +94,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Grow"
 
-[node name="Panel" type="Panel" parent="CanvasLayer/PlanterMenu"]
+[node name="SeedlingPanel" type="Panel" parent="CanvasLayer/PlanterMenu"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -105,7 +105,7 @@ offset_right = -20.0
 offset_bottom = 201.0
 grow_horizontal = 0
 
-[node name="PlantTextureRect" type="TextureRect" parent="CanvasLayer/PlanterMenu/Panel"]
+[node name="PlantTextureRect" type="TextureRect" parent="CanvasLayer/PlanterMenu/SeedlingPanel"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 5
@@ -117,7 +117,7 @@ offset_bottom = 120.0
 grow_horizontal = 2
 expand_mode = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/PlanterMenu/Panel"]
+[node name="Label" type="Label" parent="CanvasLayer/PlanterMenu/SeedlingPanel"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -130,7 +130,7 @@ grow_horizontal = 2
 text = "Chosen Plant:"
 horizontal_alignment = 1
 
-[node name="PlantLabel" type="Label" parent="CanvasLayer/PlanterMenu/Panel"]
+[node name="PlantLabel" type="Label" parent="CanvasLayer/PlanterMenu/SeedlingPanel"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 7

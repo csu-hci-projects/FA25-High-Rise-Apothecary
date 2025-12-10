@@ -24,20 +24,47 @@ script = ExtResource("1_gi8e0")
 
 [node name="Items" type="Node" parent="Environment"]
 
+[node name="InventoryItem3" parent="Environment/Items" instance=ExtResource("2_4rjj8")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(214, 101)
+itemName = "Hemlock"
+itemType = "Ingredient"
+itemTexturePath = "res://Assets/Sprites/Ingredients/pouch.png"
+itemQuantity = 5
+
+[node name="InventoryItem4" parent="Environment/Items" instance=ExtResource("2_4rjj8")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(216, 104)
+itemName = "Mandrake"
+itemType = "Ingredient"
+itemTexturePath = "res://Assets/Sprites/Ingredients/pouch.png"
+itemQuantity = 5
+
+[node name="InventoryItem5" parent="Environment/Items" instance=ExtResource("2_4rjj8")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(214, 104)
+itemName = "Dandelion"
+itemType = "Ingredient"
+itemTexturePath = "res://Assets/Sprites/Ingredients/pouch.png"
+itemQuantity = 5
+
+[node name="InventoryItem6" parent="Environment/Items" instance=ExtResource("2_4rjj8")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(215, 103)
+itemName = "Daisy"
+itemType = "Ingredient"
+itemTexturePath = "res://Assets/Sprites/Ingredients/pouch.png"
+itemQuantity = 5
+
 [node name="InventoryItem7" parent="Environment/Items" instance=ExtResource("2_4rjj8")]
 z_index = 2
 y_sort_enabled = true
-position = Vector2(376, 68)
+position = Vector2(428, 81)
 itemName = "Cherry Pits"
-itemType = "Seedling"
-itemTexturePath = "res://Assets/Sprites/Seedlings/seed.png"
-itemQuantity = 5
-
-[node name="InventoryItem9" parent="Environment/Items" instance=ExtResource("2_4rjj8")]
-z_index = 2
-y_sort_enabled = true
-position = Vector2(376, 68)
-itemName = "Grapevine"
 itemType = "Seedling"
 itemTexturePath = "res://Assets/Sprites/Seedlings/seed.png"
 itemQuantity = 5
@@ -45,111 +72,48 @@ itemQuantity = 5
 [node name="InventoryItem8" parent="Environment/Items" instance=ExtResource("2_4rjj8")]
 z_index = 2
 y_sort_enabled = true
-position = Vector2(376, 68)
+position = Vector2(427, 80)
 itemName = "Catnip"
 itemType = "Seedling"
 itemTexturePath = "res://Assets/Sprites/Seedlings/seed.png"
 itemQuantity = 5
 
-[node name="InventoryItem13" parent="Environment/Items" instance=ExtResource("2_4rjj8")]
+[node name="InventoryItem9" parent="Environment/Items" instance=ExtResource("2_4rjj8")]
 z_index = 2
 y_sort_enabled = true
-position = Vector2(376, 68)
-itemName = "Daisy"
-itemType = "Seedling"
-itemTexturePath = "res://Assets/Sprites/Seedlings/seed.png"
-itemQuantity = 5
-
-[node name="InventoryItem14" parent="Environment/Items" instance=ExtResource("2_4rjj8")]
-z_index = 2
-y_sort_enabled = true
-position = Vector2(376, 68)
-itemName = "Mandrake"
-itemType = "Seedling"
-itemTexturePath = "res://Assets/Sprites/Seedlings/seed.png"
-itemQuantity = 5
-
-[node name="InventoryItem15" parent="Environment/Items" instance=ExtResource("2_4rjj8")]
-z_index = 2
-y_sort_enabled = true
-position = Vector2(376, 68)
-itemName = "Hemlock"
-itemType = "Seedling"
-itemTexturePath = "res://Assets/Sprites/Seedlings/seed.png"
-itemQuantity = 5
-
-[node name="InventoryItem16" parent="Environment/Items" instance=ExtResource("2_4rjj8")]
-z_index = 2
-y_sort_enabled = true
-position = Vector2(376, 68)
-itemName = "Wolfsbane"
-itemType = "Seedling"
-itemTexturePath = "res://Assets/Sprites/Seedlings/seed.png"
-itemQuantity = 5
-
-[node name="InventoryItem17" parent="Environment/Items" instance=ExtResource("2_4rjj8")]
-z_index = 2
-y_sort_enabled = true
-position = Vector2(376, 68)
-itemName = "Henbane"
-itemType = "Seedling"
-itemTexturePath = "res://Assets/Sprites/Seedlings/seed.png"
-itemQuantity = 5
-
-[node name="InventoryItem18" parent="Environment/Items" instance=ExtResource("2_4rjj8")]
-z_index = 2
-y_sort_enabled = true
-position = Vector2(376, 68)
-itemName = "Bergamot"
-itemType = "Seedling"
-itemTexturePath = "res://Assets/Sprites/Seedlings/seed.png"
-itemQuantity = 5
-
-[node name="InventoryItem19" parent="Environment/Items" instance=ExtResource("2_4rjj8")]
-z_index = 2
-y_sort_enabled = true
-position = Vector2(376, 68)
-itemName = "Star Anise"
-itemType = "Seedling"
-itemTexturePath = "res://Assets/Sprites/Seedlings/seed.png"
-itemQuantity = 5
-
-[node name="InventoryItem20" parent="Environment/Items" instance=ExtResource("2_4rjj8")]
-z_index = 2
-y_sort_enabled = true
-position = Vector2(376, 68)
-itemName = "Dandelion"
-itemType = "Seedling"
-itemTexturePath = "res://Assets/Sprites/Seedlings/seed.png"
+position = Vector2(216, 104)
+itemName = "Catnip"
+itemType = "Ingredient"
+itemTexturePath = "res://Assets/Sprites/Ingredients/pouch.png"
 itemQuantity = 5
 
 [node name="InventoryItem10" parent="Environment/Items" instance=ExtResource("2_4rjj8")]
 z_index = 2
 y_sort_enabled = true
-position = Vector2(236, 87)
+position = Vector2(216, 101)
 itemName = "Sulfur"
-itemType = "Base Ingredient"
+itemType = "Ingredient"
 itemTexturePath = "res://Assets/Sprites/Ingredients/pouch.png"
-itemQuantity = 100
+itemQuantity = 5
+
+[node name="InventoryItem11" parent="Environment/Items" instance=ExtResource("2_4rjj8")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(217, 104)
+itemName = "Salt"
+itemType = "Ingredient"
+itemTexturePath = "res://Assets/Sprites/Ingredients/pouch.png"
+itemQuantity = 5
 
 [node name="InventoryItem12" parent="Environment/Items" instance=ExtResource("2_4rjj8")]
 z_index = 2
 y_sort_enabled = true
 material = SubResource("ShaderMaterial_u0jhp")
-position = Vector2(235, 89)
+position = Vector2(244, 88)
 itemName = "Mercury"
-itemType = "Base Ingredient"
+itemType = "Ingredient"
 itemTexturePath = "res://Assets/Sprites/Ingredients/pouch.png"
-itemQuantity = 100
-
-[node name="InventoryItem11" parent="Environment/Items" instance=ExtResource("2_4rjj8")]
-z_index = 2
-y_sort_enabled = true
-position = Vector2(237, 90)
-itemName = "Salt"
-itemType = "Base Ingredient"
-itemTexturePath = "res://Assets/Sprites/Ingredients/pouch.png"
-itemQuantity = 100
+itemQuantity = 5
 
 [node name="TileMap" parent="Environment" instance=ExtResource("2_2xg1f")]
 position = Vector2(150, 114)
@@ -180,61 +144,17 @@ visible = false
 [node name="PrepStation1" parent="Environment/TileMap" instance=ExtResource("8_3bt1m")]
 z_index = 3
 position = Vector2(176, -91)
-stationType = "air fryer"
-spriteTexturePath = "res://Assets/Sprites/Potions/truth.png"
+stationType = "sunning"
 
 [node name="Interactable" parent="Environment/TileMap/PrepStation1" instance=ExtResource("6_w2gfe")]
 position = Vector2(0, 11)
-
-[node name="PrepStation2" parent="Environment/TileMap" instance=ExtResource("8_3bt1m")]
-z_index = 3
-position = Vector2(144, -107)
-stationType = "stove"
-spriteTexturePath = "res://Assets/Sprites/Potions/creativity.png"
-
-[node name="Interactable" parent="Environment/TileMap/PrepStation2" instance=ExtResource("6_w2gfe")]
-position = Vector2(0, 11)
-
-[node name="PrepStation3" parent="Environment/TileMap" instance=ExtResource("8_3bt1m")]
-z_index = 3
-position = Vector2(112, -123)
-stationType = "sunning"
-spriteTexturePath = "res://Assets/Sprites/Potions/luck.png"
-
-[node name="Interactable" parent="Environment/TileMap/PrepStation3" instance=ExtResource("6_w2gfe")]
-position = Vector2(0, 11)
-
-[node name="PrepStation4" parent="Environment/TileMap" instance=ExtResource("8_3bt1m")]
-z_index = 3
-position = Vector2(16, -91)
-stationType = "freezer"
-spriteTexturePath = "res://Assets/Sprites/Potions/charisma.png"
-
-[node name="Interactable" parent="Environment/TileMap/PrepStation4" instance=ExtResource("6_w2gfe")]
-position = Vector2(0, 11)
-
-[node name="PrepStation5" parent="Environment/TileMap" instance=ExtResource("8_3bt1m")]
-z_index = 3
-position = Vector2(55, -109)
-stationType = "cleaver"
-spriteTexturePath = "res://Assets/Sprites/Potions/curse.png"
-
-[node name="Interactable" parent="Environment/TileMap/PrepStation5" instance=ExtResource("6_w2gfe")]
-position = Vector2(0, 11)
-
-[node name="PrepStation6" parent="Environment/TileMap" instance=ExtResource("8_3bt1m")]
-z_index = 3
-position = Vector2(96, -83)
-stationType = "pestle"
-spriteTexturePath = "res://Assets/Sprites/Potions/growth.png"
-
-[node name="Interactable" parent="Environment/TileMap/PrepStation6" instance=ExtResource("6_w2gfe")]
-position = Vector2(0, 3)
 
 [node name="PlantPot1" parent="Environment/TileMap" instance=ExtResource("7_k2kyf")]
 z_index = 2
 y_sort_enabled = true
 position = Vector2(304, 1)
+spriteTexturePath = null
+plantTexturePath = null
 plantReady = false
 
 [node name="Interactable" parent="Environment/TileMap/PlantPot1" instance=ExtResource("6_w2gfe")]
@@ -244,6 +164,8 @@ visible = false
 z_index = 2
 y_sort_enabled = true
 position = Vector2(288, -7)
+spriteTexturePath = null
+plantTexturePath = null
 plantReady = false
 
 [node name="Interactable" parent="Environment/TileMap/PlantPot2" instance=ExtResource("6_w2gfe")]
@@ -253,6 +175,8 @@ visible = false
 z_index = 2
 y_sort_enabled = true
 position = Vector2(352, -23)
+spriteTexturePath = null
+plantTexturePath = null
 plantReady = false
 
 [node name="Interactable" parent="Environment/TileMap/PlantPot3" instance=ExtResource("6_w2gfe")]
@@ -262,6 +186,8 @@ visible = false
 z_index = 2
 y_sort_enabled = true
 position = Vector2(368, -31)
+spriteTexturePath = null
+plantTexturePath = null
 plantReady = false
 
 [node name="Interactable" parent="Environment/TileMap/PlantPot4" instance=ExtResource("6_w2gfe")]
@@ -271,6 +197,8 @@ visible = false
 z_index = 2
 y_sort_enabled = true
 position = Vector2(304, -47)
+spriteTexturePath = null
+plantTexturePath = null
 plantReady = false
 
 [node name="Interactable" parent="Environment/TileMap/PlantPot5" instance=ExtResource("6_w2gfe")]
@@ -280,6 +208,8 @@ visible = false
 z_index = 2
 y_sort_enabled = true
 position = Vector2(320, -55)
+spriteTexturePath = null
+plantTexturePath = null
 plantReady = false
 
 [node name="Interactable" parent="Environment/TileMap/PlantPot6" instance=ExtResource("6_w2gfe")]
@@ -289,6 +219,8 @@ visible = false
 z_index = 2
 y_sort_enabled = true
 position = Vector2(352, -71)
+spriteTexturePath = null
+plantTexturePath = null
 plantReady = false
 
 [node name="Interactable" parent="Environment/TileMap/PlantPot7" instance=ExtResource("6_w2gfe")]
@@ -298,6 +230,8 @@ visible = false
 z_index = 2
 y_sort_enabled = true
 position = Vector2(368, -79)
+spriteTexturePath = null
+plantTexturePath = null
 plantReady = false
 
 [node name="Interactable" parent="Environment/TileMap/PlantPot8" instance=ExtResource("6_w2gfe")]
@@ -307,6 +241,8 @@ visible = false
 z_index = 2
 y_sort_enabled = true
 position = Vector2(416, -55)
+spriteTexturePath = null
+plantTexturePath = null
 plantReady = false
 
 [node name="Interactable" parent="Environment/TileMap/PlantPot9" instance=ExtResource("6_w2gfe")]
@@ -316,6 +252,8 @@ visible = false
 z_index = 2
 y_sort_enabled = true
 position = Vector2(400, -63)
+spriteTexturePath = null
+plantTexturePath = null
 plantReady = false
 
 [node name="Interactable" parent="Environment/TileMap/PlantPot10" instance=ExtResource("6_w2gfe")]
@@ -325,6 +263,8 @@ visible = false
 z_index = 2
 y_sort_enabled = true
 position = Vector2(464, -31)
+spriteTexturePath = null
+plantTexturePath = null
 plantReady = false
 
 [node name="Interactable" parent="Environment/TileMap/PlantPot11" instance=ExtResource("6_w2gfe")]
@@ -334,6 +274,8 @@ visible = false
 z_index = 2
 y_sort_enabled = true
 position = Vector2(448, -39)
+spriteTexturePath = null
+plantTexturePath = null
 plantReady = false
 
 [node name="Interactable" parent="Environment/TileMap/PlantPot12" instance=ExtResource("6_w2gfe")]
@@ -343,6 +285,8 @@ visible = false
 z_index = 2
 y_sort_enabled = true
 position = Vector2(416, -7)
+spriteTexturePath = null
+plantTexturePath = null
 plantReady = false
 
 [node name="Interactable" parent="Environment/TileMap/PlantPot13" instance=ExtResource("6_w2gfe")]
@@ -352,6 +296,8 @@ visible = false
 z_index = 2
 y_sort_enabled = true
 position = Vector2(432, -15)
+spriteTexturePath = null
+plantTexturePath = null
 plantReady = false
 
 [node name="Interactable" parent="Environment/TileMap/PlantPot14" instance=ExtResource("6_w2gfe")]
@@ -361,6 +307,8 @@ visible = false
 z_index = 2
 y_sort_enabled = true
 position = Vector2(352, 25)
+spriteTexturePath = null
+plantTexturePath = null
 plantReady = false
 
 [node name="Interactable" parent="Environment/TileMap/PlantPot15" instance=ExtResource("6_w2gfe")]
@@ -370,6 +318,8 @@ visible = false
 z_index = 2
 y_sort_enabled = true
 position = Vector2(368, 17)
+spriteTexturePath = null
+plantTexturePath = null
 plantReady = false
 
 [node name="Interactable" parent="Environment/TileMap/PlantPot16" instance=ExtResource("6_w2gfe")]
@@ -379,6 +329,8 @@ visible = false
 z_index = 2
 y_sort_enabled = true
 position = Vector2(304, 49)
+spriteTexturePath = null
+plantTexturePath = null
 plantReady = false
 
 [node name="Interactable" parent="Environment/TileMap/PlantPot17" instance=ExtResource("6_w2gfe")]
@@ -388,6 +340,8 @@ visible = false
 z_index = 2
 y_sort_enabled = true
 position = Vector2(320, 41)
+spriteTexturePath = null
+plantTexturePath = null
 plantReady = false
 
 [node name="Interactable" parent="Environment/TileMap/PlantPot18" instance=ExtResource("6_w2gfe")]
@@ -397,6 +351,8 @@ visible = false
 z_index = 2
 y_sort_enabled = true
 position = Vector2(272, 33)
+spriteTexturePath = null
+plantTexturePath = null
 plantReady = false
 
 [node name="Interactable" parent="Environment/TileMap/PlantPot19" instance=ExtResource("6_w2gfe")]
@@ -406,6 +362,8 @@ visible = false
 z_index = 2
 y_sort_enabled = true
 position = Vector2(256, 25)
+spriteTexturePath = null
+plantTexturePath = null
 plantReady = false
 
 [node name="Interactable" parent="Environment/TileMap/PlantPot20" instance=ExtResource("6_w2gfe")]
@@ -415,6 +373,8 @@ visible = false
 z_index = 2
 y_sort_enabled = true
 position = Vector2(224, 9)
+spriteTexturePath = null
+plantTexturePath = null
 plantReady = false
 
 [node name="Interactable" parent="Environment/TileMap/PlantPot21" instance=ExtResource("6_w2gfe")]
@@ -424,6 +384,8 @@ visible = false
 z_index = 2
 y_sort_enabled = true
 position = Vector2(208, 1)
+spriteTexturePath = null
+plantTexturePath = null
 plantReady = false
 
 [node name="Interactable" parent="Environment/TileMap/PlantPot22" instance=ExtResource("6_w2gfe")]

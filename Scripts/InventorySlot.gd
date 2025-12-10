@@ -11,9 +11,18 @@ extends Control
 
 var currentItem = null # currently held item
 
+var shader = load("res://Assets/Shaders/outline.gdshader")
+var shaderMaterial = ShaderMaterial.new()
+
+signal pointsUpdated
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	GlobalInventory.pointsUpdated.connect(pointsUpdated.emit)
+	pointsUpdated.connect(_on_pointsUpdated)
+	
+	shaderMaterial.shader = shader
+	icon.material = shaderMaterial.duplicate(true)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -31,6 +40,8 @@ func _on_item_button_pressed() -> void:
 			useButton.text = "Add"
 		elif iType.contains("Seedling") and Globals.openUI == "planter inv":
 			useButton.text = "Plant"
+		elif iType == "Ingredient" and Globals.openUI == "station inv":
+			useButton.text = "Choose"
 		else:
 			useButton.text = "Cannot use"
 		usagePanel.visible = !usagePanel.visible
@@ -61,6 +72,8 @@ func setItem(newItem):
 		else:
 			itemEffect.text = str(newItem.itemEffect)
 			itemEffect.set_autowrap_mode(TextServer.AUTOWRAP_WORD)
+		if str(newItem.itemType) == "Prepared Ingredient":
+			setShader(true, Color.hex(GlobalInventory.shaderHex))
 	else:
 		icon.texture = load(newItem["texturePath"])
 		quantityLabel.text = str(newItem["quantity"])
@@ -82,6 +95,8 @@ func _on_use_button_pressed() -> void:
 			GlobalInventory.itemSent.emit(currentItem)
 		elif Globals.openUI == "planter inv" and iType.contains("Seedling"):
 			GlobalInventory.itemSent.emit(currentItem)
+		elif Globals.openUI == "station inv" and iType == "Ingredient":
+			GlobalInventory.itemSent.emit(currentItem)
 
 func assignEffect(pointTotals):
 	var effect = ""
@@ -95,3 +110,12 @@ func assignEffect(pointTotals):
 	effect += "Body: " + str(pointTotals[7]) + ", "
 	effect += "Spirit: " + str(pointTotals[8])
 	return effect
+
+func _on_pointsUpdated():
+	if currentItem != null:
+		itemEffect.text = assignEffect(currentItem.pointTotals)
+
+func setShader(state: bool, color: Color):
+	self.icon.material.set_shader_parameter("active", state)
+	self.icon.material.set_shader_parameter("line_color", color)
+	self.icon.material.set_shader_parameter("line_thickness", 1)

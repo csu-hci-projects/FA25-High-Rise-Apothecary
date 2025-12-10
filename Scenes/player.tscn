@@ -1,6 +1,6 @@
 [gd_scene load_steps=24 format=3 uid="uid://pe2sq3jvjs8w"]
 
-[ext_resource type="Script" uid="uid://c0am47y352wck" path="res://Scripts/player.gd" id="1_t6bgw"]
+[ext_resource type="Script" uid="uid://c0am47y352wck" path="res://Scripts/Player.gd" id="1_t6bgw"]
 [ext_resource type="Texture2D" uid="uid://bwbnqri3fqbl0" path="res://Assets/icon.svg" id="2_do1p4"]
 [ext_resource type="Texture2D" uid="uid://cr3qbfurnwrym" path="res://Assets/Sprite Sheets/Witch_charSheet.png" id="3_vgqql"]
 [ext_resource type="PackedScene" uid="uid://dgv6u15212ifn" path="res://Scenes/inventoryUI.tscn" id="4_vgqql"]
@@ -178,13 +178,14 @@ texture = ExtResource("2_do1p4")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(0, 10.000001)
+position = Vector2(0, 50.000004)
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_8pfb1")
 animation = &"idle"
+offset = Vector2(0, -50)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 39.999996)
+position = Vector2(0, 59.999996)
 scale = Vector2(3.1999998, 3.1999998)
 shape = SubResource("CircleShape2D_5o5va")
 

@@ -109,7 +109,7 @@ func _on_button_pressed() -> void:
 			var maxAspects = findMaximums(pointTotals, 6, 9)
 			var chosenElement = maxElements.pick_random()
 			var chosenAspect = maxAspects.pick_random()
-			var createdPotion = createItem()
+			var createdPotion = GlobalInventory.createItem("", 1, "Potion", "")
 			var potionName = determinePotion(chosenAspect, chosenElement)
 			var potionTier = determineTier()
 			createdPotion = assignPotionValues(createdPotion, potionName, potionTier)
@@ -157,11 +157,6 @@ func determineTier():
 		return 2
 	else:
 		return 1
-
-func createItem():
-	var newItem = itemScene.instantiate()
-	newItem.initiateItem("name", "type", "effect", "res://Assets/icon.svg", 1, null, null)
-	return newItem
 
 func assignPotionValues(potionItem: InventoryItem, potionName: String, tier: int):
 	potionItem.itemName = potionName.capitalize()
